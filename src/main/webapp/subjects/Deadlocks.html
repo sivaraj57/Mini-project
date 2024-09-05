@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+	<h1><span class="color_h1">Deadlocks</span></h1>
+    <p>In a multiprogramming system, numerous processes get competed for a finite number of resources. Any process requests resources, and as the resources aren't available at that time, the process goes into a waiting state. At times, a waiting process is not at all able again to change its state as other waiting processes detain the resources it has requested. That condition is termed as deadlock. In this chapter, you will learn about this issue briefly in connection with semaphores.    </p>
+    <hr>
+    <h2>System Model</h2>
+    <p>A system model or structure consists of a fixed number of resources to be circulated among some opposing processes. The resources are then partitioned into numerous types, each consisting of some specific quantity of identical instances. Memory space, CPU cycles, directories and files, I/O devices like keyboards, printers and CD-DVD drives are prime examples of resource types. When a system has 2 CPUs, then the resource type CPU got two instances.</p>
+    <p>Under the standard mode of operation, any process may use a resource in only the below-mentioned sequence:
+        <ol>
+            <li><b>Request: </b>When the request can't be approved immediately (where the case may be when another process is utilizing the resource), then the requesting job must remain waited until it can obtain the resource.</li>
+            <li><b>Use: </b>The process can run on the resource (like when the resource is a printer, its job/process is to print on the printer).</li>
+            <li><b>Release: </b>The process releases the resource (like, terminating or exiting any specific process).</li>
+        </ol>
+    </p>
+    <hr>
+    <h2>Necessary Conditions and Preventions for Deadlock</h2>
+    <p>
+        A deadlock state can occur when the following four circumstances hold simultaneously within a system:
+        <ul>
+            <li><b>Mutual exclusion: </b>At least there should be one resource that has to be held in a non-sharable manner; i.e., only a single process at a time can utilize the resource. If other process demands that resource, the requesting process must be postponed until the resource gets released.</li>
+            <li><b>Hold and wait: </b>A job must be holding at least one single resource and waiting to obtain supplementary resources which are currently being held by several other processes.</li>
+            <li><b>No preemption: </b>Resources can't be anticipated; i.e., a resource can get released only willingly by the process holding it, then after that, the process has completed its task.</li>
+            <li><b>Circular wait: </b>The circular - wait situation implies the hold-and-wait state or condition, and hence all the four conditions are not completely independent. They are interconnected among each other.</li>
+        </ul>
+    </p>
+    <hr>
+    <h2>Methods for Handling Deadlocks</h2>
+    <p>
+        Normally you can deal with the deadlock issues and situations in one of the three ways mentioned below:
+        <ul>
+            <li>You can employ a protocol for preventing or avoiding deadlocks, and ensure that the system will never go into a deadlock state.</li>
+            <li>You can let the system to enter any deadlock condition, detect it, and then recover.</li>
+            <li>You can overlook the issue altogether and assume that deadlocks never occur within the system.</li>
+        </ul>
+        But is recommended to deal with deadlock, from the 1st option
+    </p>
+</body>
+</html>

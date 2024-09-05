@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+	<h1><span class="color_h1" style="color: darkviolet;">SOFTWARE TESTING OVERVIEW</span></h1><hr>
+    <div>
+        <p>Software Testing is evaluation of the software against requirements gathered from users and system specifications. Testing is conducted at the phase level in software development life cycle or at module level in program code. Software testing comprises of Validation and Verification.</p>
+    <h2>Software Validation</h2>
+    <p>Validation is process of examining whether or not the software satisfies the user requirements. It is carried out at the end of the SDLC. If the software matches requirements for which it was made, it is validated.</p>
+    <ul class="list">
+    <li>Validation ensures the product under development is as per the user requirements.</li>
+    <li>Validation answers the question – "Are we developing the product which attempts all that user needs from this software ?".</li>
+    <li>Validation emphasizes on user requirements.</li>
+    </ul>
+    <h2>Software Verification</h2>
+    <p>Verification is the process of confirming if the software is meeting the business requirements, and is developed adhering to the proper specifications and methodologies. </p>
+    <ul class="list">
+    <li>Verification ensures the product being developed is according to design specifications.</li>
+    <li>Verification answers the question– "Are we developing this product by firmly following all design specifications ?"</li>
+    <li>Verifications concentrates on the design and system specifications.</li>
+    </ul>
+    <p>Target of the test are - </p>
+    <ul class="list">
+    <li><p><b>Errors</b> - These are actual coding mistakes made by developers. In addition, there is a difference in output of software and desired output, is considered as an error.</p></li>
+    <li><p><b>Fault</b> - When error exists fault occurs. A fault, also known as a bug, is a result of an error which can cause system to fail.</p></li>
+    <li><p><b>Failure </b> - failure is said to be the inability of the system to perform the desired task.  Failure occurs when fault exists in the system.</p></li>
+    </ul>
+    <h2>Manual Vs Automated Testing</h2>
+    <p>Testing can either be done manually or using an automated testing tool:</p>
+    <ul class="list">
+    <li><p><b>Manual</b> - This testing is performed without taking help of automated testing tools. The software tester prepares test cases for different sections and levels of the code, executes the tests and reports the result to the manager. </p>
+    <p>Manual testing is time and resource consuming. The tester needs to confirm whether or not right test cases are used. Major portion of testing involves manual testing.</p></li>
+    <li><p><b>Automated</b> This testing is a testing procedure done with aid of automated testing tools. The limitations with manual testing can be overcome using automated test tools.</p></li>
+    </ul>
+    <p>A test needs to check if a webpage can be opened in Internet Explorer. This can be easily done with manual testing. But to check if the web-server can take the load of 1 million users, it is quite impossible to test manually. </p>
+    <p>There are software and hardware tools which helps tester in conducting load testing, stress testing, regression testing.</p>
+    <h2>Testing Approaches</h2>
+    <p>Tests can be conducted based on two approaches – </p>
+    <ul class="list">
+    <li>Functionality testing </li>
+    <li>Implementation testing</li>
+    </ul>
+    <p>When functionality is being tested without taking the actual implementation in concern it is known as black-box testing.  The other side is known as white-box testing where not only functionality is tested but the way it is implemented is also analyzed.</p>
+    <p>Exhaustive tests are the best-desired method for a perfect testing. Every single possible value in the range of the input and output values is tested. It is not possible to test each and every value in real world scenario if the range of values is large.</p>
+    <h3>Black-box testing</h3> 
+    <p>It is carried out to test functionality of the program. It is also called ‘Behavioral’ testing. The tester in this case, has a set of input values and respective desired results. On providing input, if the output matches with the desired results, the program is tested ‘ok’, and problematic otherwise. </p>
+    <img src="/software_engineering/images/black_box_testing.png" alt="Black-box Testing">
+    <p>In this testing method, the design and structure of the code are not known to the tester, and testing engineers and end users conduct this test on the software.</p>
+    <p>Black-box testing techniques:</p>
+    <ul class="list">
+    <li><p><b>Equivalence class</b> - The input is divided into similar classes.  If one element of a class passes the test, it is assumed that all the class is passed.</p></li>
+    <li><p><b>Boundary values</b> - The input is divided into higher and lower end values.  If these values pass the test, it is assumed that all values in between may pass too.</p></li>
+    <li><p><b>Cause-effect graphing</b> - In both previous methods, only one input value at a time is tested. Cause (input) – Effect (output) is a testing technique where combinations of input values are tested in a systematic way.</p></li>
+    <li><p><b>Pair-wise Testing</b> - The behavior of software depends on multiple parameters. In pairwise testing, the multiple parameters are tested pair-wise for their different values.</p></li>
+    <li><p><b>State-based testing</b> - The system changes state on provision of input. These systems are tested based on their states and input.</p></li>
+    </ul>
+    <h3>White-box testing</h3>
+    <p> It is conducted to test program and its implementation, in order to improve code efficiency or structure. It is also known as ‘Structural’ testing.</p>
+    <img src="/software_engineering/images/white_box_testing.png" alt="White-box testing">
+    <p>In this testing method, the design and structure of the code are known to the tester. Programmers of the code conduct this test on the code.</p>
+    <p>The below are some White-box testing techniques:</p>
+    <ul class="list">
+    <li><p><b>Control-flow testing</b> - The purpose of the control-flow testing to set up test cases which covers all statements and branch conditions.  The branch conditions are tested for both being true and false, so that all statements can be covered.</p></li>
+    <li><p><b>Data-flow testing</b> - This testing technique emphasis to cover all the data variables included in the program.  It tests where the variables were declared and defined and where they were used or changed.</p></li>
+    </ul>
+    <h2>Testing Levels</h2>
+    <p>Testing itself may be defined at various levels of SDLC. The testing process runs parallel to software development. Before jumping on the next stage, a stage is tested, validated and verified.</p>
+    <p>Testing separately is done just to make sure that there are no hidden bugs or issues left in the software.  Software is tested on various levels -</p>
+    <h3>Unit Testing</h3>
+    <p> While coding, the programmer performs some tests on that unit of program to know if it is error free.  Testing is performed under white-box testing approach. Unit testing helps developers decide that individual units of the program are working as per requirement and are error free.</p>
+    <h3>Integration Testing</h3>
+    <p>Even if the units of software are working fine individually, there is a need to find out if the units if integrated together would also work without errors. For example, argument passing and data updation etc.</p>
+    <h3>System Testing </h3>
+    <p>The software is compiled as product and then it is tested as a whole.  This can be accomplished using one or more of the following tests:</p>
+    <ul class="list">
+    <li><p><b>Functionality testing</b> - Tests all functionalities of the software against the requirement.</p></li>
+    <li><p><b>Performance testing</b> - This test proves how efficient the software is.  It tests the effectiveness and average time taken by the software to do desired task.  Performance testing is done by means of load testing and stress testing where the software is put under high user and data load under various environment conditions.</p></li>
+    <li><p><b>Security &amp; Portability</b> - These tests are done when the software is meant to work on various platforms and accessed by number of persons.</p></li>
+    </ul>
+    <h3>Acceptance Testing</h3>
+    <p> When the software is ready to hand over to the customer it has to go through last phase of testing where it is tested for user-interaction and response.  This is important because even if the software matches all user requirements and if user does not like the way it appears or works, it may be rejected.</p>
+    <ul class="list">
+    <li><p><b>Alpha testing</b> - The team of developer themselves perform alpha testing by using the system as if it is being used in work environment. They try to find out how user would react to some action in software and how the system should respond to inputs.</p></li>
+    <li><p><b>Beta testing</b> - After the software is tested internally, it is handed over to the users to use it under their production environment only for testing purpose. This is not as yet the delivered product. Developers expect that users at this stage will bring minute problems, which were skipped to attend.</p></li>
+    </ul>
+    <h3>Regression Testing</h3>
+    <p>Whenever a software product is updated with new code, feature or functionality, it is tested thoroughly to detect if there is any negative impact of the added code. This is known as regression testing.</p>
+    <h2>Testing Documentation</h2>
+    <p>Testing documents are prepared at different stages -</p>
+    <h3>Before Testing</h3>
+    <p>Testing starts with test cases generation. Following documents are needed for reference –</p>
+    <ul class="list">
+    <li><p><b>SRS document</b> - Functional Requirements document</p></li>
+    <li><p><b>Test Policy document</b> - This describes how far testing should take place before releasing the product.</p></li>
+    <li><p><b>Test Strategy document</b> - This mentions detail aspects of test team, responsibility matrix and rights/responsibility of test manager and test engineer.</p></li>
+    <li><p><b>Traceability Matrix document</b> - This is SDLC document, which is related to requirement gathering process. As new requirements come, they are added to this matrix. These matrices help testers know the source of requirement.  They can be traced forward and backward.</p></li>
+    </ul>
+    <h3>While Being Tested</h3>
+    <p>The following documents may be required while testing is started and is being done:</p>
+    <ul class="list">
+    <li><p><b>Test Case document</b> - This document contains list of tests required to be conducted.  It includes Unit test plan, Integration test plan, System test plan and Acceptance test plan.</p></li>
+    <li><p><b>Test description</b> - This document is a detailed description of all test cases and procedures to execute them.</p></li>
+    <li><p><b>Test case report</b> - This document contains test case report as a result of the test.</p></li>
+    <li><p><b>Test logs</b> - This document contains test logs for every test case report.</p></li>
+    </ul>
+    <h3>After Testing</h3>
+    <p>The following documents may be generated after testing :</p>
+    <ul class="list">
+    <li><p><b>Test summary</b> - This test summary is collective analysis of all test reports and logs.  It summarizes and concludes if the software is ready to be launched. The software is released under version control system if it is ready to launch.</p></li>
+    </ul>
+    <h2>Testing vs. Quality Control, Quality Assurance and Audit</h2>
+    <p>We need to understand that software testing is different from software quality assurance, software quality control and software auditing.</p>
+    <ul class="list">
+    <li><p><b>Software quality assurance</b> - These are software development process monitoring means, by which it is assured that all the measures are taken as per the standards of organization. This monitoring is done to make sure that proper software development methods were followed.</p>
+    </li><li><p><b>Software quality control</b> - This is a system to maintain the quality of software product. It may include functional and non-functional aspects of software product, which enhance the goodwill of the organization. This system makes sure that the customer is receiving quality product for their requirement and the product certified as ‘fit for use’.</p>
+    </li><li><p><b>Software audit</b> - This is a review of procedure used by the organization to develop the software.  A team of auditors, independent of development team examines the software process, procedure, requirements and other aspects of SDLC.  The purpose of software audit is to check that software and its development process, both conform standards, rules and regulations.</p>
+    </li></ul>
+    </div>
+    
+</body>
+</html>       

@@ -1,0 +1,95 @@
+element.style {
+}
+@media (max-width: 992px)
+#sidenav a {
+    padding: 3px 2px 3px 24px;
+    font-size: 17px;
+}
+#menubtn_container {
+    position: fixed;
+    left: 0;
+    top: 56px;
+    xborder-right: 10px solid rgba(40, 42, 53,0.5);
+    height: 33px;
+    color: white;
+    font-size: 15px;
+}
+#sidenav a {
+    font-family: "Segoe UI",Arial,sans-serif;
+    text-decoration: none;
+    display: block;
+    padding: 2px 1px 1px 16px;
+    position: relative;
+    right: 0%;
+}
+a {
+    color: inherit;
+}
+a {
+    background-color: transparent;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+html, body {
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+#subtopnav {
+    position: fixed;
+    background-color: #282A35;
+    color: #f1f1f1;
+    padding: 0;
+    letter-spacing: 1px;
+    font-family: 'Source Sans Pro Topnav', sans-serif;
+    font-size: 0;
+    top: 56px;
+    z-index: 2;
+    width: 100%;
+    white-space: nowrap;
+    overflow: auto;
+    scrollbar-width: none;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+html, body {
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+#subtopnav::-webkit-scrollbar {
+    display: none!important;
+}
+

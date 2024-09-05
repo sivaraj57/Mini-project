@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+	<h1><span class="color_h1">Threads</span></h1>
+	
+	
+	<p>The process model that has been discussed in previous tutorials described that a process was an executable program that is having a single thread of control. The majority of the modern operating systems now offer features enabling a process for containing multiple threads of control. In this tutorial, there are many concepts associated with multithreaded computer structures. There are many issues related to multithreaded programming and how it brings effect on the design of any operating systems. Then you will learn about how the Windows XP and Linux OS maintain threads at the kernel level.</p>
+    <hr>
+    <h2>What is a thread?</h2>
+    <p>A thread is a stream of execution throughout the process code having its program counter which keeps track of lists of instruction to execute next, system registers which bind its current working variables. Threads are also termed as lightweight process. A thread uses parallelism which provides a way to improve application performance.</p>
+    <hr>
+    <h2>Major Types of Threads</h2>
+    <p>Let us take an example where a web browser may have one thread to display images or text while another thread retrieves data from the network. Another example can be a word processor that may have a thread for displaying the UI or graphics while a new thread for responding to keystrokes received from the user and another thread is to perform spelling and grammar checking in the background. In some cases, a single application may be required to perform several similar tasks.</p>
+    <hr>
+    <h2>Advantages of Threads in OS</h2>
+    <p>The advantages of multithreaded programming can be categorized into four major headings -
+        <ul>
+            <li><i><u><b>Responsiveness:</b></u></i> Multithreading is an interactive concept for an application which may allow a program to continue running even when a part of it is blocked or is carrying a lengthy operation, which increases responsiveness to the user.</li>
+            <li><i><u><b>Resource Sharing:</b></u></i> Mostly threads share the memory and the resources of any process to which they fit in. The advantage of sharing code is that it allows any application to have multiple different threads of activity inside the same address space.</li>
+            <li><i><u><b>Economy:</b></u></i>In OS, allocation of memory and resources for process creation seems costly. Because threads can distribute resources of any process to which they belong, it became more economical to create and develop context-switch threads.</li>
+            <li><i><u><b>Utilization of multiprocessor architectures:</b></u></i> The advantages of multithreading can be greatly amplified in a multiprocessor architecture, where there exist threads which may run in parallel on diverse processors.</li>
+        </ul>
+        <hr>
+        <h2>Multithreading Models</h2>
+        <p>All the threads must have a relationship between them (i.e., user threads and kernel threads). Here is a list which tells the three common ways of establishing this relationship.
+            <ul>
+                <li><i><u><b>Many-to-One Model: </b></u></i>In the many-to-one model plots several user-level threads to a single kernel thread.</li>
+                <li><i><u><b>One-to-One Model: </b></u></i>In the one-to-one model maps every particular user thread to a kernel thread and provides more concurrency compare to many-to-one model.</li>
+                <li><i><u><b>Many-to-Many Model: </b></u></i> In the many-to-many model, many user-level threads get mapped to a smaller or equal quantity of kernel threads. The number of kernel threads might be exact to either a particular application or to a particular machine.</li>
+            </ul>
+            <hr>
+        </p>
+    </p>
+</body>
+</html>    

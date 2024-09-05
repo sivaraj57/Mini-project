@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+  <h1>Queue Data Structure</h1>
+   
+    <h2>Introduction</h2>
+    <p>A queue is a linear data structure that follows the First-In, First-Out (FIFO) principle. It is designed to store and manage a collection of elements, where the first element added is the first one to be removed. Queues are used in various computing applications, including task scheduling, breadth-first search algorithms, and managing resources with limited capacity.</p>
+
+    <h2>Structure</h2>
+    <p>A queue typically has the following components:</p>
+    <ul>
+        <li><strong>Front:</strong> A reference to the front (or head) of the queue, which is the element to be removed next.</li>
+        <li><strong>Rear:</strong> A reference to the rear (or tail) of the queue, which is where new elements are added.</li>
+        <li><strong>Enqueue (or Push):</strong> Adding an element to the rear of the queue.</li>
+        <li><strong>Dequeue (or Pop):</strong> Removing and returning the front element from the queue.</li>
+        <li><strong>Front:</strong> Retrieving the front element without removing it.</li>
+        <li><strong>Rear:</strong> Retrieving the rear element without removing it.</li>
+        <li><strong>Size (or Count):</strong> Determining the number of elements in the queue.</li>
+        <li><strong>Empty:</strong> Checking whether the queue is empty.</li>
+    </ul>
+
+    <h2>Common Operations</h2>
+    <p>Common operations performed on queues include:</p>
+    <ul>
+        <li><strong>Enqueue (or Push):</strong> Adding an element to the rear of the queue.</li>
+        <li><strong>Dequeue (or Pop):</strong> Removing and returning the front element from the queue.</li>
+        <li><strong>Front:</strong> Retrieving the front element without removing it.</li>
+        <li><strong>Rear:</strong> Retrieving the rear element without removing it.</li>
+        <li><strong>Size (or Count):</strong> Determining the number of elements in the queue.</li>
+        <li><strong>Empty:</strong> Checking whether the queue is empty.</li>
+    </ul>
+
+    <h2>Example</h2>
+    <p>Here's a simple example in Python that demonstrates the use of a queue:</p>
+
+    <pre>
+<code>
+from collections import deque
+
+# Creating a queue using the deque class
+my_queue = deque()
+
+# Enqueueing elements to the rear of the queue
+my_queue.append(1)
+my_queue.append(2)
+my_queue.append(3)
+
+# Dequeueing elements from the front of the queue
+dequeued_item = my_queue.popleft()
+</code>
+    </pre>
+
+    <h2>Conclusion</h2>
+    <p>Queues are fundamental data structures used in various algorithms and applications. They provide an efficient way to manage data according to the First-In, First-Out (FIFO) principle. Understanding queues and their operations is crucial for algorithm design, especially for problems involving task scheduling, resource allocation, and breadth-first traversal of data.</p>
+<hr>
+    <h1>Types of Queues in Data Structures</h1>
+   
+    <h2>Introduction</h2>
+    <p>A queue is a linear data structure that follows the First-In, First-Out (FIFO) principle. Different types of queues are used in various computing applications to suit specific needs and requirements. Understanding these types of queues is essential for solving a wide range of problems efficiently.</p>
+
+    <h2>Types of Queues</h2>
+   
+    <h3>1. Standard Queue</h3>
+    <p>The standard queue follows the basic FIFO principle. Elements are added to the rear (enqueue) and removed from the front (dequeue). It is the most common type of queue used in various applications.</p>
+
+    <h3>2. Priority Queue</h3>
+    <p>A priority queue assigns a priority to each element and removes elements based on their priority. Elements with higher priorities are dequeued before elements with lower priorities. Priority queues are used in scenarios where elements have different levels of urgency.</p>
+
+    <h3>3. Double-Ended Queue (Deque)</h3>
+    <p>A double-ended queue, or deque, allows elements to be added or removed from both ends. This provides flexibility in performing operations from the front and rear. Deques are useful in scenarios requiring efficient insertion and removal at both ends.</p>
+
+    <h3>4. Circular Queue</h3>
+    <p>A circular queue is a variation of a standard queue where the rear pointer loops back to the front when the end of the queue is reached. This creates a circular structure and can be useful in scenarios where the queue size is fixed, and space should be efficiently utilized.</p>
+
+    <h3>5. Priority Deque</h3>
+    <p>A priority deque combines the features of both a priority queue and a deque. It allows elements to be added or removed from both ends, and elements are prioritized based on their importance or urgency. Priority deques are used in various applications, including task scheduling.</p>
+
+    <h2>Common Operations</h2>
+    <p>Common operations performed on different types of queues include:</p>
+    <ul>
+        <li><strong>Enqueue (or Push):</strong> Adding an element to the queue.</li>
+        <li><strong>Dequeue (or Pop):</strong> Removing and returning an element from the queue.</li>
+        <li><strong>Front (or Peek):</strong> Retrieving the front element without removing it.</li>
+        <li><strong>Rear:</strong> Retrieving the rear element without removing it (in deque and circular queue).</li>
+        <li><strong>Priority Assignment (for priority queues and priority deques):</strong> Assigning and comparing priorities to determine the order of removal.</li>
+        <li><strong>Empty:</strong> Checking whether the queue is empty.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Understanding the different types of queues and their respective characteristics is essential for selecting the appropriate data structure for various applications and problem-solving scenarios. Each type of queue offers specific advantages and is suited to different use cases, making them valuable tools in computer science and programming.</p>
+<hr>
+
+    <h1>Queue Representation</h1>
+
+    <div class="queue-container">
+        <h2>Queue</h2>
+
+        <div class="queue">
+            <!-- Queue elements -->
+            <div class="queue-element">1</div>
+            <div class="queue-element">2</div>
+            <div class="queue-element">3</div>
+            <div class="queue-element">4</div>
+            <!-- Add more elements as needed -->
+        </div>
+
+        <!-- Controls for enqueue and dequeue operations -->
+        <div>
+            <button onclick="enqueue()">Enqueue</button>
+            <button onclick="dequeue()">Dequeue</button>
+        </div>
+
+        <!-- Display the front and rear indices -->
+        <div>
+            <p>Front: 0</p>
+            <p>Rear: 3</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript functions for enqueue and dequeue operations
+        let queue = [1, 2, 3, 4]; // Initial queue elements
+
+        function enqueue() {
+            const newItem = prompt("Enter the element to enqueue:");
+            queue.push(newItem);
+            updateQueue();
+        }
+
+        function dequeue() {
+            if (queue.length > 0) {
+                queue.shift();
+                updateQueue();
+            } else {
+                alert("Queue is empty!");
+            }
+        }
+
+        function updateQueue() {
+            const queueContainer = document.querySelector(".queue");
+            queueContainer.innerHTML = ""; // Clear the current queue display
+
+            // Re-render the queue elements
+            queue.forEach(item => {
+                const element = document.createElement("div");
+                element.classList.add("queue-element");
+                element.textContent = item;
+                queueContainer.appendChild(element);
+            });
+
+            // Update the front and rear indices
+            const frontIndex = document.querySelector("p:nth-of-type(1)");
+            const rearIndex = document.querySelector("p:nth-of-type(2)");
+            frontIndex.textContent = `Front: 0`;
+            rearIndex.textContent = `Rear: ${queue.length - 1}`;
+        }
+    </script>
+    <hr>
+  <!DOCTYPE html>
+    <h1>Priority Queue</h1>
+    
+    <p>A priority queue is a data structure that stores a collection of elements, each associated with a priority. The elements can be of any data type, and the priority can be represented using numbers, keys, or other comparable values.</p>
+
+    <p>In a priority queue, elements with higher priorities are dequeued or removed before elements with lower priorities. This means that when you dequeue an element from a priority queue, you get the element with the highest priority.</p>
+
+    <h2>Operations</h2>
+    <p>Priority queues typically support the following operations:</p>
+    <ul>
+        <li><strong>Insertion (Enqueue):</strong> Add an element to the priority queue along with its associated priority.</li>
+        <li><strong>Deletion (Dequeue):</strong> Remove and return the element with the highest priority.</li>
+        <li><strong>Peek:</strong> Retrieve the element with the highest priority without removing it.</li>
+        <li><strong>Size:</strong> Get the number of elements in the priority queue.</li>
+        <li><strong>Empty:</strong> Check if the priority queue is empty.</li>
+    </ul>
+
+    <h2>Use Cases</h2>
+    <p>Priority queues are used in various applications, including:</p>
+    <ul>
+        <li>Task scheduling algorithms</li>
+        <li>Graph algorithms like Dijkstra's algorithm</li>
+        <li>Job scheduling in operating systems</li>
+        <li>Order processing in e-commerce</li>
+        <li>And more...</li>
+    </ul>
+
+    <p>Priority queues play a crucial role in optimizing and managing tasks based on their priorities, ensuring that higher-priority tasks are processed or served first.</p>
+
+    <h2>Implementation</h2>
+    <p>Priority queues can be implemented using various data structures, such as heaps or balanced trees. The choice of implementation depends on the specific requirements of your application.</p>
+
+    <p>Here is a simplified example of a priority queue implemented using a min-heap:</p>
+    <pre>
+        // JavaScript code for a Min-Heap-based Priority Queue
+        class PriorityQueue {
+            // Implementation details here
+        }
+    </pre>
+
+    <p>This is a high-level overview of priority queues. To use a priority queue effectively, you need to understand the underlying data structure and the operations it supports.</p>
+<hr>
+  
+</body>
+</html>

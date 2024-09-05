@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+	<h1><span class="color_h1">File System Interface in OS</span></h1>
+    <p>For the majority of users, the file system is the most obvious aspect of any operating system. This provides users the method for storage and access to data as well as programs of the operating system where all the users of the computer system can use it.</p>
+    <p>The file system consists of 2 distinct parts:
+        <ul>
+            <li>a collection of files, that store related data, and</li>
+            <li>a directory structure, which organizes and provides information about all the files in the system.</li>
+        </ul>
+        In this chapter, you will learn about the different file tribute, concepts of file and its storage along with operations on files.
+    </p>
+    <hr>
+    <h2>File Attributes</h2>
+    <p>A file is named, for the ease of its users and is referred by its name. A name is usually a string of characters like filename.cpp, along with an extension which designates the file format. Some systems (like Linux) distinguish between uppercase and lowercase characters in names, whereas other systems don't. When a file is given a name, it becomes independent of the process, the user and also the system which created it. Let's suppose, one user might make the file filename.cpp, and another user might be editing that file by deducing its name. The file's owner may write the file to a compact disk (CD) or send it via an e-mail or copy it across a network, and it could still be called filename.cpp on the destination system.</p>
+    <hr>
+    <h2>Fundamental Components of a File</h2>
+    <p>
+        A file's attributes vary from one operating system to another but typically consist of these:
+        <ul>
+            <li><b><u>Name:</u></b>Name is the symbolic file name and is the only information kept in human readable form.</li>
+            <li><b><u>Identifier:</u></b>This unique tag is a number that identifies the file within the file system; it is in non-human-readable form of the file.</li>
+            <li><b><u>Type:</u></b>This information is needed for systems which support different types of files or its format.</li>
+            <li><b><u>Location:</u></b>This information is a pointer to a device which points to the location of the file on the device where it is stored.</li>
+            <li><b><u>Size:</u></b>The current size of the file (which is in bytes, words, etc.) which possibly the maximum allowed size gets included in this attribute.</li>
+            <li><b><u>Protection:</u></b> Access-control information establishes who can do the reading, writing, executing, etc.</li>
+            <li><b><u>Date, Time & user identification:</u></b>This information might be kept for the creation of the file, its last modification and last used. These data might be useful for in the field of protection, security, and monitoring its usage.            </li>
+        </ul>
+    </p>
+    <hr>
+    <h2>File Operations</h2>
+    <p>
+        A file is an abstract data type. For defining a file properly, we need to consider the operations that can be performed on files. The operating system can provide system calls to create, write, read, reposition, delete, and truncate files. There are six basic file operations within an Operating system. These are:
+        <ul>
+            <li><b><u>Creating a File: </u></b>There are two steps necessary for creating a file. First, space in the file system must be found for the file. We discuss how to allocate space for the file. Second, an entry for the new file must be made in the directory.</li>
+            <li><b><u>Writing a File: </u></b>To write to a file, you make a system call specify about both the name of the file along with the information to be written to the file.</li>
+            <li><b><u>Reading a File: </u></b> To read from a file, you use a system call which specifies the name of the file and where within memory the next block of the file should be placed.</li>
+            <li><b><u>Repositioning a File: </u></b> The directory is then searched for the suitable entry, and the 'current-file-position' pointer is relocating to a given value. Relocating within a file need not require any actual I/O. This file operation is also termed as 'file seek.'</li>
+            <li><b><u>Deleting a File: </u></b> For deleting a file, you have to search the directory for the specific file. Deleting that file or directory release all file space so that other files can re-use that space.</li>
+            <li><b><u>Truncating a File: </u></b>The user may wish for erasing the contents of a file but keep the attributes same. Rather than deleting the file and then recreate it, this utility allows all attributes to remain unchanged — except the file length — and let the user add or edit the file content.            </li>
+        </ul>
+    </p>

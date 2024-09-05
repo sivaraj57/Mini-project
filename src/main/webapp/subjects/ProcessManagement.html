@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+	<h1><span class="color_h1">Process Management</span></h1>
+	
+	
+	<p>During the olden days, computer systems allowed only one program to be executed at one time. This is why that program had complete power of the system and had access to all or most of the system's resources. In contrast, nowadays, current-day computer systems let multiple programs to be loaded into memory and execute them concurrently. This massive change and development required rigid control and more compartmentalization in various programs.</p>
+    <p>The more fused or complex the operating system is, the more it is expected to do on behalf of its users. Even though its main concern is the execution of user programs, it also requires taking care of various system tasks which are better left outside the kernel itself. So a system must consist of a set of processes: operating system processes, executing different system code and user processes which will be executing user code. In this chapter, you will learn about the processes that are being used and managed by the operating system.</p>
+    <hr>
+    <h2>What are the processors?</h2>
+    <p>A process is mainly a program in execution where the execution of a process must progress in sequential order or based on some priority or algorithms. In other words, it is an entity that represents the fundamental working that has been assigned to a system.</p>
+    <p>When a program gets loaded into the memory, it is said to as a process. This processing can be categorized into four sections. These are:</p>
+    <ul>
+        <li>Heap</li>
+        <li>Stack</li>
+        <li>Data</li>
+        <li>Text</li>
+    </ul>
+    <hr>
+    <h2>Process Concept</h2>
+    <p>There's a question which arises while discussing operating systems that involves when to call all the activities of the CPU. Even on a single-user operating system like Microsoft Windows, a user may be capable of running more than a few programs at one time like MS Word processor, different web browser(s) and an e-mail messenger. Even when the user can execute only one program at a time, the operating system might require maintaining its internal programmed activities like memory management. In these respects, all such activities are similar, so we call all of them as 'processes.'</p>
+    <p>Again another term - "job" and process are used roughly replacing each other. Much of the operating - system theory and terminology was developed during a time when the main action of operating systems was job processing; so the term job became famous gradually. It would be confusing to avoid the use of commonly accepted terms which include the word job like 'job scheduling.'    </p>
+    <hr>
+    <h2>Process state of OS</h2>
+    <p>As a process executes, it changes state. The state of a process is defined in part by the current activity of that process. Each process may be in one of the following states:</p>
+    <ul>
+        <li><i><u><b>New:</b></u></i>In this state, the process is being created.</li><br>
+        <li><i><u><b>Running:</b></u></i> In this state, instructions are being executed.</li><br>
+        <li><i><u><b>Waiting:</b>:</b></u></i> In this state, the process is waiting for the different event to occur like I/O completion or treatment of a signal.</li><br>
+        <li><i><u><b>Ready:</b></u></i> In this state, the process waits to assign a processor.</li><br>
+        <li><i><u><b>Terminated:</b></u></i>In this state, the process has finished executing.</li><br>
+    </ul>
+    <hr>
+ </body>
+</html>

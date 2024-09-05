@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+	<h1><span class="color_h1">Working of Main Memory (IPC)</span></h1>
+    <p>In this chapter, you will learn about a variety of ways of managing memory along with its working phenomenon. The memory management algorithms differ from a primitive bare - machine technique to different paging and segmentation policies. Each approach has its benefit and demerits. Selection of a varied memory management technique for a specific system depends largely on various factors, particularly on the hardware design of the system. Now you will see many techniques that require hardware support, recent designs that have closely incorporated the hardware and operating system.</p>
+    <hr>
+    <h2>Basic Hardware</h2>
+    <p>Main memory and different registers built inside the processor itself are the only primary storage that the CPU can have the right to use directly by accessing. There are some machine instructions which take memory addresses as arguments or values, but none of them take disk addresses. So, any instructions in implementation and any data which is used by the instructions should have to be in one of these direct accessing storage devices. When the data are not in memory, they have to be moved there before the CPL can work on them.</p>
+    <p>Registers which are built into the CPU are accessible within one single cycle of the CPU clock. Most CPUs' can interpret those instructions and carry out simple operations on register contents at the rate of 1 or more process per clock tick. The same may not be said for main memory, which gets accessed via a transaction on the memory bus.    </p>
+    <hr>
+    <h2>Address Binding</h2>
+    <p>Usually, a program inhabits on a disk in a binary executable form of a file. For executing, the program must be fetched into memory and positioned within a process (list in the queue). Depending on the usage of memory management, the process may get moved between disk and memory at the time of its execution. The processes on the disk are then waiting to be brought into main memory for implementing form the input queue. The normal method is to choose any one of the processes in the input queue and to load that process into the memory.</p>
+    <p>As the process gets executed, it is able now to access instructions and data from memory. Ultimately, the process expires, and its memory space is declared as available/free. Most systems let user process to exist in any part of the physical memory. Therefore, even if the address space of the computer begins at 00000, the first address of the user process need not have to be 00000. This approach can affect the addresses which the user program can use.</p>
+    <p>Normally, the binding of instructions and data onto memory addresses can be done at any of the step given below:
+        <ul>
+            <li><i><b><u>Compile time:</u></b></i> Compile time is the phase where the process will reside in memory and eventually absolute code can be generated.</li>
+            <li><i><b><u>Load time:</u></b></i> At compile time, when the process will reside in memory, the compiler must generate relocatable code. In that case, final binding gets delayed until load time.</li>
+            <li><i><b><u>Execution time:</u></b></i> Execution time is the time that a program or instruction takes for executing a particular task.            </li>
+        </ul>
+    </p>
+

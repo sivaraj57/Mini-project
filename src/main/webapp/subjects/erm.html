@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">ENTITY RELATIONSHIP MODEL</span></h1>
+    
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">ER Model Basic Concepts</span></h1>
+        <hr>
+        <div>
+            <p>The ER model defines the conceptual view of a database. It works around real-world entities and the associations among them. At view level, the ER model is considered a good option for designing databases.</p>
+        <h2>Entity</h2>
+        <p>An entity can be a real-world object, either animate or inanimate, that can be easily identifiable. For example, in a school database, students, teachers, classes, and courses offered can be considered as entities. All these entities have some attributes or properties that give them their identity.</p>
+        <p>An entity set is a collection of similar types of entities. An entity set may contain entities with attribute sharing similar values. For example, a Students set may contain all the students of a school; likewise a Teachers set may contain all the teachers of a school from all faculties. Entity sets need not be disjoint.</p>
+        <h2>Attributes</h2>
+        <p>Entities are represented by means of their properties, called <b>attributes</b>. All attributes have values. For example, a student entity may have name, class, and age as attributes.</p>
+        <p>There exists a domain or range of values that can be assigned to attributes. For example, a student's name cannot be a numeric value. It has to be alphabetic. A student's age cannot be negative, etc.</p>
+        <h3>Types of Attributes</h3>
+        <ul class="list">
+        <li><p><b>Simple attribute</b> − Simple attributes are atomic values, which cannot be divided further. For example, a student's phone number is an atomic value of 10 digits.</p></li>
+        <li><p><b>Composite attribute</b> − Composite attributes are made of more than one simple attribute. For example, a student's complete name may have first_name and last_name.</p></li>
+        <li><p><b>Derived attribute</b> − Derived attributes are the attributes that do not exist in the physical database, but their values are derived from other attributes present in the database. For example, average_salary in a department should not be saved directly in the database, instead it can be derived. For another example, age can be derived from data_of_birth.</p></li>
+        <li><p><b>Single-value attribute</b> − Single-value attributes contain single value. For example − Social_Security_Number.</p></li>
+        <li><p><b>Multi-value attribute</b> − Multi-value attributes may contain more than one values. For example, a person can have more than one phone number, email_address, etc.</p></li>
+        </ul>
+        <p>These attribute types can come together in a way like −</p>
+        <ul class="list">
+        <li>simple single-valued attributes</li>
+        <li>simple multi-valued attributes</li>
+        <li>composite single-valued attributes</li>
+        <li>composite multi-valued attributes</li>
+        </ul>
+        <h3>Entity-Set and Keys</h3>
+        <p>Key is an attribute or collection of attributes that uniquely identifies an entity among entity set.</p>
+        <p>For example, the roll_number of a student makes him/her identifiable among students.</p>
+        <ul class="list">
+        <li><p><b>Super Key</b> − A set of attributes (one or more) that collectively identifies an entity in an entity set.</p></li>
+        <li><p><b>Candidate Key</b> − A minimal super key is called a candidate key. An entity set may have more than one candidate key.</p></li>
+        <li><p><b>Primary Key</b> − A primary key is one of the candidate keys chosen by the database designer to uniquely identify the entity set.</p></li>
+        </ul>
+        <h2>Relationship</h2>
+        <p>The association among entities is called a relationship. For example, an employee <b>works_at</b> a department, a student <b>enrolls</b> in a course. Here, Works_at and Enrolls are called relationships.</p>
+        <h3>Relationship Set</h3>
+        <p>A set of relationships of similar type is called a relationship set. Like entities, a relationship too can have attributes. These attributes are called <b>descriptive attributes</b>.</p>
+        <h3>Degree of Relationship</h3>
+        <p>The number of participating entities in a relationship defines the degree of the relationship.</p>
+        <ul class="list">
+        <li>Binary = degree 2</li>
+        <li>Ternary = degree 3</li>
+        <li>n-ary = degree</li>
+        </ul>
+        <h3>Mapping Cardinalities</h3>
+        <p><b>Cardinality</b> defines the number of entities in one entity set, which can be associated with the number of entities of other set via relationship set.</p>
+        <ul class="list">
+        <li><p><b>One-to-one</b> − One entity from entity set A can be associated with at most one entity of entity set B and vice versa.</p></li>
+        <img src="/dbms/images/one_to_one_relation.png" alt="One-to-one relation">
+        <li><p><b>One-to-many</b> − One entity from entity set A can be associated with more than one entities of entity set B however an entity from entity set B, can be associated with at most one entity.</p></li>
+        <img src="/dbms/images/one_to_many_relation.png" alt="One-to-many relation">
+        <li><p><b>Many-to-one</b> − More than one entities from entity set A can be associated with at most one entity of entity set B, however an entity from entity set B can be associated with more than one entity from entity set A.</p></li>
+        <img src="/dbms/images/many_to_one_relation.png" alt="Many-to-one relation">
+        <li><p><b>Many-to-many</b> − One entity from A can be associated with more than one entity from B and vice versa.</p></li>
+        <img src="/dbms/images/many_to_many_relation.png" alt="Many-to-many relation">
+        </ul>
+        </div>
+        <hr>
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">ER Diagram Representation</span></h1>
+        <hr>
+        <div>
+            <p>Let us now learn how the ER Model is represented by means of an ER diagram. Any object, for example, entities, attributes of an entity, relationship sets, and attributes of relationship sets, can be represented with the help of an ER diagram.</p>
+            <h2>Entity</h2>
+            <p>Entities are represented by means of rectangles. Rectangles are named with the entity set they represent.</p>
+            <img src="/dbms/images/entities.png" alt="Entities in a school database">
+            <h2>Attributes</h2>
+            <p>Attributes are the properties of entities. Attributes are represented by means of ellipses. Every ellipse represents one attribute and is directly connected to its entity (rectangle).</p>
+            <img src="/dbms/images/er_attributes.png" alt="Simple Attributes">
+            <p>If the attributes are <b>composite</b>, they are further divided in a tree like structure. Every node is then connected to its attribute. That is, composite attributes are represented by ellipses that are connected with an ellipse.</p>
+            <img src="/dbms/images/er_attributes_composite.png" alt="Composite Attributes">
+            <p><b>Multivalued</b> attributes are depicted by double ellipse.</p>
+            <img src="/dbms/images/er_attributes_multivalued.png" alt="Multivalued Attributes">
+            <p><b>Derived</b> attributes are depicted by dashed ellipse.</p>
+            <img src="/dbms/images/er_attributes_derived.png" alt="Derived Attributes">
+            <h2>Relationship</h2>
+            <p>Relationships are represented by diamond-shaped box. Name of the relationship is written inside the diamond-box. All the entities (rectangles) participating in a relationship, are connected to it by a line.</p>
+            <h3>Binary Relationship and Cardinality</h3>
+            <p>A relationship where two entities are participating is called a <b>binary relationship</b>. Cardinality is the number of instance of an entity from a relation that can be associated with the relation.</p>
+            <ul class="list">
+            <li><p><b>One-to-one</b> − When only one instance of an entity is associated with the relationship, it is marked as '1:1'. The following image reflects that only one instance of each entity should be associated with the relationship. It depicts one-to-one relationship.</p></li>
+            <img src="/dbms/images/er_relation_one_to_one.png" alt="One-to-one">
+            <li><p><b>One-to-many</b> − When more than one instance of an entity is associated with a relationship, it is marked as '1:N'. The following image reflects that only one instance of entity on the left and more than one instance of an entity on the right can be associated with the relationship. It depicts one-to-many relationship.</p></li>
+            <img src="/dbms/images/er_relation_one_to_many.png" alt="One-to-many">
+            <li><p><b>Many-to-one</b> − When more than one instance of entity is associated with the relationship, it is marked as 'N:1'. The following image reflects that more than one instance of an entity on the left and only one instance of an entity on the right can be associated with the relationship. It depicts many-to-one relationship.</p></li>
+            <img src="/dbms/images/er_relation_many_to_one.png" alt="Many-to-one">
+            <li><p><b>Many-to-many</b> − The following image reflects that more than one instance of an entity on the left and more than one instance of an entity on the right can be associated with the relationship. It depicts many-to-many relationship.</p></li>
+            <img src="/dbms/images/er_relation_many_to_many.png" alt="Many-to-many">
+            </ul>
+            <h3>Participation Constraints</h3>
+            <ul class="list">
+            <li><p><b>Total Participation</b> − Each entity is involved in the relationship. Total participation is represented by double lines.</p></li>
+            <li><p><b>Partial participation</b> − Not all entities are involved in the relationship. Partial participation is represented by single lines.</p></li>
+            </ul>
+        </div>
+        <hr>
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Generalization,Aggregation</span></h1>
+        <hr>
+        <div>
+            <p>The ER Model has the power of expressing database entities in a conceptual hierarchical manner. As the hierarchy goes up, it generalizes the view of entities, and as we go deep in the hierarchy, it gives us the detail of every entity included.</p>
+            <p>Going up in this structure is called <b>generalization</b>, where entities are clubbed together to represent a more generalized view. For example, a particular student named Mira can be generalized along with all the students. The entity shall be a student, and further, the student is a person. The reverse is called <b>specialization</b> where a person is a student, and that student is Mira.</p>
+            <h2>Generalization</h2>
+            <p>As mentioned above, the process of generalizing entities, where the generalized entities contain the properties of all the generalized entities, is called generalization. In generalization, a number of entities are brought together into one generalized entity based on their similar characteristics. For example, pigeon, house sparrow, crow and dove can all be generalized as Birds.</p>
+            <img src="/dbms/images/generalization.png" alt="Generalization">
+            <h2>Specialization</h2>
+            <p>Specialization is the opposite of generalization. In specialization, a group of entities is divided into sub-groups based on their characteristics. Take a group ‘Person’ for example. A person has name, date of birth, gender, etc. These properties are common in all persons, human beings. But in a company, persons can be identified as employee, employer, customer, or vendor, based on what role they play in the company.</p>
+            <img src="/dbms/images/specialization.png" alt="Specialization">
+            <p>Similarly, in a school database, persons can be specialized as teacher, student, or a staff, based on what role they play in school as entities.</p>
+            <h2>Inheritance</h2>
+            <p>We use all the above features of ER-Model in order to create classes of objects in object-oriented programming. The details of entities are generally hidden from the user; this process known as <b>abstraction</b>.</p>
+            <p>Inheritance is an important feature of Generalization and Specialization. It allows lower-level entities to inherit the attributes of higher-level entities.</p>
+            <img src="/dbms/images/inheritance.png" alt="Inheritance">
+            <p>For example, the attributes of a Person class such as name, age, and gender can be inherited by lower-level entities such as Student or Teacher.</p>
+        </div>
+        <hr>
+    </body>
+</html>

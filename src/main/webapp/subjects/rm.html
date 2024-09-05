@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+    <h1><span class="color_h1" style="color:rgb(18, 7, 23)">RELATIONAL MODEL</span></h1>
+    
+    <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Codd's Rules</span></h1>
+    <hr>
+    <div>
+        <p>Dr Edgar F. Codd, after his extensive research on the Relational Model of database systems, came up with twelve rules of his own, which according to him, a database must obey in order to be regarded as a true relational database.</p>
+        <p>These rules can be applied on any database system that manages stored data using only its relational capabilities. This is a foundation rule, which acts as a base for all the other rules.</p>
+        <h2>Rule 1: Information Rule</h2>
+        <p>The data stored in a database, may it be user data or metadata, must be a value of some table cell. Everything in a database must be stored in a table format.</p>
+        <h2>Rule 2: Guaranteed Access Rule</h2>
+        <p>Every single data element (value) is guaranteed to be accessible logically with a combination of table-name, primary-key (row value), and attribute-name (column value). No other means, such as pointers, can be used to access data.</p>
+        <h2>Rule 3: Systematic Treatment of NULL Values</h2>
+        <p>The NULL values in a database must be given a systematic and uniform treatment. This is a very important rule because a NULL can be interpreted as one the following − data is missing, data is not known, or data is not applicable.</p>
+        <h2>Rule 4: Active Online Catalog</h2>
+        <p>The structure description of the entire database must be stored in an online catalog, known as <b>data dictionary</b>, which can be accessed by authorized users. Users can use the same query language to access the catalog which they use to access the database itself.</p>
+        <h2>Rule 5: Comprehensive Data Sub-Language Rule</h2>
+        <p>A database can only be accessed using a language having linear syntax that supports data definition, data manipulation, and transaction management operations. This language can be used directly or by means of some application. If the database allows access to data without any help of this language, then it is considered as a violation.</p>
+        <h2>Rule 6: View Updating Rule</h2>
+        <p>All the views of a database, which can theoretically be updated, must also be updatable by the system.</p>
+        <h2>Rule 7: High-Level Insert, Update, and Delete Rule</h2>
+        <p>A database must support high-level insertion, updation, and deletion. This must not be limited to a single row, that is, it must also support union, intersection and minus operations to yield sets of data records.</p>
+        <h2>Rule 8: Physical Data Independence</h2>
+        <p>The data stored in a database must be independent of the applications that access the database. Any change in the physical structure of a database must not have any impact on how the data is being accessed by external applications.</p>
+        <h2>Rule 9: Logical Data Independence</h2>
+        <p>The logical data in a database must be independent of its user’s view (application). Any change in logical data must not affect the applications using it. For example, if two tables are merged or one is split into two different tables, there should be no impact or change on the user application. This is one of the most difficult rule to apply.</p>
+        <h2>Rule 10: Integrity Independence</h2>
+        <p>A database must be independent of the application that uses it. All its integrity constraints can be independently modified without the need of any change in the application. This rule makes a database independent of the front-end application and its interface.</p>
+        <h2>Rule 11: Distribution Independence</h2>
+        <p>The end-user must not be able to see that the data is distributed over various locations. Users should always get the impression that the data is located at one site only. This rule has been regarded as the foundation of distributed database systems.</p>
+        <h2>Rule 12: Non-Subversion Rule</h2>
+        <p>If a system has an interface that provides access to low-level records, then the interface must not be able to subvert the system and bypass security and integrity constraints.</p>
+    </div>
+    <hr>
+    <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Relational Data Model </span></h1>
+    <hr>
+    <div>
+        <p>Relational data model is the primary data model, which is used widely around the world for data storage and processing. This model is simple and it has all the properties and capabilities required to process data with storage efficiency.</p>
+        <h2>Concepts</h2>
+        <p><b>Tables</b> − In relational data model, relations are saved in the format of Tables. This format stores the relation among entities. A table has rows and columns, where rows represents records and columns represent the attributes.</p>
+        <p><b>Tuple</b> − A single row of a table, which contains a single record for that relation is called a tuple.</p>
+        <p><b>Relation instance</b> − A finite set of tuples in the relational database system represents relation instance. Relation instances do not have duplicate tuples.</p>
+        <p><b>Relation schema</b> − A relation schema describes the relation name (table name), attributes, and their names.</p>
+        <p><b>Relation key</b> − Each row has one or more attributes, known as relation key, which can identify the row in the relation (table) uniquely.</p> 
+        <p><b>Attribute domain</b> − Every attribute has some pre-defined value scope, known as attribute domain.</p>
+        <h2>Constraints</h2>
+        <p>Every relation has some conditions that must hold for it to be a valid relation.  These conditions are called <b>Relational Integrity Constraints</b>. There are three main integrity constraints −</p>
+        <ul class="list">
+        <li>Key constraints</li>
+        <li>Domain constraints</li>
+        <li>Referential integrity constraints</li>
+        </ul>
+        <h3>Key Constraints</h3>
+        <p>There must be at least one minimal subset of attributes in the relation, which can identify a tuple uniquely. This minimal subset of attributes is called <b>key</b> for that relation. If there are more than one such minimal subsets, these are called <b><i>candidate keys</i></b>.</p>
+        <p>Key constraints force that −</p>
+        <ul class="list">
+        <li><p>in a relation with a key attribute, no two tuples can have identical values for key attributes.</p></li>
+        <li><p>a key attribute can not have NULL values.</p></li>
+        </ul>
+        <p>Key constraints are also referred to as Entity Constraints.</p>
+        <h3>Domain Constraints</h3>
+        <p>Attributes have specific values in real-world scenario. For example, age can only be a positive integer. The same constraints have been tried to employ on the attributes of a relation. Every attribute is bound to have a specific range of values. For example, age cannot be less than zero and telephone numbers cannot contain a digit outside 0-9.</p>
+        <h3>Referential integrity Constraints</h3>
+        <p>Referential integrity constraints work on the concept of Foreign Keys. A foreign key is a key attribute of a relation that can be referred in other relation.</p>
+        <p>Referential integrity constraint states that if a relation refers to a key attribute of a different or same relation, then that key element must exist.</p>
+    </div>
+    <hr>
+    <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Relational algebra</span></h1>
+    <hr>
+    <div>
+        <p>Relational database systems are expected to be equipped with a query language that can assist its users to query the database instances. There are two kinds of query languages − relational algebra and relational calculus.</p>
+        <h2>Relational Algebra</h2>
+        <p>Relational algebra is a procedural query language, which takes instances of relations as input and yields instances of relations as output. It uses operators to perform queries. An operator can be either <b>unary</b> or <b>binary</b>.  They accept relations as their input and yield relations as their output. Relational algebra is performed recursively on a relation and intermediate results are also considered relations.</p>
+        <p>The fundamental operations of relational algebra are as follows −</p>
+        <ul class="list">
+        <li>Select</li>
+        <li>Project</li>
+        <li>Union</li>
+        <li>Set different</li>
+        <li>Cartesian product</li>
+        <li>Rename</li>
+        </ul>
+        <p>We will discuss all these operations in the following sections.</p>
+        <h2>Select Operation (σ)</h2>
+        <p>It selects tuples that satisfy the given predicate from a relation.</p>
+        <p><b>Notation</b> − σ<sub><i>p</i></sub>(r)</p>
+        <p>Where <b>σ</b> stands for selection predicate and <b>r</b> stands for relation. <i>p</i> is prepositional logic formula which may use connectors like <b>and, or,</b> and <b>not</b>. These terms may use relational operators like − =,&nbsp;≠,&nbsp;≥,&nbsp;&lt; ,&nbsp; &gt;, &nbsp;≤.</p>
+        <p><b>For example</b> −</p>
+        <pre class="result notranslate"><span style="font-size:1.2em">σ<sub><i>subject = "database"</i></sub>(Books)</span>
+        </pre>
+        <p><b>Output</b> − Selects tuples from books where subject is 'database'.</p>
+        <pre class="result notranslate"><span style="font-size:1.2em">σ<sub>subject = "database" and price = "450"</sub>(Books)</span>
+        </pre>
+        <p><b>Output</b> − Selects tuples from books where subject is 'database' and 'price' is 450.</p>
+        <pre class="result notranslate"><span style="font-size:1.2em">σ<sub>subject = "database" and price = "450" or year &gt; "2010"</sub>(Books)</span>
+        </pre>
+        <p><b>Output</b> − Selects tuples from books where subject is 'database' and 'price' is 450 or those books published after 2010.</p>
+        <h2>Project Operation (∏)</h2>
+        <p>It projects column(s) that satisfy a given predicate.</p>
+        <p>Notation − ∏<sub>A<sub><small>1</small></sub>, A<sub><small>2</small></sub>, A<sub><small>n</small></sub></sub> (r)</p>
+        <p>Where A<sub><small>1</small></sub>, A<sub><small>2</small></sub> , A<sub><small>n</small></sub> are attribute names of relation <b>r</b>.</p>
+        <p>Duplicate rows are automatically eliminated, as relation is a set.</p>
+        <p><b>For example</b> −</p>
+        <pre class="result notranslate"><span style="font-size:1.2em">∏<sub>subject, author</sub> (Books)</span>
+        </pre>
+        <p>Selects and projects columns named as subject and author from the relation Books.</p>
+        <h2>Union Operation (∪)</h2>
+        <p>It performs binary union between two given relations and is defined as −</p>
+        <pre class="result notranslate"><span style="font-size:1.2em">r ∪ s = { t | t ∈ r or t ∈ s}</span>
+        </pre>
+        <p><b>Notation</b> − r U s </p>
+        <p>Where <b>r</b> and <b>s</b> are either database relations or relation result set (temporary relation).</p>
+        <p>For a union operation to be valid, the following conditions must hold −</p>
+        <ul class="list">
+        <li><b>r</b>, and <b>s</b> must have the same number of attributes.</li>
+        <li>Attribute domains must be compatible.</li>
+        <li>Duplicate tuples are automatically eliminated.</li>
+        </ul>
+        <pre class="result notranslate"><span style="font-size:1.2em">∏ <sub>author</sub> (Books) ∪ ∏ <sub>author</sub> (Articles)</span>
+        </pre>
+        <p><b>Output</b> − Projects the names of the authors who have either written a book or an article or both.</p>
+        <h2>Set Difference (−)</h2>
+        <p>The result of set difference operation is tuples, which are present in one relation but are not in the second relation.</p>
+        <p><b>Notation</b> − <b>r</b> − <b>s</b></p>
+        <p>Finds all the tuples that are present in <b>r</b> but not in <b>s</b>.</p>
+        <pre class="result notranslate"><span style="font-size:1.2em">∏ <sub>author</sub> (Books) − ∏ <sub>author</sub> (Articles)</span>
+        </pre>
+        <p><b>Output</b> − Provides the name of authors who have written books but not articles.</p>
+        <h2>Cartesian Product (Χ)</h2>
+        <p>Combines information of two different relations into one. </p>
+        <p><b>Notation</b> − r Χ s</p>
+        <p>Where <b>r</b> and <b>s</b> are relations and their output will be defined as −</p>
+        <p>r Χ  s = { q t | q ∈  r and t ∈ s}</p>
+        <pre class="result notranslate"><span style="font-size:1.2em">σ<sub>author = 'tutorialspoint'</sub>(Books Χ Articles)</span>
+        </pre>
+        <p><b>Output</b> − Yields a relation, which shows all the books and articles written by tutorialspoint.</p>
+        <h2>Rename Operation (ρ)</h2>
+        <p>The results of relational algebra are also relations but without any name. The rename operation allows us to rename the output relation. 'rename' operation is denoted with small Greek letter <b>rho</b> <i>ρ</i>.</p>
+        <p><b>Notation</b> − <i>ρ</i> <sub>x</sub> (E)</p>
+        <p>Where the result of expression <b>E</b> is saved with name of <b>x</b>.</p>
+        <p>Additional operations are −</p>
+        <ul class="list">
+        <li>Set intersection</li>
+        <li>Assignment</li>
+        <li>Natural join</li>
+        </ul>
+        <h2>Relational Calculus</h2>
+        <p>In contrast to Relational Algebra, Relational Calculus is a non-procedural query language, that is, it tells what to do but never explains how to do it.</p>
+        <p>Relational calculus exists in two forms −</p>
+        <h3>Tuple Relational Calculus (TRC)</h3>
+        <p>Filtering variable ranges over tuples</p>
+        <p><b>Notation</b> − {T | Condition} </p>
+        <p>Returns all tuples T that satisfies a condition.</p>
+        <p><b>For example</b> −</p>
+        <pre class="result notranslate">{ T.name |  Author(T) AND T.article = 'database' }
+        </pre>
+        <p><b>Output</b> − Returns tuples with 'name' from Author who has written article on 'database'.</p>
+        <p>TRC can be quantified. We can use Existential (∃) and Universal Quantifiers (∀).</p>
+        <p><b>For example</b> −</p>
+        <pre class="result notranslate">{ R| ∃T &nbsp; ∈ Authors(T.article='database' AND R.name=T.name)}
+        </pre>
+        <p><b>Output</b> − The above query will yield the same result as the previous one.</p>
+        <h3>Domain Relational Calculus (DRC)</h3>
+        <p>In DRC, the filtering variable uses the domain of attributes instead of entire tuple values (as done in TRC, mentioned above).</p>
+        <p><b>Notation</b> −</p>
+        <p>{ a<sub><small>1</small></sub>, a<sub><small>2</small></sub>, a<sub><small>3</small></sub>, ..., a<sub><small>n</small></sub> | P (a<sub><small>1</small></sub>, a<sub><small>2</small></sub>, a<sub><small>3</small></sub>, ... ,a<sub><small>n</small></sub>)}</p>
+        <p>Where a1, a2 are attributes and <b>P</b> stands for formulae built by inner attributes.</p>
+        <p><b>For example</b> −</p>
+        <pre class="result notranslate">{&lt; article, page, subject &gt; | <article, page,="" subject=""> ∈ TutorialsPoint ∧ subject = 'database'}
+        </article,></pre>
+        <p><b>Output</b> − Yields Article, Page, and Subject from the relation TutorialsPoint, where subject is database.</p>
+        <p>Just like TRC, DRC can also be written using existential and universal quantifiers.  DRC also involves relational operators.</p>
+        <p>The expression power of Tuple Relation Calculus and Domain Relation Calculus is equivalent to Relational Algebra.</p>
+    </div>
+    <hr>
+    <h1><span class="color_h1" style="color:rgb(76, 27, 97)">ER to Relational Model</span></h1>
+    <hr>
+    <div>
+        <p>ER Model, when conceptualized into diagrams, gives a good overview of entity-relationship, which is easier to understand. ER diagrams can be mapped to relational schema, that is, it is possible to create relational schema using ER diagram. We cannot import all the ER constraints into relational model, but an approximate schema can be generated.</p>
+        <p>There are several processes and algorithms available to convert ER Diagrams into Relational Schema. Some of them are automated and some of them are manual. We may focus here on the mapping diagram contents to relational basics.</p>
+        <p>ER diagrams mainly comprise of −</p>
+        <ul class="list">
+        <li>Entity and its attributes</li>
+        <li>Relationship, which is association among entities.</li>
+        </ul>
+        <h2>Mapping Entity</h2>
+        <p>An entity is a real-world object with some attributes.</p>
+        <img src="/dbms/images/mapping_entities.png" alt="Mapping Entity">
+        <h3>Mapping Process (Algorithm)</h3>
+        <ul class="list">
+        <li>Create table for each entity.</li>
+        <li>Entity's attributes should become fields of tables with their respective data types.</li>
+        <li>Declare primary key.</li>
+        </ul>
+        <h2>Mapping Relationship</h2>
+        <p>A relationship is an association among entities.</p>
+        <img src="/dbms/images/mapping_relationship.png" alt="Mapping relationship">
+        <h3>Mapping Process</h3>
+        <ul class="list">
+        <li>Create table for a relationship.</li>
+        <li>Add the primary keys of all participating Entities as fields of table with their respective data types.</li>
+        <li>If relationship has any attribute, add each attribute as field of table.</li>
+        <li>Declare a primary key composing all the primary keys of participating entities.</li>
+        <li>Declare all foreign key constraints.</li>
+        </ul>
+        <h2>Mapping Weak Entity Sets</h2>
+        <p>A weak entity set is one which does not have any primary key associated with it.</p>
+        <img src="/dbms/images/mapping_weak_entity_sets.png" alt="Mapping Weak Entity Sets">
+        <h3>Mapping Process</h3>
+        <ul class="list">
+        <li>Create table for weak entity set.</li>
+        <li>Add all its attributes to table as field.</li>
+        <li>Add the primary key of identifying entity set.</li>
+        <li>Declare all foreign key constraints.</li>
+        </ul>
+        <h2>Mapping Hierarchical Entities</h2>
+        <p>ER specialization or generalization comes in the form of hierarchical entity sets.</p>
+        <img src="/dbms/images/inheritance.png" alt="Mapping hierarchical entities">
+        <h3>Mapping Process</h3>
+        <ul class="list">
+        <li><p>Create tables for all higher-level entities.</p></li>
+        <li><p>Create tables for lower-level entities.</p></li>
+        <li><p>Add primary keys of higher-level entities in the table of lower-level entities.</p></li>
+        <li><p>In lower-level tables, add all other attributes of lower-level entities.</p></li>
+        <li><p>Declare primary key of higher-level table and the primary key for lower-level table.</p></li>
+        <li><p>Declare foreign key constraints.</p></li>
+        </ul>
+    </div>
+    <hr>
+    <h1><span class="color_h1" style="color:rgb(76, 27, 97)">SQL Overview</span></h1>
+    <hr>
+    <div>
+        <p>SQL is a programming language for Relational Databases. It is designed over relational algebra and tuple relational calculus. SQL comes as a package with all major distributions of RDBMS.</p>
+        <p>SQL comprises both data definition and data manipulation languages. Using the data definition properties of SQL, one can design and modify database schema, whereas data manipulation properties allows SQL to store and retrieve data from database.</p>
+        <h2>Data Definition Language</h2>
+        <p>SQL uses the following set of commands to define database schema −</p>
+        <h3>CREATE</h3>
+        <p>Creates new databases, tables and views from RDBMS.</p>
+        <p><b>For example</b> −</p>
+        <pre class="result notranslate">Create database tutorialspoint;
+        Create table article;
+        Create view for_students;
+        </pre>
+        <h3>DROP</h3>
+        <p>Drops commands, views, tables, and databases from RDBMS.</p>
+        <p><b>For example</b>−</p>
+        <pre class="result notranslate">Drop object_type object_name;
+        Drop database tutorialspoint;
+        Drop table article;
+        Drop view for_students;
+        </pre>
+        <h3>ALTER</h3>
+        <p>Modifies database schema.</p>
+        <pre class="result notranslate">Alter object_type object_name parameters;
+        </pre>
+        <p><b>For example</b>−</p>
+        <pre class="result notranslate">Alter table article add subject varchar;
+        </pre>
+        <p>This command adds an attribute in the relation <b>article</b> with the name <b>subject</b> of string type.</p>
+        <h2>Data Manipulation Language</h2>
+        <p>SQL is equipped with data manipulation language (DML). DML modifies the database instance by inserting, updating and deleting its data. DML is responsible for all forms data modification in a database. SQL contains the following set of commands in its DML section −</p>
+        <ul class="list">
+        <li>SELECT/FROM/WHERE</li>
+        <li>INSERT INTO/VALUES</li>
+        <li>UPDATE/SET/WHERE</li>
+        <li>DELETE FROM/WHERE</li>
+        </ul>
+        <p>These basic constructs allow database programmers and users to enter data and information into the database and retrieve efficiently using a number of filter options.</p>
+        <h3>SELECT/FROM/WHERE</h3>
+        <ul class="list">
+        <li><p><b>SELECT</b> − This is one of the fundamental query command of SQL. It is similar to the projection operation of relational algebra. It selects the attributes based on the condition described by WHERE clause.</p></li>
+        <li><p><b>FROM</b> − This clause takes a relation name as an argument from which attributes are to be selected/projected. In case more than one relation names are given, this clause corresponds to Cartesian product.</p></li>
+        <li><p><b>WHERE</b> − This clause defines predicate or conditions, which must match in order to qualify the attributes to be projected.</p></li>
+        </ul>
+        <p><b>For example</b> −</p>
+        <pre class="result notranslate">Select author_name
+        From book_author
+        Where age &gt; 50;
+        </pre>
+        <p>This command will yield the names of authors from the relation <b>book_author</b> whose age is greater than 50.</p>
+        <h3>INSERT INTO/VALUES</h3>
+        <p>This command is used for inserting values into the rows of a table (relation).</p>
+        <p><b>Syntax</b>−</p>
+        <pre class="result notranslate">INSERT INTO table (column1 [, column2, column3 ... ]) VALUES (value1 [, value2, value3 ... ])
+        </pre>
+        <p>Or</p>
+        <pre class="result notranslate">INSERT INTO table VALUES (value1, [value2, ... ])
+        </pre>
+        <p><b>For example</b> −</p>
+        <pre class="result notranslate">INSERT INTO tutorialspoint (Author, Subject) VALUES ("anonymous", "computers");
+        </pre>
+        <h3>UPDATE/SET/WHERE</h3>
+        <p>This command is used for updating or modifying the values of columns in a table (relation).</p>
+        <p><b>Syntax</b> −</p>
+        <pre class="result notranslate">UPDATE table_name SET column_name = value [, column_name = value ...] [WHERE condition]
+        </pre>
+        <p><b>For example</b> −</p>
+        <pre class="result notranslate">UPDATE tutorialspoint SET Author="webmaster" WHERE Author="anonymous";
+        </pre>
+        <h3>DELETE/FROM/WHERE</h3>
+        <p>This command is used for removing one or more rows from a table (relation).</p>
+        <p><b>Syntax</b> −</p>
+        <pre class="result notranslate">DELETE FROM table_name [WHERE condition];
+        </pre>
+        <p><b>For example</b> −</p>
+        <pre class="result notranslate">DELETE FROM tutorialspoints
+           WHERE Author="unknown";
+        </pre>
+    </div>
+    <hr>
+   
+    </body>
+</html>

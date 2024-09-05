@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+  <h1>Stack Data Structure</h1>
+   
+    <h2>Introduction</h2>
+    <p>A stack is a linear data structure that follows the Last-In, First-Out (LIFO) principle. It is designed to store and manage a collection of elements, where the most recently added element is the first one to be removed. Stacks are used in various computing applications, including expression evaluation, function call management, and backtracking algorithms.</p>
+
+    <h2>Structure</h2>
+    <p>A stack is typically implemented using an array or a linked list. It consists of the following main components:</p>
+    <ul>
+        <li><strong>Top:</strong> A reference to the top element of the stack, which is the element to be removed next.</li>
+        <li><strong>Push:</strong> An operation that adds an element to the top of the stack.</li>
+        <li><strong>Pop:</strong> An operation that removes and returns the top element from the stack.</li>
+        <li><strong>Peek (or Top):</strong> An operation that retrieves the top element without removing it.</li>
+        <li><strong>Size (or Count):</strong> The number of elements currently in the stack.</li>
+        <li><strong>Empty:</strong> A condition indicating whether the stack is empty or not.</li>
+    </ul>
+
+    <h2>Common Operations</h2>
+    <p>Common operations performed on stacks include:</p>
+    <ul>
+        <li><strong>Push:</strong> Adding an element to the top of the stack.</li>
+        <li><strong>Pop:</strong> Removing and returning the top element from the stack.</li>
+        <li><strong>Peek (or Top):</strong> Retrieving the top element without removing it.</li>
+        <li><strong>Size (or Count):</strong> Determining the number of elements in the stack.</li>
+        <li><strong>Empty:</strong> Checking whether the stack is empty.</li>
+    </ul>
+
+    <h2>Example</h2>
+    <p>Here's a simple example in Python that demonstrates the use of a stack:</p>
+
+    <pre>
+<code>
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        if not self.is_empty():
+            return self.items.pop()
+
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def size(self):
+        return len(self.items)
+
+# Creating a stack
+my_stack = Stack()
+
+# Pushing elements onto the stack
+my_stack.push(1)
+my_stack.push(2)
+my_stack.push(3)
+
+# Popping the top element
+popped_item = my_stack.pop()
+</code>
+    </pre>
+
+    <h2>Conclusion</h2>
+    <p>Stacks are fundamental data structures used in various algorithms and applications. They provide a simple and efficient way to manage data in a last-in, first-out manner. Understanding stacks and their operations is essential for algorithm design, especially for problems involving function calls, parsing expressions, and backtracking.</p>
+<hr>
+    <h1>Stack Implementation Using an Array</h1>
+   
+    <h2>Introduction</h2>
+    <p>A stack is a linear data structure that follows the Last-In, First-Out (LIFO) principle. One common way to implement a stack is by using an array as the underlying data structure. This implementation allows you to efficiently add and remove elements from the stack using array operations.</p>
+
+    <h2>Implementation</h2>
+    <p>In the array-based implementation of a stack, you typically use an array to store the elements, and you keep track of the top of the stack using an index. Here are the key components:</p>
+    <ul>
+        <li><strong>Array:</strong> A fixed-size or dynamic array used to store the elements of the stack.</li>
+        <li><strong>Top:</strong> An index that points to the top element of the stack.</li>
+        <li><strong>Push:</strong> Adding an element to the top of the stack by incrementing the top index and placing the element at that position in the array.</li>
+        <li><strong>Pop:</strong> Removing and returning the top element from the stack by accessing the element at the top index and then decrementing the top index.</li>
+        <li><strong>Peek (or Top):</strong> Retrieving the top element without removing it by accessing the element at the top index.</li>
+        <li><strong>Size (or Count):</strong> Determining the number of elements in the stack, often calculated as the difference between the top index and the base index.</li>
+        <li><strong>Empty:</strong> Checking whether the stack is empty, typically by comparing the top index to the base index or using a separate flag.</li>
+    </ul>
+
+    <h2>Common Operations</h2>
+    <p>Common operations performed on a stack implemented using an array include:</p>
+    <ul>
+        <li><strong>Push:</strong> Adding an element to the top of the stack.</li>
+        <li><strong>Pop:</strong> Removing and returning the top element from the stack.</li>
+        <li><strong>Peek (or Top):</strong> Retrieving the top element without removing it.</li>
+        <li><strong>Size (or Count):</strong> Determining the number of elements in the stack.</li>
+        <li><strong>Empty:</strong> Checking whether the stack is empty.</li>
+    </ul>
+
+    <h2>Example</h2>
+    <p>Here's a simple example in Python that demonstrates the implementation of a stack using an array:</p>
+
+    <pre>
+<code>
+class Stack:
+    def __init__(self):
+        self.items = []
+        self.top = -1
+
+    def push(self, item):
+        self.top += 1
+        self.items.append(item)
+
+    def pop(self):
+        if not self.is_empty():
+            popped_item = self.items[self.top]
+            self.top -= 1
+            return popped_item
+
+    def peek(self):
+        if not self.is_empty():
+            return self.items[self.top]
+
+    def is_empty(self):
+        return self.top == -1
+
+    def size(self):
+        return self.top + 1
+</code>
+    </pre>
+
+    <h2>Conclusion</h2>
+    <p>Implementing a stack using an array is a common and efficient approach in computer science and programming. It provides a straightforward way to manage data according to the Last-In, First-Out (LIFO) principle. Understanding this implementation is crucial for algorithm design and problem-solving in various applications.</p>
+<hr>
+    <h1>Stack Implementation Using a Linked List</h1>
+   
+    <h2>Introduction</h2>
+    <p>A stack is a linear data structure that follows the Last-In, First-Out (LIFO) principle. You can implement a stack using a linked list as the underlying data structure. In this implementation, each element of the stack is represented as a node in the linked list. This approach allows for efficient addition and removal of elements from the top of the stack.</p>
+
+    <h2>Implementation</h2>
+    <p>In the linked list-based implementation of a stack, you typically use a singly linked list or a doubly linked list to represent the stack. Here are the key components:</p>
+    <ul>
+        <li><strong>Linked List:</strong> A singly linked list or a doubly linked list used to store the elements of the stack.</li>
+        <li><strong>Top:</strong> A reference to the top node of the linked list, which is the element to be removed next.</li>
+        <li><strong>Push:</strong> Adding an element to the top of the stack by inserting a new node at the beginning of the linked list.</li>
+        <li><strong>Pop:</strong> Removing and returning the top element from the stack by removing the first node from the linked list.</li>
+        <li><strong>Peek (or Top):</strong> Retrieving the top element without removing it by accessing the data in the first node of the linked list.</li>
+        <li><strong>Size (or Count):</strong> Determining the number of elements in the stack by counting the nodes in the linked list.</li>
+        <li><strong>Empty:</strong> Checking whether the stack is empty by verifying if the linked list is empty (no nodes).</li>
+    </ul>
+
+    <h2>Common Operations</h2>
+    <p>Common operations performed on a stack implemented using a linked list include:</p>
+    <ul>
+        <li><strong>Push:</strong> Adding an element to the top of the stack.</li>
+        <li><strong>Pop:</strong> Removing and returning the top element from the stack.</li>
+        <li><strong>Peek (or Top):</strong> Retrieving the top element without removing it.</li>
+        <li><strong>Size (or Count):</strong> Determining the number of elements in the stack.</li>
+        <li><strong>Empty:</strong> Checking whether the stack is empty.</li>
+    </ul>
+
+    <h2>Example</h2>
+    <p>Here's a simple example in Python that demonstrates the implementation of a stack using a singly linked list:</p>
+
+    <pre>
+<code>
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class Stack:
+    def __init__(self):
+        self.top = None
+
+    def push(self, item):
+        new_node = Node(item)
+        new_node.next = self.top
+        self.top = new_node
+
+    def pop(self):
+        if not self.is_empty():
+            popped_item = self.top.data
+            self.top = self.top.next
+            return popped_item
+
+    def peek(self):
+        if not self.is_empty():
+            return self.top.data
+
+    def is_empty(self):
+        return self.top is None
+
+    def size(self):
+        current = self.top
+        count = 0
+        while current:
+            count += 1
+            current = current.next
+        return count
+</code>
+    </pre>
+
+    <h2>Conclusion</h2>
+    <p>Implementing a stack using a linked list is a versatile approach that allows for efficient manipulation of data according to the Last-In, First-Out (LIFO) principle. Understanding this implementation is crucial for algorithm design and problem-solving in various applications.</p>
+
+</body>
+</html>

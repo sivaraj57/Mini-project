@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+	<h1><span class="color_h1" style="color: darkviolet;">SOFTWARE DESIGN COMPLEXITY</span></h1><hr>
+    <div>
+        <p>The term complexity stands for state of events or things, which have multiple interconnected links and highly complicated structures. In software programming, as the design of software is realized, the number of  elements and their interconnections gradually emerge to be huge, which becomes too difficult to understand at once.</p>
+    <p>Software design complexity  is difficult to assess without using complexity metrics and measures. Let us see three important software complexity measures.</p>
+    <h2>Halstead's Complexity Measures</h2>
+    <p>In 1977, Mr. Maurice Howard Halstead introduced metrics to measure software complexity.  Halstead’s metrics depends upon the actual implementation of program and its measures, which are computed directly from the operators and operands from source code, in static manner. It allows to evaluate testing time, vocabulary, size, difficulty, errors, and efforts for C/C++/Java source code.</p>
+    <p>According to Halstead, “A computer program is an implementation of an algorithm considered to be a collection of tokens which can be classified as either operators or operands”.  Halstead metrics think a program as sequence of operators and their associated operands.</p>
+    <p>He defines various indicators to check complexity of module.</p>
+    <div class="table-wrapper"><table class="src">
+    <tbody><tr>
+    <th>Parameter</th>
+    <th>Meaning</th>
+    </tr>
+    <tr>
+    <td>n1</td>
+    <td>Number of unique operators</td>
+    </tr>
+    <tr>
+    <td>n2</td>
+    <td>Number of unique operands</td>
+    </tr>
+    <tr>
+    <td>N1</td>
+    <td>Number of total occurrence of operators</td>
+    </tr>
+    <tr>
+    <td>N2</td>
+    <td>Number of total occurrence of operands</td>
+    </tr>
+    </tbody></table></div>
+    <p>When we select source file to view its complexity details in Metric Viewer, the following result is seen in Metric Report:</p>
+    <div class="table-wrapper"><table class="src">
+    <tbody><tr>
+    <th>Metric</th>
+    <th>Meaning</th>
+    <th>Mathematical Representation</th>
+    </tr>
+    <tr>
+    <td>n</td>
+    <td>Vocabulary</td>
+    <td>n1 + n2</td>
+    </tr>
+    <tr>
+    <td>N</td>
+    <td>Size</td>
+    <td>N1 + N2</td>
+    </tr>
+    <tr>
+    <td>V</td>
+    <td>Volume</td>
+    <td>Length * Log2 Vocabulary</td>
+    </tr>
+    <tr>
+    <td>D</td>
+    <td>Difficulty</td>
+    <td>(n1/2) * (N1/n2)</td>
+    </tr>
+    <tr>
+    <td>E</td>
+    <td>Efforts</td>
+    <td>Difficulty * Volume</td>
+    </tr>
+    <tr>
+    <td>B</td>
+    <td>Errors</td>
+    <td>Volume / 3000</td>
+    </tr>
+    <tr>
+    <td>T</td>
+    <td>Testing time</td>
+    <td>Time = Efforts / S, where S=18 seconds.</td>
+    </tr>
+    </tbody></table></div>
+    <h2>Cyclomatic Complexity Measures</h2>
+    <p>Every program encompasses statements to execute in order to perform some task and other decision-making statements that decide, what statements need to be executed. These decision-making constructs change the flow of the program. </p>
+    <p>If we compare two programs of same size, the one with more decision-making statements will be more complex as the control of program jumps frequently.</p>
+    <p>McCabe, in 1976, proposed Cyclomatic Complexity Measure to quantify complexity of a given software.  It is graph driven model that is based on decision-making constructs of program such as if-else, do-while, repeat-until, switch-case and goto statements.</p>
+    <p>Process to make flow control graph:</p>
+    <ul class="list">
+    <li>Break program in smaller blocks, delimited by decision-making constructs.</li>
+    <li>Create nodes representing each of these nodes.</li>
+    <li>Connect nodes as follows: </li>
+    <ul class="list">
+    <li><p>If control can branch from block i to block j</p>
+    <p>Draw an arc</p></li>
+    <li><p>From exit node to entry node</p>
+    <p>Draw an arc.</p></li>
+    </ul>
+    </ul>
+    <p>To calculate Cyclomatic complexity of a program module, we use the formula -</p> 
+    <pre class="prettyprint notranslate prettyprinted" ><span class="pln">V</span><span class="pun">(</span><span class="pln">G</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> e </span><span class="pun">–</span><span class="pln"> n </span><span class="pun">+</span><span class="pln"> </span><span class="lit">2</span><span class="pln">
+    
+    </span><span class="typ">Where</span><span class="pln">
+    e </span><span class="kwd">is</span><span class="pln"> total number </span><span class="kwd">of</span><span class="pln"> edges
+    n </span><span class="kwd">is</span><span class="pln"> total number </span><span class="kwd">of</span><span class="pln"> nodes</span></pre>
+    <img src="/software_engineering/images/cyclomatic_complexity.png" alt="Cyclomatic Complexity Measures">
+    <p>The Cyclomatic complexity of the above module is</p>
+    <pre class="prettyprint notranslate prettyprinted" ><span class="pln">e </span><span class="pun">=</span><span class="pln"> </span><span class="lit">10</span><span class="pln">
+    n </span><span class="pun">=</span><span class="pln"> </span><span class="lit">8</span><span class="pln">
+    </span><span class="typ">Cyclomatic</span><span class="pln"> </span><span class="typ">Complexity</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">10</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="lit">8</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="lit">2</span><span class="pln">
+                          </span><span class="pun">=</span><span class="pln"> </span><span class="lit">4</span></pre>
+    <p>According to P. Jorgensen, Cyclomatic Complexity of a module should not exceed 10.</p>
+    <h2>Function Point</h2>
+    <p>It is widely used to measure the size of software.  Function Point concentrates on functionality provided by the system.  Features and functionality of the system are used to measure the software complexity.</p>
+    <p>Function point counts on five parameters, named as External Input, External Output, Logical Internal Files, External Interface Files, and External Inquiry. To consider the complexity of software  each parameter is further categorized as simple, average or complex.  </p>
+    <img src="/software_engineering/images/function_points.png" alt="Function Point">
+    <p>Let us see parameters of function point:</p>
+    <h3>External Input</h3>
+    <p>Every unique input to the system, from outside, is considered as external input.  Uniqueness of input is measured, as no two inputs should have same formats.  These inputs can either be data or control parameters.</p>
+    <ul class="list">
+    <li><p><b>Simple</b> - if input count is low and affects less internal files</p></li>
+    <li><p><b>Complex</b> - if input count is high and affects more internal files</p></li>
+    <li><p><b>Average</b> - in-between simple and complex.</p></li>
+    </ul>
+    <h3>External Output</h3>
+    <p> All output types provided by the system are counted in this category. Output is considered unique if their output format and/or processing are unique.</p>
+    <ul class="list">
+    <li><p><b>Simple</b> - if output count is low</p></li>
+    <li><p><b>Complex</b> - if output count is high</p></li>
+    <li><p><b>Average</b> - in between simple and complex.</p></li>
+    </ul>
+    <h3>Logical Internal Files</h3>
+    <p> Every software system maintains internal files in order to maintain its functional information and to function properly. These files hold logical data of the system.  This logical data may contain both functional data and control data.</p>
+    <ul class="list">
+    <li><p><b>Simple</b> - if number of record types are low</p></li>
+    <li><p><b>Complex</b> - if number of record types are high</p></li>
+    <li><p><b>Average</b> - in between simple and complex.</p></li>
+    </ul>
+    <h3>External Interface Files</h3>
+    <p> Software system may need to share its files with some external software or it may need to pass the file for processing or as parameter to some function. All these files are counted as external interface files.</p>
+    <ul class="list">
+    <li><p><b>Simple</b> - if number of record types in shared file are low</p></li>
+    <li><p><b>Complex</b> - if number of record types in shared file are high</p></li>
+    <li><p><b>Average</b> - in between simple and complex.</p></li>
+    </ul>
+    <h3>External Inquiry </h3>
+    <p> An inquiry is a combination of input and output, where user sends some data to inquire about as input and the system responds to the user with the output of inquiry processed.  The complexity of a query is more than External Input and External Output.  Query is said to be unique if its input and output are unique in terms of format and data.</p>
+    <ul class="list">
+    <li><p><b>Simple</b> - if query needs low processing and yields small amount of output data</p></li>
+    <li><p><b>Complex</b> - if query needs high process and yields large amount of output data</p></li>
+    <li><p><b>Average</b> - in between simple and complex.</p></li>
+    </ul>
+    <p>Each of these parameters in the system is given weightage according to their class and complexity.  The table below mentions the weightage given to each parameter:</p>
+    <div class="table-wrapper"><table class="src">
+    <tbody><tr>
+    <th>Parameter</th>
+    <th>Simple</th>
+    <th>Average</th>
+    <th>Complex</th>
+    </tr>
+    <tr>
+    <td>Inputs</td>
+    <td>3</td>
+    <td>4</td>
+    <td>6</td>
+    </tr>
+    <tr>
+    <td>Outputs</td>
+    <td>4</td>
+    <td>5</td>
+    <td>7</td>
+    </tr>
+    <tr>
+    <td>Enquiry</td>
+    <td>3</td>
+    <td>4</td>
+    <td>6</td>
+    </tr>
+    <tr>
+    <td>Files</td>
+    <td>7</td>
+    <td>10</td>
+    <td>15</td>
+    </tr>
+    <tr>
+    <td>Interfaces</td>
+    <td>5</td>
+    <td>7</td>
+    <td>10</td>
+    </tr>
+    </tbody></table></div>
+    <p>The table above yields raw Function Points. These function points are  adjusted according to the environment complexity. System is described using  fourteen different characteristics:</p>
+    <ul class="list">
+    <li>Data communications</li>
+    <li>Distributed processing</li>
+    <li>Performance objectives</li>
+    <li>Operation configuration load</li>
+    <li>Transaction rate</li>
+    <li>Online data entry,</li>
+    <li>End user efficiency</li>
+    <li>Online update</li>
+    <li>Complex processing logic</li>
+    <li>Re-usability</li>
+    <li>Installation ease</li>
+    <li>Operational ease</li>
+    <li>Multiple sites</li>
+    <li>Desire to facilitate changes</li>
+    </ul>
+    <p>These characteristics factors are then rated from 0 to 5, as mentioned below:</p>
+    <ul class="list">
+    <li>No influence</li>
+    <li>Incidental</li>
+    <li>Moderate</li>
+    <li>Average</li>
+    <li>Significant</li>
+    <li>Essential</li>
+    </ul>
+    <p>All ratings are then summed up as N. The value of N ranges from 0 to 70 (14 types of characteristics x 5 types of ratings).  It is used to calculate Complexity Adjustment Factors (CAF), using the following formulae:</p>
+    <pre class="prettyprint notranslate; prettyprinted" ><span class="pln">CAF </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0.65</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="lit">0.01N</span></pre>
+    <p>Then,</p>
+    <pre class="prettyprint notranslate; prettyprinted" ><span class="typ">Delivered</span><span class="pln"> </span><span class="typ">Function</span><span class="pln"> </span><span class="typ">Points</span><span class="pln"> </span><span class="pun">(</span><span class="pln">FP</span><span class="pun">)=</span><span class="pln"> CAF x </span><span class="typ">Raw</span><span class="pln"> FP</span></pre>
+    <p>This FP can then be used in various metrics, such as:</p>
+    <ul class="list">
+    <p><b>Cost</b> = $ / FP</p>
+    <p><b>Quality</b> = Errors / FP</p>
+    <p><b>Productivity</b> = FP / person-month</p>
+    </ul>
+    </div>
+    
+</body>
+</html>       

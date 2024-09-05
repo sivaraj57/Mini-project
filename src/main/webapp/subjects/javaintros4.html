@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+    <h1>Delete Files in Java</h1>
+    
+    <p>
+        Deleting files is a common operation in Java programming, especially when managing temporary files or cleaning up resources. Java provides classes and methods to delete files and directories from the file system.
+    </p>
+    
+    <h2>Key Concepts</h2>
+    <ul>
+        <li><strong>File Class:</strong> The <code>java.io.File</code> class represents a file or directory path in the file system. You can use this class to specify the file or directory to be deleted.</li>
+        <li><strong>Deletion Methods:</strong> Java provides methods such as <code>delete()</code> for deleting files and <code>deleteOnExit()</code> for scheduling files for deletion when the Java Virtual Machine (JVM) exits.</li>
+        <li><strong>Directory Deletion:</strong> To delete directories and their contents, you may need to use recursive techniques to traverse subdirectories and delete files and directories recursively.</li>
+        <li><strong>Exception Handling:</strong> It's essential to handle exceptions like <code>SecurityException</code> and <code>IOException</code> when deleting files and directories to handle potential errors.</li>
+    </ul>
+    
+    <h2>Examples</h2>
+    
+    <h3>Delete a File</h3>
+    <pre>
+        <code>
+import java.io.File;
+
+public class DeleteFileExample {
+    public static void main(String[] args) {
+        String fileName = "example.txt";
+        File fileToDelete = new File(fileName);
+
+        if (fileToDelete.delete()) {
+            System.out.println("File deleted successfully.");
+        } else {
+            System.err.println("Failed to delete the file.");
+        }
+    }
+}
+        </code>
+    </pre>
+    <p>
+        In this example, we specify the file "example.txt" to be deleted using the <code>delete()</code> method of the <code>File</code> class.
+    </p>
+    
+    <h3>Delete a Directory and Its Contents</h3>
+    <pre>
+        <code>
+import java.io.File;
+
+public class DeleteDirectoryExample {
+    public static void main(String[] args) {
+        String directoryName = "my_directory";
+        File directoryToDelete = new File(directoryName);
+
+        if (deleteDirectory(directoryToDelete)) {
+            System.out.println("Directory and its contents deleted successfully.");
+        } else {
+            System.err.println("Failed to delete the directory.");
+        }
+    }
+
+    private static boolean deleteDirectory(File directory) {
+        if (directory.isDirectory()) {
+            File[] files = directory.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    if (!deleteDirectory(file)) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return directory.delete();
+    }
+}
+        </code>
+    </pre>
+    <p>
+        In this example, we delete a directory named "my_directory" and its contents using a recursive approach to delete files and subdirectories.
+    </p>
+    
+    <p>
+        These examples demonstrate the basic process of deleting files and directories in Java. Depending on your specific use case and requirements, you may need to explore more advanced file handling techniques and libraries.
+    </p>
+<hr>
+    <h1>Java String Methods</h1>
+    <p>Java provides a wide range of methods for working with strings. Here are some commonly used String methods:</p>
+    
+    <h2><code>length()</code></h2>
+    <p>The <code>length()</code> method returns the number of characters in a string.</p>
+
+    <h2><code>charAt(index)</code></h2>
+    <p>The <code>charAt(index)</code> method returns the character at the specified index in a string.</p>
+
+    <h2><code>substring(startIndex, endIndex)</code></h2>
+    <p>The <code>substring(startIndex, endIndex)</code> method extracts a portion of a string, starting from the <code>startIndex</code> (inclusive) to the <code>endIndex</code> (exclusive).</p>
+
+    <h2><code>indexOf(str)</code></h2>
+    <p>The <code>indexOf(str)</code> method returns the index of the first occurrence of the specified substring <code>str</code> in the string.</p>
+
+    <h2><code>lastIndexOf(str)</code></h2>
+    <p>The <code>lastIndexOf(str)</code> method returns the index of the last occurrence of the specified substring <code>str</code> in the string.</p>
+
+    <h2><code>toUpperCase()</code></h2>
+    <p>The <code>toUpperCase()</code> method converts all characters in a string to uppercase.</p>
+
+    <h2><code>toLowerCase()</code></h2>
+    <p>The <code>toLowerCase()</code> method converts all characters in a string to lowercase.</p>
+
+    <h2><code>trim()</code></h2>
+    <p>The <code>trim()</code> method removes leading and trailing whitespace characters from a string.</p>
+
+    <h2><code>startsWith(prefix)</code></h2>
+    <p>The <code>startsWith(prefix)</code> method checks if a string starts with the specified <code>prefix</code>.</p>
+
+    <h2><code>endsWith(suffix)</code></h2>
+    <p>The <code>endsWith(suffix)</code> method checks if a string ends with the specified <code>suffix</code>.</p>
+
+    <h2><code>replace(oldStr, newStr)</code></h2>
+    <p>The <code>replace(oldStr, newStr)</code> method replaces all occurrences of <code>oldStr</code> with <code>newStr</code> in the string.</p>
+
+    <h2><code>split(delimiter)</code></h2>
+    <p>The <code>split(delimiter)</code> method splits a string into an array of substrings based on the specified <code>delimiter</code>.</p>
+
+
+<hr>
+    <h1>Java Math Methods</h1>
+    <p>Java provides a <code>Math</code> class that contains various methods for performing mathematical operations. Here are some commonly used methods:</p>
+    
+    <h2><code>Math.abs()</code></h2>
+    <p>The <code>Math.abs()</code> method returns the absolute value of a number. It removes the sign of the number, if it's negative.</p>
+
+    <h2><code>Math.sqrt()</code></h2>
+    <p>The <code>Math.sqrt()</code> method returns the square root of a number.</p>
+
+    <h2><code>Math.pow()</code></h2>
+    <p>The <code>Math.pow(base, exponent)</code> method returns the value of a base raised to the power of an exponent.</p>
+
+    <h2><code>Math.max()</code></h2>
+    <p>The <code>Math.max(a, b)</code> method returns the greater of two values, <code>a</code> or <code>b</code>.</p>
+
+    <h2><code>Math.min()</code></h2>
+    <p>The <code>Math.min(a, b)</code> method returns the smaller of two values, <code>a</code> or <code>b</code>.</p>
+
+    <h2><code>Math.random()</code></h2>
+    <p>The <code>Math.random()</code> method generates a random decimal number between 0 (inclusive) and 1 (exclusive).</p>
+
+    <h2><code>Math.floor()</code></h2>
+    <p>The <code>Math.floor()</code> method rounds a number down to the nearest integer.</p>
+
+    <h2><code>Math.ceil()</code></h2>
+    <p>The <code>Math.ceil()</code> method rounds a number up to the nearest integer.</p>
+
+    <h2><code>Math.round()</code></h2>
+    <p>The <code>Math.round()</code> method rounds a number to the nearest integer.</p>
+
+    <h2><code>Math.PI</code></h2>
+    <p>The <code>Math.PI</code> constant represents the mathematical constant π (pi).</p>
+
+    <h2><code>Math.E</code></h2>
+    <p>The <code>Math.E</code> constant represents the mathematical constant e (Euler's number).</p>
+
+
+
+
+</body>
+</html>

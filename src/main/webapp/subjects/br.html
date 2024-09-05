@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+    <h1><span class="color_h1" style="color:rgb(76, 27, 97)">BACKUP AND RECOVERY</span></h1>
+    
+    <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Data Backup</span></h1>
+    <hr>
+    <div>
+        <h2>Loss of Volatile Storage</h2>
+        <p>A volatile storage like RAM stores all the active logs, disk buffers, and related data. In addition, it stores all the transactions that are being currently executed. What happens if such a volatile storage crashes abruptly? It would obviously take away all the logs and active copies of the database. It makes recovery almost impossible, as everything that is required to recover the data is lost.</p>
+        <p>Following techniques may be adopted in case of loss of volatile storage −</p>
+        <ul class="list">
+        <li><p>We can have <b>checkpoints</b> at multiple stages so as to save the contents of the database periodically.</p></li>
+        <li><p>A state of active database in the volatile memory can be periodically <b>dumped</b> onto a stable storage, which may also contain logs and active transactions and buffer blocks.</p></li>
+        <li><p>&lt;dump&gt; can be marked on a log file, whenever the database contents are dumped from a non-volatile memory to a stable one.</p></li>
+        </ul>
+        <h3>Recovery</h3>
+        <ul class="list">
+        <li><p>When the system recovers from a failure, it can restore the latest dump.</p></li>
+        <li><p>It can maintain a redo-list and an undo-list as checkpoints.</p></li>
+        <li><p>It can recover the system by consulting undo-redo lists to restore the state of all transactions up to the last checkpoint.</p></li>
+        </ul>
+        <h2>Database Backup &amp; Recovery from Catastrophic Failure</h2>
+        <p>A catastrophic failure is one where a stable, secondary storage device gets corrupt. With the storage device, all the valuable data that is stored inside is lost. We have two different strategies to recover data from such a catastrophic failure −</p>
+        <ul class="list">
+        <li><p>Remote backup &amp;minu; Here a backup copy of the database is stored at a remote location from where it can be restored in case of a catastrophe.</p></li>
+        <li><p>Alternatively, database backups can be taken on magnetic tapes and stored at a safer place. This backup can later be transferred onto a freshly installed database to bring it to the point of backup.</p></li>
+        </ul>
+        <p>Grown-up databases are too bulky to be frequently backed up. In such cases, we have techniques where we can restore a database just by looking at its logs. So, all that we need to do here is to take a backup of all the logs at frequent intervals of time. The database can be backed up once a week, and the logs being very small can be backed up every day or as frequently as possible.</p>
+        <h2>Remote Backup</h2>
+        <p>Remote backup provides a sense of security in case the primary location where the database is located gets destroyed. Remote backup can be offline or real-time or online. In case it is offline, it is maintained manually.</p>
+        <img src="/dbms/images/remote_data_backup.png" alt="Remote Data Backup">
+        <p>Online backup systems are more real-time and lifesavers for database administrators and investors. An online backup system is a mechanism where every bit of the real-time data is backed up simultaneously at two distant places. One of them is directly connected to the system and the other one is kept at a remote place as backup.</p>
+        <p>As soon as the primary database storage fails, the backup system senses the failure and switches the user system to the remote storage. Sometimes this is so instant that the users can’t even realize a failure.</p>
+    </div>
+    <hr>
+    <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Data Recovery</span></h1>
+    <hr>
+    <div>
+        <h2>Crash Recovery</h2>
+    <p>DBMS is a highly complex system with hundreds of transactions being executed every second. The durability and robustness of a DBMS depends on its complex architecture and its underlying hardware and system software. If it fails or crashes amid transactions, it is expected that the system would follow some sort of algorithm or techniques to recover lost data.</p>
+    <h2>Failure Classification</h2>
+    <p>To see where the problem has occurred, we generalize a failure into various categories, as follows −</p>
+    <h3>Transaction failure</h3>
+    <p>A transaction has to abort when it fails to execute or when it reaches a point from where it can’t go any further. This is called transaction failure where only a few transactions or processes are hurt.</p>
+    <p>Reasons for a transaction failure could be −</p>
+    <ul class="list">
+    <li><p><b>Logical errors</b> − Where a transaction cannot complete because it has some code error or any internal error condition.</p></li>
+    <li><p><b>System errors</b> − Where the database system itself terminates an active transaction because the DBMS is not able to execute it, or it has to stop because of some system condition. For example, in case of deadlock or resource unavailability, the system aborts an active transaction.</p></li>
+    </ul>
+    <h3>System Crash</h3>
+    <p>There are problems − external to the system − that may cause the system to stop abruptly and cause the system to crash. For example, interruptions in power supply may cause the failure of underlying hardware or software failure.</p>
+    <p>Examples may include operating system errors.</p>
+    <h3>Disk Failure</h3>
+    <p>In early days of technology evolution, it was a common problem where hard-disk drives or storage drives used to fail frequently.</p>
+    <p>Disk failures include formation of bad sectors, unreachability to the disk, disk head crash or any other failure, which destroys all or a part of disk storage.</p>
+    <h2>Storage Structure</h2>
+    <p>We have already described the storage system. In brief, the storage structure can be divided into two categories −</p>
+    <ul class="list">
+    <li><p><b>Volatile storage</b> − As the name suggests, a volatile storage cannot survive system crashes. Volatile storage devices are placed very close to the CPU; normally they are embedded onto the chipset itself. For example, main memory and cache memory are examples of volatile storage. They are fast but can store only a small amount of information.</p></li>
+    <li><p><b>Non-volatile storage</b> − These memories are made to survive system crashes. They are huge in data storage capacity, but slower in accessibility. Examples may include hard-disks, magnetic tapes, flash memory, and non-volatile (battery backed up) RAM.</p></li>
+    </ul>
+    <h2>Recovery and Atomicity</h2>
+    <p>When a system crashes, it may have several transactions being executed and various files opened for them to modify the data items. Transactions are made of various operations, which are atomic in nature. But according to ACID properties of DBMS, atomicity of transactions as a whole must be maintained, that is, either all the operations are executed or none.</p>
+    <p>When a DBMS recovers from a crash, it should maintain the following −</p>
+    <ul class="list">
+    <li><p>It should check the states of all the transactions, which were being executed.</p></li>
+    <li><p>A transaction may be in the middle of some operation; the DBMS must ensure the atomicity of the transaction in this case.</p></li>
+    <li><p>It should check whether the transaction can be completed now or it needs to be rolled back.</p></li>
+    <li><p>No transactions would be allowed to leave the DBMS in an inconsistent state.</p></li>
+    </ul>
+    <p>There are two types of techniques, which can help a DBMS in recovering as well as maintaining the atomicity of a transaction −</p>
+    <ul class="list">
+    <li><p>Maintaining the logs of each transaction, and writing them onto some stable storage before actually modifying the database.</p></li>
+    <li><p>Maintaining shadow paging, where the changes are done on a volatile memory, and later, the actual database is updated.</p></li>
+    </ul>
+    <h2>Log-based Recovery</h2>
+    <p>Log is a sequence of records, which maintains the records of actions performed by a transaction. It is important that the logs are written prior to the actual modification and stored on a stable storage media, which is failsafe.</p>
+    <p>Log-based recovery works as follows −</p>
+    <ul class="list">
+    <li><p>The log file is kept on a stable storage media.</p></li>
+    <li><p>When a transaction enters the system and starts execution, it writes a log about it.</p></li>
+    </ul>
+    <pre class="result notranslate">&lt;T<sub><small>n</small></sub>, Start&gt;
+    </pre>
+    <ul class="list">
+    <li><p>When the transaction modifies an item X, it write logs as follows −</p></li>
+    </ul>
+    <pre class="result notranslate">&lt;T<sub><small>n</small></sub>, X, V<sub><small>1</small></sub>, V<sub><small>2</small></sub>&gt;
+    </pre>
+    <p>It reads T<sub><small>n</small></sub> has changed the value of X, from V<sub><small>1</small></sub> to V<sub><small>2</small></sub>.</p>
+    <ul class="list">
+    <li>When the transaction finishes, it logs −</li>
+    </ul>
+    <pre class="result notranslate">&lt;T<sub><small>n</small></sub>, commit&gt;
+    </pre>
+    <p>The database can be modified using two approaches −</p>
+    <ul class="list">
+    <li><p><b>Deferred database modification</b> − All logs are written on to the stable storage and the database is updated when a transaction commits.</p></li>
+    <li><p><b>Immediate database modification</b> − Each log follows an actual database modification. That is, the database is modified immediately after every operation.</p></li>
+    </ul>
+    <h2>Recovery with Concurrent Transactions</h2>
+    <p>When more than one transaction are being executed in parallel, the logs are interleaved. At the time of recovery, it would become hard for the recovery system to backtrack all logs, and then start recovering. To ease this situation, most modern DBMS use the concept of 'checkpoints'.</p>
+    <h3>Checkpoint</h3>
+    <p>Keeping and maintaining logs in real time and in real environment may fill out all the memory space available in the system. As time passes, the log file may grow too big to be handled at all. Checkpoint is a mechanism where all the previous logs are removed from the system and stored permanently in a storage disk. Checkpoint declares a point before which the DBMS was in consistent state, and all the transactions were committed.</p>
+    <h3>Recovery</h3>
+    <p>When a system with concurrent transactions crashes and recovers, it behaves in the following manner −</p>
+    <img src="/dbms/images/recovery.png" alt="Recovery">
+    <ul class="list">
+    <li><p>The recovery system reads the logs backwards from the end to the last checkpoint.</p></li>
+    <li><p>It maintains two lists, an undo-list and a redo-list.</p></li>
+    <li><p>If the recovery system sees a log with &lt;T<sub><small>n</small></sub>, Start&gt; and &lt;T<sub><small>n</small></sub>, Commit&gt; or just &lt;T<sub><small>n</small></sub>, Commit&gt;, it puts the transaction in the redo-list.</p></li>
+    <li><p>If the recovery system sees a log with &lt;T<sub><small>n</small></sub>, Start&gt; but no commit or abort log found, it puts the transaction in undo-list.</p></li>
+    </ul>
+    <p>All the transactions in the undo-list are then undone and their logs are removed. All the transactions in the redo-list and their previous logs are removed and then redone before saving their logs.</p>
+
+    </body>
+</html>

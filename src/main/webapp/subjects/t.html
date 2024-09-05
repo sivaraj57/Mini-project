@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+    <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Overview</span></h1>
+    <hr>
+    <div>
+        <p><b>Database</b> is a collection of related data and data is a collection of facts and figures that can be processed to produce information.</p>
+    <p>Mostly data represents recordable facts. Data aids in producing information, which is based on facts. For example, if we have data about marks obtained by all students, we can then conclude about toppers and average marks.</p>
+    <p>A <b>database management system</b> stores data in such a way that it becomes easier to retrieve, manipulate, and produce information.</p>
+    <h2>Characteristics</h2>
+    <p>Traditionally, data was organized in file formats. DBMS was a new concept then, and all the research was done to make it overcome the deficiencies in traditional style of data management. A modern DBMS has the following characteristics −</p>
+    <ul class="list">
+    <li><p><b>Real-world entity</b> − A modern DBMS is more realistic and uses real-world entities to design its architecture. It uses the behavior and attributes too. For example, a school database may use students as an entity and their age as an attribute.</p></li>
+    <li><p><b>Relation-based tables</b> − DBMS allows entities and relations among them to form tables. A user can understand the architecture of a database just by looking at the table names.</p></li>
+    <li><p><b>Isolation of data and application</b> − A database system is entirely different than its data. A database is an active entity, whereas data is said to be passive, on which the database works and organizes. DBMS also stores metadata, which is data about data, to ease its own process.</p></li>
+    <li><p><b>Less redundancy</b> − DBMS follows the rules of normalization, which splits a relation when any of its attributes is having redundancy in values. Normalization is a mathematically rich and scientific process that reduces data redundancy.</p></li> 
+    <li><p><b>Consistency</b> − Consistency is a state where every relation in a database remains consistent. There exist methods and techniques, which can detect attempt of leaving database in inconsistent state. A DBMS can provide greater consistency as compared to earlier forms of data storing applications like file-processing systems.</p></li>
+    <li><p><b>Query Language</b> − DBMS is equipped with query language, which makes it more efficient to retrieve and manipulate data. A user can apply as many and as different filtering options as required to retrieve a set of data. Traditionally it was not possible where file-processing system was used.</p><p></p></li>
+    <li><p><b>ACID Properties</b> − DBMS follows the concepts of <b>A</b>tomicity, <b>C</b>onsistency, <b>I</b>solation, and <b>D</b>urability (normally shortened as ACID). These concepts are applied on transactions, which manipulate data in a database. ACID properties help the database stay healthy in multi-transactional environments and in case of failure.</p></li>
+    <li><p><b>Multiuser and Concurrent Access</b> − DBMS supports multi-user environment and allows them to access and manipulate data in parallel. Though there are restrictions on transactions when users attempt to handle the same data item, but users are always unaware of them.</p></li>
+    <li><p><b>Multiple views</b> − DBMS offers multiple views for different users. A user who is in the Sales department will have a different view of database than a person working in the Production department. This feature enables the users to have a concentrate view of the database according to their requirements.</p></li>
+    <li><p><b>Security</b> − Features like multiple views offer security to some extent where users are unable to access data of other users and departments. DBMS offers methods to impose constraints while entering data into the database and retrieving the same at a later stage. DBMS offers many different levels of security features, which enables multiple users to have different views with different features. For example, a user in the Sales department cannot see the data that belongs to the Purchase department. Additionally, it can also be managed how much data of the Sales department should be displayed to the user. Since a DBMS is not saved on the disk as traditional file systems, it is very hard for miscreants to break the code.</p></li>
+    </ul>
+    <h2>Users</h2>
+    <p>A typical DBMS has users with different rights and permissions who use it for different purposes. Some users retrieve data and some back it up. The users of a DBMS can be broadly categorized as follows −</p>
+    <img src="/dbms/images/dbms_users.png" caption="DBMS Users">
+    <ul class="list">
+    <li><p><b>Administrators</b> − Administrators maintain the DBMS and are responsible for administrating the database. They are responsible to look after its usage and by whom it should be used. They create access profiles for users and apply limitations to maintain isolation and force security. Administrators also look after DBMS resources like system license, required tools, and other software and hardware related maintenance.</p></li>
+    <li><p><b>Designers</b> − Designers are the group of people who actually work on the designing part of the database. They keep a close watch on what data should be kept and in what format. They identify and design the whole set of entities, relations, constraints, and views.</p></li>
+    <li><p><b>End Users</b> − End users are those who actually reap the benefits of having a DBMS. End users can range from simple viewers who pay attention to the logs or market rates to sophisticated users such as business analysts.</p></li>
+    </ul>
+    </div>
+    <hr>
+    <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Architecture</span></h1>
+    <hr>
+    <div>
+        <p>The design of a DBMS depends on its architecture. It can be centralized or decentralized or hierarchical. The architecture of a DBMS can be seen as either single tier or multi-tier. An n-tier architecture divides the whole system into related but independent <b>n</b> modules, which can be independently modified, altered, changed, or replaced.</p>
+    <p>In 1-tier architecture, the DBMS is the only entity where the user directly sits on the DBMS and uses it. Any changes done here will directly be done on the DBMS itself. It does not provide handy tools for end-users. Database designers and programmers normally prefer to use single-tier architecture.</p>
+    <p>If the architecture of DBMS is 2-tier, then it must have an application through which the DBMS can be accessed. Programmers use 2-tier architecture where they access the DBMS by means of an application. Here the application tier is entirely independent of the database in terms of operation, design, and programming.</p>
+    <h2>3-tier Architecture</h2>
+    <p>A 3-tier architecture separates its tiers from each other based on the complexity of the users and how they use the data present in the database. It is the most widely used architecture to design a DBMS.</p>
+    <img src="/dbms/images/dbms_architecture.png" caption="3-tier architecture">
+    <ul class="list">
+    <li><p><b>Database (Data) Tier</b> − At this tier, the database resides along with its query processing languages. We also have the relations that define the data and their constraints at this level.</p></li>
+    <li><p><b>Application (Middle) Tier</b> − At this tier reside the application server and the programs that access the database. For a user, this application tier presents an abstracted view of the database. End-users are unaware of any existence of the database beyond the application. At the other end, the database tier is not aware of any other user beyond the application tier. Hence, the application layer sits in the middle and acts as a mediator between the end-user and the database.</p></li> 
+    <li><p><b>User (Presentation) Tier</b> − End-users operate on this tier and they know nothing about any existence of the database beyond this layer. At this layer, multiple views of the database can be provided by the application. All views are generated by applications that reside in the application tier.</p></li>
+    </ul>
+    <p>Multiple-tier database architecture is highly modifiable, as almost all its components are independent and can be changed independently.</p>
+    </div>
+    <hr>
+    <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Data Models</span></h1>
+    <hr>
+    <div>
+        <p>Data models define how the logical structure of a database is modeled. Data Models are fundamental entities to introduce abstraction in a DBMS. Data models define how data is connected to each other and how they are processed and stored inside the system.</p>
+    <p>The very first data model could be flat data-models, where all the data used are to be kept in the same plane. Earlier data models were not so scientific, hence they were prone to introduce lots of duplication and update anomalies.</p>
+    <h2>Entity-Relationship Model</h2>
+    <p>Entity-Relationship (ER) Model is based on the notion of real-world entities and relationships among them. While formulating real-world scenario into the database model, the ER Model creates entity set, relationship set, general attributes and constraints.</p>
+    <p>ER Model is best used for the conceptual design of a database.</p>
+    <p>ER Model is based on −</p>
+    <ul class="list">
+    <li><p><b>Entities</b> and their <i>attributes.</i></p></li>
+    <li><p><b>Relationships</b> among entities.</p></li>
+    </ul>
+    <p>These concepts are explained below.</p>
+    <img src="/dbms/images/er_model_intro.png" caption="ER Model">
+    <ul class="list">
+    <li><p><b>Entity</b> − An entity in an ER Model is a real-world entity having properties called <b>attributes</b>. Every <b>attribute</b> is defined by its set of values called <b>domain</b>. For example, in a school database, a student is considered as an entity. Student has various attributes like name, age, class, etc.</p></li>
+    <li><p><b>Relationship</b> − The logical association among entities is called <b><i>relationship</i></b>. Relationships are mapped with entities in various ways. Mapping cardinalities define the number of association between two entities.</p>
+    <p>Mapping cardinalities −</p>
+    <ul class="list">
+    <li>one to one</li>
+    <li>one to many</li>
+    <li>many to one</li>
+    <li>many to many</li>
+    </ul>
+    </li>
+    </ul>
+    <h2>Relational Model</h2>
+    <p>The most popular data model in DBMS is the Relational Model. It is more scientific a model than others. This model is based on first-order predicate logic and defines a table as an <b>n-ary relation</b>.</p>
+    <img src="/dbms/images/relational_model_table.png" alt="Relational Model Table">
+    <p>The main highlights of this model are −</p>
+    <ul class="list">
+    <li>Data is stored in tables called <b>relations</b>.</li>
+    <li>Relations can be normalized.</li>
+    <li>In normalized relations, values saved are atomic values.</li>
+    <li>Each row in a relation contains a unique value.</li>
+    <li>Each column in a relation contains values from a same domain.</li>
+    </ul>
+    </div>
+    <hr>
+    <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Data Schemas</span></h1>
+    <hr>
+    <div>
+        <p>A database schema is the skeleton structure that represents the logical view of the entire database. It defines how the data is organized and how the relations among them are associated. It formulates all the constraints that are to be applied on the data.</p>
+    <p>A database schema defines its entities and the relationship among them. It contains a descriptive detail of the database, which can be depicted by means of schema diagrams. It’s the database designers who design the schema to help programmers understand the database and make it useful.</p>
+    <img src="/dbms/images/dbms_schemas.png" caption="Database Schemas">
+    <p>A database schema can be divided broadly into two categories −</p>
+    <ul class="list">
+    <li><p><b>Physical Database Schema</b> − This schema pertains to the actual storage of data and its form of storage like files, indices, etc. It defines how the data will be stored in a secondary storage.</p></li>
+    <li><p><b>Logical Database Schema</b> − This schema defines all the logical constraints that need to be applied on the data stored. It defines tables, views, and integrity constraints.</p></li>
+    </ul>
+    <h2>Database Instance</h2>
+    <p>It is important that we distinguish these two terms individually. Database schema is the skeleton of database. It is designed when the database doesn't exist at all. Once the database is operational, it is very difficult to make any changes to it. A database schema does not contain any data or information.</p>
+    <p>A database instance is a state of operational database with data at any given time. It contains a snapshot of the database. Database instances tend to change with time. A DBMS ensures that its every instance (state) is in a valid state, by diligently following all the validations, constraints, and conditions that the database designers have imposed.</p>
+    </div>
+    <hr>
+    <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Data Independance</span></h1>
+    <hr>
+    <div>
+        <p>If a database system is not multi-layered, then it becomes difficult to make any changes in the database system. Database systems are designed in multi-layers as we learnt earlier.</p>
+    <h2>Data Independence</h2>
+    <p>A database system normally contains a lot of data in addition to users’ data. For example, it stores data about data, known as metadata, to locate and retrieve data easily. It is rather difficult to modify or update a set of metadata once it is stored in the database. But as a DBMS expands, it needs to change over time to satisfy the requirements of the users. If the entire data is dependent, it would become a tedious and highly complex job.</p>
+    <img src="/dbms/images/data_independence.png" alt="Data independence">
+    <p>Metadata itself follows a layered architecture, so that when we change data at one layer, it does not affect the data at another level. This data is independent but mapped to each other.</p>
+    <h2>Logical Data Independence</h2>
+    <p>Logical data is data about database, that is, it stores information about how data is managed inside. For example, a table (relation) stored in the database and all its constraints, applied on that relation.</p>
+    <p>Logical data independence is a kind of mechanism, which liberalizes itself from actual data stored on the disk. If we do some changes on table format, it should not change the data residing on the disk.</p>
+    <h2>Physical Data Independence</h2>
+    <p>All the schemas are logical, and the actual data is stored in bit format on the disk. Physical data independence is the power to change the physical data without impacting the schema or logical data.</p>
+    <p>For example, in case we want to change or upgrade the storage system itself − suppose we want to replace hard-disks with SSD − it should not have any impact on the logical data or schemas.</p>
+    </ul>
+    </div>
+    <hr>
+       </div>
+    <hr>
+
+    </body>
+</html>

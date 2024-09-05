@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+	<h1><span class="color_h1">Scheduling Techniques</span></h1>
+	
+    <p>CPU scheduling is the foundation or starting concept of multi-programmed operating systems (OSs). By toggling the CPU with different processes, the operating system can make the computer and its processing power more productive. In this tutorial, you will learn about the introductory basic of CPU-scheduling concepts.</p>
+    <hr>
+    <h2>What is CPU/Process Scheduling</h2>
+    <p>The CPU scheduling is the action done by the process manager to handle the elimination of the running process within the CPU and the inclusion of another process by certain specific strategies.</p>
+    <hr>
+    <h2>Reason behind the use of CPU Scheduling</h2>
+    <p>In a single-processor system, only one job can be processed at a time; rest of the job must wait until the CPU gets free and can be rescheduled. The aim of multiprogramming is to have some process to run at all times, for maximizing CPU utilization. The idea is simple. In this case, the process gets executed until it must wait, normally for the completion of some I/O request.</p>
+    <p>In a simple operating system, the CPU then just stands idle. All this waiting time is wasted; no fruitful work can be performed. With multiprogramming, you can use this time to process other jobs productively.</p>
+    <hr>
+    <h2>CPU-I/O Burst Cycle</h2>
+    <p>The success of CPU scheduling varies on an experiential property of processes: Process execution holds a cycle of CPU execution and Input / Output wait. Processes get to swap between these two states. Process execution begins with a burst of CPU. That is followed by an Input / Output burst and goes after by one more CPU burst, then one more Input / Output burst, and it continues. Eventually, the final or last CPU burst finish with a system request for terminating execution.</p>
+    <hr>
+    <h2>CPU Schedulers</h2>
+    <p>Whenever the CPU gets idle, the operating system (OS) has to select one of the processes in the ready queue for execution. The selection process is performed by the short-term scheduler (also known as CPU scheduler). The scheduler picks up a process from the processes in memory which are ready to be executed and allocate the CPU with that process.    </p>
+    <hr>
+    <h2>Preemptive Scheduling</h2>
+    <p>CPU scheduling choices may take place under the following four conditions:
+        <ul>
+            <li>When a process toggles from the running state to its waiting state</li>
+            <li>When a process toggles from the running state to its ready state (an example can be when an interrupt occurs)</li>
+            <li>When a process toggles from the waiting state to its ready state (for example, at the completion of Input / Output)</li>
+            <li>When a process terminates (example when execution ends)            </li>
+        </ul>
+        <hr>
+    </p>
+</body>
+</html>    
+	

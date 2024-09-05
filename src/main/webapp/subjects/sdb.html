@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+    <h1><span class="color_h1" style="color: darkviolet;">SOFTWARE DESIGN BASICS</span></h1><hr>
+    <div>
+        <p>Software design is a process to transform user requirements into some suitable form, which helps the programmer in software coding and implementation.</p>
+        <p>For assessing user requirements, an SRS (Software Requirement Specification) document is created whereas for coding and implementation, there is a need of more specific and detailed requirements in software terms.  The output of this process can directly be used into implementation in programming languages.</p>
+        <p>Software design is the first step in SDLC (Software Design Life Cycle), which moves the concentration from problem domain to solution domain. It tries to specify how to fulfill the requirements mentioned in SRS.</p>
+        <h2>Software Design Levels</h2>
+        <p>Software design yields three levels of results:</p>
+        <ul class="list">
+        <li><b>Architectural Design - </b> The architectural design is the highest abstract version of the system. It identifies the software as a system with many components interacting with each other. At this level, the designers get the idea of proposed solution domain.</li>
+        <li><b>High-level Design- </b> The high-level design breaks the ‘single entity-multiple component’ concept of architectural design into less-abstracted view of sub-systems and modules and depicts their interaction with each other.  High-level design focuses on how the system along with all of its components can be implemented in forms of modules.  It recognizes modular structure of each sub-system and their relation and interaction among each other.</li>
+        <li><b>Detailed Design- </b> Detailed design deals with the implementation part of what is seen as a system and its sub-systems in the previous two designs. It is more detailed towards modules and their implementations.  It defines logical structure of each module and their interfaces to communicate with other modules.</li>
+        </ul>
+        <h2>Modularization</h2>
+        <p>Modularization is a technique to divide a software system into multiple discrete and independent modules, which are expected to be capable of carrying out task(s) independently. These modules may work as basic constructs for the entire software. Designers tend to design modules such that they can be executed and/or compiled separately and independently.</p>
+        <p>Modular design unintentionally follows the rules of ‘divide and conquer’ problem-solving strategy this is because there are many other benefits attached with the modular design of a software.</p>
+        <p>Advantage of modularization:</p>
+        <ul class="list">
+        <li>Smaller components are easier to maintain</li>
+        <li>Program can be divided based on functional aspects</li>
+        <li>Desired level of abstraction can be brought in the program</li>
+        <li>Components with high cohesion can be re-used again</li>
+        <li>Concurrent execution can be made possible</li>
+        <li>Desired from security aspect</li>
+        </ul>
+        <h2>Concurrency</h2>
+        <p>Back in time, all software are meant to be executed sequentially.  By sequential execution we mean that the coded instruction will be executed one after another implying only one portion of program being activated at any given time.  Say, a software has multiple modules, then only one of all the modules can be found active at any time of execution.</p>
+        <p>In software design, concurrency is implemented by splitting the software into multiple independent units of execution, like modules and executing them in parallel.  In other words, concurrency provides capability to the software to execute more than one part of code in parallel to each other.</p>
+        <p>It is necessary for the programmers and designers to recognize those modules, which can be made parallel execution. </p>
+        <h3>Example</h3> 
+        <p>The spell check feature in word processor is a  module of software, which runs along side the word processor itself.</p>
+        <h2>Coupling and Cohesion</h2>
+        <p>When a software program is modularized, its tasks are divided into several modules based on some characteristics.  As we know, modules are set of instructions put together in order to achieve some tasks.  They are though, considered as single entity but may refer to each other to work together.  There are measures by which the quality of a design of modules and their interaction among them can be measured. These measures are called coupling and cohesion.</p>
+        <h2>Cohesion</h2>
+        <p>Cohesion is a measure that defines the degree of intra-dependability within elements of a module.  The greater the cohesion, the better is the program design.</p>
+        <p>There are seven types of cohesion, namely –</p>
+        <ul class="list">
+        <li><b>Co-incidental cohesion -</b> It is unplanned and random cohesion, which might be the result of breaking the program into smaller modules for the sake of modularization.  Because it is unplanned, it may serve confusion to the programmers and is generally not-accepted.</li>
+        <li><b>Logical cohesion -</b> When logically categorized elements are put together into a module, it is called logical cohesion.</li>
+        <li><b>Temporal Cohesion - </b> When elements of module are organized such that they are processed at a similar point in time, it is called temporal cohesion.</li>
+        <li><b>Procedural cohesion - </b> When elements of module are grouped together, which are executed sequentially in order to perform a task, it is called procedural cohesion.</li>
+        <li><b>Communicational cohesion - </b> When elements of module are grouped together, which are executed sequentially and work on same data (information), it is called communicational cohesion.</li>
+        <li><b>Sequential cohesion - </b> When elements of module are grouped because the output of one element serves as input to another and so on, it is called sequential cohesion.</li>
+        <li><b>Functional cohesion - </b> It is considered to be the highest degree of cohesion, and it is highly expected. Elements of module in functional cohesion are grouped because they all contribute to a single well-defined function. It can also be reused.</li>
+        </ul>
+        <h2>Coupling </h2>
+        <p>Coupling  is a measure that defines the level of inter-dependability among modules of a program.  It tells at what level the modules interfere and interact with each other. The lower the coupling, the better the program.</p>
+        <p>There are five levels of coupling, namely -</p>
+        <ul class="list">
+        <li><b>Content coupling - </b> When a module can directly access or modify or refer to the content of another module, it is called content level coupling.</li>
+        <li><b>Common coupling- </b> When multiple modules have read and write access to some global data, it is called common or global coupling.</li>
+        <li><b>Control coupling- </b> Two modules are called control-coupled if one of them decides the function of the other module  or changes its flow of execution.</li>
+        <li><b>Stamp coupling- </b> When multiple modules share common data structure and  work on different part of it, it is called stamp coupling.</li>
+        <li><b>Data coupling- </b> Data coupling is when two modules interact with each other by means of passing data (as parameter).  If a module passes data structure as parameter, then the receiving module should use all its components.</li>
+        </ul>
+        <p>Ideally, no coupling is considered to be the best.</p>
+        <h2>Design Verification</h2>
+        <p>The output of software design process is design documentation, pseudo codes, detailed logic diagrams, process diagrams, and detailed description of all functional or non-functional requirements. </p>
+        <p>The next phase, which is the implementation of software, depends on all outputs  mentioned above.  </p>
+        <p>It is then becomes necessary to verify the output before proceeding to the next phase. The early any mistake is detected, the better it is or it might not be detected until testing of the product.  If the outputs of design phase are in formal notation form, then their associated tools for verification should be used otherwise a thorough design review can be used for verification and validation.</p>
+        <p>By structured verification approach, reviewers can detect defects that might be caused by overlooking some conditions.  A good design review is important for good software design, accuracy and quality.</p>
+    </div>
+   
+    
+</body>
+</html>       

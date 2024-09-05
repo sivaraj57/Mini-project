@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+    <h1><span class="color_h1">OS Input Output I/O</span></h1>
+    <p>The three major jobs of a computer are Input, Output, and Processing. In a lot of cases, the most important job is Input / Output, and the processing is simply incidental. For example, when you browse a web page or edit any file, our immediate attention is to read or enter some information, not for computing an answer. The primary role of the operating system in computer Input / Output is to manage and organize I/O operations and all I/O devices. In this chapter, you will learn about the various uses of input output devices concerning the operating system.    </p>
+    <hr>
+    <h2>Overview of I/O System</h2>
+    <p>The controlling of various devices that are connected to the computer is a key concern of operating-system designers. This is because I/O devices vary so widely in their functionality and speed (for example a mouse, a hard disk and a CD-ROM), varied methods are required for controlling them. These methods form the I/O sub-system of the kernel of OS that separates the rest of the kernel from the complications of managing I/O devices.    </p>
+    <hr>
+    <h2>I/O Hardware</h2>
+    <p>Computers operate many huge kinds of devices. The general categories of storage devices are like disks, tapes, transmission devices (like network interface cards, modems) and human interface devices (like screen, keyboard, etc.).</p>
+    <p>A device communicates with the operating system of a computer by transferring signals over cable or even through the air. The peripheral devices communicate with the machine through a connection point also called ports— (one example is a serial port). When devices use a set of wires or cables, that connecting cables are called a "bus." A bus is a collection of wires and a firmly defined protocol which specifies a set of messages that can be sent on the wires.</p>
+    <hr>
+    <h2>OS Using I/O Port</h2>
+    <p>
+        An I/O port usually consists of four different registers. These are (1) status, (2) control, (3) data-in, and (4) data-out registers.
+        <ul>
+            <li>The data-in register is read by the host for getting input.</li>
+            <li>The data-out register is written by the host for sending output.</li>
+            <li>The status register holds bits which can be read by the host.</li>
+            <li>The control register is written by the host for starting a command or for changing the mode of any device.</li>
+            <li>The data registers are usually 1 to 4 bytes in size. Some of the controllers have FIFO chips which hold several bytes of input or output data for expanding the capacity of the controller beyond the size of the data register.</li>
+        </ul>
+    </p>
+    <hr>
+    <h2>Polling</h2>
+    <p>The complete protocol used to interact with the host and a controller can be difficult for the OS, but the necessary handshaking notion is simple. You can express handshaking with an example. You assume that 2 bits have been used for coordinating the producer - consumer relationship among the controller and the host. The controller points to its state using the busy bit in the status register.</p>
+    <p>
+        The host marks output through a port, with the controller using handshaking like:
+        <ol>
+            <li>The host frequently reads the busy bit till that bit gets clear.</li>
+            <li>The host then sets the write, bit in the command register and then writes a byte to the data-out register.</li>
+            <li>The host then puts the command-ready bit.</li>
+            <li>As the controller notices that the command - ready bit has been set, it sets the busy bit.</li>
+            <li>The controller then reads the command register. It reads the data-out register for getting the byte and performs the I/O to the device.</li>
+            <li>The controller clears the command - ready bit then clears the error bit within the status register for indicating that the device I/O succeeded.</li>
+        </ol>
+    </p>
+    </body>
+    </html>
+	

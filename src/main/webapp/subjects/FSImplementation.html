@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+	<h1><span class="color_h1">File System Implementation in OS</span></h1>
+    <p>As you saw in the last tutorial, the file system provides the means for online storage and accessing of file contents, including data and its programs. The file system exists in permanently on secondary storage that is designed for holding a large amount of permanent data. This tutorial is mainly concerned with issues related to file storage and accessing them on the most common secondary storage standard, i.e., the disk.</p>
+    <hr>
+    <h2>File-System Structure</h2>
+    <p>
+        Disks offer the massive amount of secondary storage where a file system can be maintained. They have two characteristics which make them a suitable medium for storing various files -
+        <ul>
+            <li>A disk can be used to rewrite in place; it is possible to read a chunk from the disk, modify the chunk and write it back there in the same place.</li>
+            <li>A disk can access directly any given block of data it contains. Hence, it is easy to access any file either in sequence or at random and switching from one single file to another need only to move the read-write heads and wait for the disk to rotate to that specific location.            </li>
+        </ul>
+    </p>
+    <hr>
+    <h2>Basic File System Structure</h2>
+    <p>The basic file system requires only issuing generic commands for the appropriate device driver mainly for reading and writing physical blocks on the disk. Each physical block can be recognized by its numeric disk address (like this: drive 1, cylinder 62, track 2, sector 14).</p>
+    <hr>
+    <h2>File-System Implementation</h2>
+    <p>
+        Numerous on-disk and in-memory configurations and structures are being used for implementing a file system. These structures differ based on the operating system and the file system but applying some general principles. Here they are portrayed below:
+        <ul>
+            <li>A boot control block usually contains the information required by the system for booting an operating system from that volume. When the disks do not contain any operating system, this block can be treated as empty. This is typically the first chunk of a volume. In UFS, this is termed as the boot block; in NTFS, it is the partition boot sector.</li>
+            <li>A volume control block holds volume or the partition details, such as the number of blocks in the partition, size of the blocks or chunks, free-block count along with free-block pointers. In UFS, it is termed as superblock; in NTFS, it is stored in the master file table.</li>
+            <li>A directory structure per file system is required for organizing the files. In UFS, it held the file names and associated 'inode' numbers. In NTFS, it gets stored in the master file table.</li>
+            <li>The FCB contains many details regarding any file which includes file permissions, ownership; the size of file and location of data blocks. In UFS, it is called the inode. In NTFS, this information gets stored within the master file table that uses a relational database (RDBM) structure, using a row per file.</li>
+        </ul>
+    </p>
+    </body>
+    </html>

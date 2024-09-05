@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+    <h1><span class="color_h1" style="color: darkviolet;">ANALYSIS & DESIGN TOOLS</span></h1><hr>
+    <div>
+        <p>Software analysis and design includes all activities, which help the transformation of requirement specification into implementation.  Requirement specifications specify all functional and non-functional expectations from the software. These requirement specifications come in the shape of human readable and understandable  documents, to which a computer has nothing to do. </p>
+    <p>Software analysis and design is the intermediate stage, which helps human-readable requirements to be transformed into actual code.</p>
+    <p>Let us see few analysis and design tools used by software designers:</p>
+    <h2>Data Flow Diagram</h2>
+    <p>Data flow diagram is graphical representation of flow of data in an information system. It is capable of depicting incoming data flow, outgoing data flow and stored data. The DFD does not mention anything about how data flows through the system.</p>
+    <p>There is a prominent difference between DFD and Flowchart. The flowchart depicts flow of control in program modules. DFDs depict flow of data in the system at various levels. DFD does not contain any control or branch elements.</p>
+    <h3>Types of DFD</h3>
+    <p>Data Flow Diagrams are either Logical or Physical.</p>
+    <ul class="list">
+    <li><b>Logical DFD</b> - This type of DFD concentrates on the system process, and flow of data in the system.For example in a Banking software system, how data is moved between different entities.</li>
+    <li><b>Physical DFD</b> - This type of DFD shows how the data flow is actually implemented in the system.  It is more specific and close to the implementation.</li>
+    </ul>
+    <h3>DFD Components</h3>
+    <p>DFD can represent Source, destination, storage and flow of data using the following set of components -</p>
+    <img src="/software_engineering/images/DFD_components.png" alt="DFD Components">
+    <ul class="list">
+    <li><b>Entities</b> - Entities are source and destination of information data.  Entities are represented by a rectangles with their respective names.</li>
+    <li><b>Process</b> - Activities and action taken on the data are represented by Circle or Round-edged rectangles.</li>
+    <li><b>Data Storage</b> - There are two variants of data storage  -  it can either be represented as a rectangle with absence of both smaller sides or as an open-sided rectangle with only one side missing.</li>
+    <li><b>Data Flow</b> - Movement of data is shown by pointed arrows.  Data movement is shown from the base of arrow as its source towards head of the arrow as destination.</li>
+    </ul>
+    <h3>Levels of DFD</h3>
+    <ul class="list">
+    <li><b>Level 0</b> - Highest abstraction level DFD is known as Level 0 DFD, which depicts the entire information system as one diagram concealing all the underlying details.  Level 0 DFDs are also known as context level DFDs.</li>
+    <img src="/software_engineering/images/DFD_level_zero.png" alt="Level 0">
+    <li><b>Level 1</b> - The Level 0 DFD is broken down into more specific, Level 1 DFD. Level 1 DFD depicts basic modules in the system and flow of data among various modules.  Level 1 DFD also mentions basic processes and sources of information.</li>
+    <img src="/software_engineering/images/DFD_level_one.png" alt="Level 1">
+    <li><p><b>Level 2</b> - At this level, DFD shows how data flows inside the modules mentioned in Level 1.</p>
+    <p>Higher level DFDs can be transformed into more specific lower level DFDs with deeper level of understanding unless the desired level of specification is achieved.</p></li>
+    </ul>
+    <h2>Structure Charts</h2>
+    <p>Structure chart is a chart derived from Data Flow Diagram.  It represents the system in more detail than DFD.  It  breaks down the entire system into lowest functional modules, describes functions and  sub-functions of each module of the system to a greater detail than DFD.</p>
+    <p>Structure chart represents hierarchical structure of modules. At each layer a specific task is performed.</p>
+    <p>Here are the symbols used in  construction of structure charts -</p>
+    <ul class="list">
+    <li><b>Module</b> - It represents process or subroutine or task.  A control module branches to more than one sub-module. Library Modules are re-usable and invokable from any module.
+    <img src="/software_engineering/images/SC_modules.png" alt="SC Modules"></li>
+    <li><b>Condition</b> - It is represented by small diamond at the base of module.  It depicts that control module can select any of sub-routine  based on some condition.
+    <img src="/software_engineering/images/SC_condition.png" alt="SC Condition"></li>
+    <li><b>Jump</b> - An arrow is shown pointing inside the module to depict that the control will jump in the middle of the sub-module.
+    <img src="/software_engineering/images/SC_module_jump.png" alt="SC Module Jump"></li>
+    <li><b>Loop</b> - A curved arrow represents loop in the module. All sub-modules covered by  loop  repeat execution of module.
+    <img src="/software_engineering/images/SC_loop.png" alt="SC Loop"></li>
+    <li><b>Data flow</b> - A directed arrow with empty circle at the end represents data flow.
+    <img src="/software_engineering/images/SC_dataflow.png" alt="SC Dataflow"></li>
+    <li><b>Control  flow</b> - A directed arrow with filled circle at the end represents control flow.
+    <img src="/software_engineering/images/SC_controlflow.png" alt="SC ControlFlow"></li>
+    </ul>
+    <h2>HIPO Diagram</h2>
+    <p>HIPO (Hierarchical Input Process Output) diagram is a combination of two organized method to analyze the system and provide the means of documentation. HIPO model was developed by IBM in year 1970.</p>
+    <p>HIPO  diagram represents the hierarchy of modules in the software system. Analyst uses HIPO diagram in order to obtain high-level view of system functions. It decomposes functions into sub-functions in a hierarchical manner. It depicts the functions performed by system.     </p>
+    <p>HIPO diagrams are good for documentation purpose. Their graphical representation makes it easier for designers and managers to  get the pictorial idea of the system structure. </p>
+    <img src="/software_engineering/images/HIPO_Diagram.png" alt="HIPO diagrams">
+    <p>In contrast to IPO (Input Process Output) diagram, which depicts  the flow of control and data in a module, HIPO does not provide any information about data flow or control flow.</p>
+    <img src="/software_engineering/images/IPO_chart.png" alt="IPO Chart">
+    <h3>Example</h3>
+    <p>Both parts of HIPO diagram, Hierarchical presentation and IPO Chart are used for structure design of software program as well as documentation of the same.</p>
+    <h2>Structured English</h2>
+    <p>Most programmers are unaware of the large picture of software so they only rely on what their managers tell them to do. It is the responsibility of higher  software management to provide accurate information to the programmers to develop accurate yet fast code.</p>
+    <p>Other forms of methods, which use graphs or diagrams, may are sometimes interpreted differently by different people.</p>
+    <p>Hence, analysts and designers of the software come up with tools such as Structured English. It is nothing but the description of what is required to code and how to code it. Structured English helps the programmer to write error-free code. </p>
+    <p>Other form of methods, which use graphs or diagrams, may are sometimes interpreted differently by different people. Here, both Structured English and Pseudo-Code tries to mitigate that understanding gap.</p>
+    <p>Structured English is the It uses plain English words in structured programming paradigm.  It is not the ultimate code but a kind of description what is required to code and how to code it. The following are some tokens of structured programming.</p>
+    <pre class="prettyprint notranslate">IF-THEN-ELSE,  
+    DO-WHILE-UNTIL
+    </pre>
+    <p>Analyst uses the same variable and data name, which are stored in Data Dictionary, making it much simpler to write and understand the code.</p>
+    <h3>Example</h3>
+    <p>We take the same example of Customer Authentication in the online shopping environment. This procedure to authenticate customer can be written in Structured English as:</p>
+    <pre class="prettyprint notranslate">Enter Customer_Name
+    SEEK Customer_Name in Customer_Name_DB file
+    IF Customer_Name found THEN
+       Call procedure USER_PASSWORD_AUTHENTICATE()
+    ELSE
+       PRINT error message
+       Call procedure NEW_CUSTOMER_REQUEST()
+    ENDIF
+    </pre>
+    <p>The code written in Structured English is more  like day-to-day spoken English. It can not be implemented directly as a code of software. Structured English is independent of programming language.</p>
+    <h2>Pseudo-Code</h2>
+    <p>Pseudo code is written more close to programming language.  It may be considered as augmented programming language, full of comments and descriptions.  </p>
+    <p>Pseudo code avoids variable declaration but they are written using some actual programming language’s constructs, like C, Fortran, Pascal etc.</p>
+    <p>Pseudo code contains more programming details than Structured English.  It provides a method to perform the task, as if a computer is executing the code.</p>
+    <h3>Example</h3>
+    <p>Program to print Fibonacci up to n numbers.</p>
+    <pre class="prettyprint notranslate">void function Fibonacci
+    Get value of n;
+    Set value of a to 1;
+    Set value of b to 1;
+    Initialize I to 0
+    for (i=0; i&lt; n; i++)
+    {
+       if a greater than b 
+       {
+          Increase b by a;
+          Print b;
+       } 
+       else if b greater than a
+       {
+          increase a by b;
+          print a;
+       }
+    }
+    </pre>
+    <h2>Decision Tables </h2>
+    <p>A Decision table represents conditions and the respective actions to be taken to address them, in a structured tabular format.</p>
+    <p>It is a powerful tool to debug and prevent errors. It helps group similar information into a single table and then by combining tables it delivers easy and convenient decision-making.</p>
+    <h3>Creating Decision Table</h3>
+    <p>To create the decision table, the developer must follow basic four steps:</p>
+    <ul class="list">
+    <li>Identify all possible conditions to be addressed</li>
+    <li>Determine actions for all identified conditions</li>
+    <li>Create Maximum possible rules</li>
+    <li>Define action for each rule</li>
+    </ul>
+    <p>Decision Tables should be verified by end-users and can lately be simplified by eliminating duplicate rules and actions.</p>
+    <h3>Example</h3>
+    <p>Let us take a simple example of day-to-day problem with our Internet connectivity. We begin by identifying all problems that can arise while starting the internet and their respective possible solutions.  </p>
+    <p>We list all possible problems under column conditions and the prospective actions under column Actions.</p>
+    <div class="table-wrapper"><table class="src">
+      <tbody><tr>
+      <th></th>
+      <th>Conditions/Actions</th>
+      <th colspan="8">Rules</th>
+      </tr>
+      <tr>
+      <th rowspan="3" style="border-bottom:1px solid #999;">Conditions</th>
+      <td>Shows Connected</td>
+      <td>N</td>
+      <td>N</td>
+      <td>N</td>
+      <td>N</td>
+      <td>Y</td>
+      <td>Y</td>
+      <td>Y</td>
+      <td>Y</td>
+      </tr>
+      <tr>
+      <td>Ping is Working</td>
+      <td>N</td>
+      <td>N</td>
+      <td>Y</td>
+      <td>Y</td>
+      <td>N</td>
+      <td>N</td>
+      <td>Y</td>
+      <td>Y</td>
+      </tr>
+      <tr>
+      <td style="border-bottom:1px solid #999;">Opens Website</td>
+      <td style="border-bottom:1px solid #999;">Y</td>
+      <td style="border-bottom:1px solid #999;">N</td>
+      <td style="border-bottom:1px solid #999;">Y</td>
+      <td style="border-bottom:1px solid #999;">N</td>
+      <td style="border-bottom:1px solid #999;">Y</td>
+      <td style="border-bottom:1px solid #999;">N</td>
+      <td style="border-bottom:1px solid #999;">Y</td>
+      <td style="border-bottom:1px solid #999;">N</td>
+      </tr>
+      <tr>
+       <th rowspan="5">Actions</th>
+      <td>Check network cable</td>
+      <td>X</td>
+      <td></td>
+      <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+      </tr>
+      <tr>
+      <td>Check internet router</td>
+      <td>X</td>
+      <td></td>
+    <td></td>
+    <td></td>
+      <td>X</td>
+      <td>X</td>
+    <td>X</td>
+    <td></td>
+      </tr>
+      <tr>
+      <td>Restart Web Browser</td>
+      <td></td>
+    <td></td>
+      <td></td>
+    <td></td>
+      <td></td>
+      <td></td>
+      <td>X</td>
+      <td></td>
+      </tr>
+      <tr>
+      <td>Contact Service provider</td>
+      <td></td>
+      <td>X</td>
+      <td>X</td>
+     <td>X</td>
+     <td>X</td>
+     <td>X</td>
+     <td>X</td>
+       <td></td>
+      </tr>
+    <tr>
+    <td>Do no action</td>
+    <td></td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td></td>
+    <td> </td>
+    <td></td>
+    </tr>
+    </tbody></table></div>
+      
+    <center><u>Table : Decision Table – In-house Internet Troubleshooting</u></center>
+    <h2>Entity-Relationship Model</h2>
+    <p>Entity-Relationship model is a type of database model based on the notion of real world entities and relationship among them.  We can map real world scenario onto ER database model. ER Model creates a set of entities with their attributes, a set of constraints and relation among them.</p>
+    <p>ER Model is best used for the conceptual design of database. ER Model can be represented as follows :</p>
+    <img src="/software_engineering/images/er_model_intro.png" alt="ER Model">
+    <ul class="list">
+    <li><p><b>Entity</b> - An entity in ER Model is a real world  being, which has some properties called <b><i>attributes</i></b>.  Every attribute is defined by its corresponding set of values, called <b><i>domain</i></b>.</p>
+    <p>For example,  Consider a school database. Here, a student is  an entity. Student has various attributes like name, id, age and class etc.</p></li>
+    <li><p><b>Relationship</b> - The logical association among entities is called <b><i>relationship</i></b>.  Relationships are mapped with entities in various ways. Mapping cardinalities define the number of associations between two entities.</p>
+    <p>Mapping cardinalities:</p>
+    <ul class="list">
+    <li>one to one</li>
+    <li>one to many</li>
+    <li>many to one</li>
+    <li>many to many</li>
+    </ul>
+    </li>
+    </ul>  
+    <h2>Data Dictionary</h2>
+    <p>Data dictionary is the centralized collection of information about data. It stores meaning and origin of data, its relationship with other data, data format for usage etc. Data dictionary  has rigorous definitions of all names in order to facilitate user and software designers.</p>
+    <p>Data dictionary is often referenced as meta-data (data about data) repository.  It is created along  with DFD (Data Flow Diagram) model of software program and is expected to be updated whenever DFD is changed or updated.</p>
+    <h3>Requirement of Data Dictionary</h3>
+    <p>The data is referenced via data dictionary while designing and implementing software.  Data dictionary removes any chances of ambiguity.  It helps keeping work of programmers and designers synchronized while using same object reference everywhere in the program.</p>
+    <p>Data dictionary provides a way of documentation for the  complete database system in one place.  Validation of DFD is carried out using data dictionary.</p>
+    <h3>Contents</h3>
+    <p>Data dictionary should contain information about the following </p>
+    <ul class="list">
+    <li>Data Flow</li>
+    <li>Data Structure</li>
+    <li>Data Elements</li>
+    <li>Data Stores</li>
+    <li>Data Processing</li>
+    </ul>
+    <p>Data Flow is described by means of DFDs as studied earlier and represented in algebraic form as described.</p>
+    <div class="table-wrapper"><table class="src">
+    <tbody><tr>
+    <th>=</th>
+    <th>Composed of</th>
+    </tr>
+    <tr>
+    <td>{}</td>
+    <td>Repetition</td>
+    </tr>
+    <tr>
+    <td>()</td>
+    <td>Optional</td>
+    </tr>
+    <tr>
+    <td>+</td>
+    <td>And</td>
+    </tr>
+    <tr>
+    <td>[ / ]</td>
+    <td>Or</td>
+    </tr>
+    </tbody></table></div>
+    <h3>Example</h3>
+    <p>Address = House No + (Street / Area) + City + State</p>
+    <p>Course ID = Course Number + Course Name + Course Level + Course Grades</p>
+    <h3>Data Elements</h3>
+    <p>Data elements consist of Name and descriptions of Data and Control Items, Internal or External data stores etc. with the following details:</p>
+    <ul class="list">
+    <li>Primary Name</li>
+    <li>Secondary Name (Alias)</li>
+    <li>Use-case (How  and where to use)</li>
+    <li>Content Description (Notation etc. )</li>
+    <li>Supplementary Information (preset values, constraints etc.)</li>
+    </ul>
+    <h3>Data Store</h3>
+    <p>It  stores the information from where the data enters into the system and exists out of the system. The Data Store may include -</p>
+    <ul class="list">
+    <li><b>Files</b>
+    <ul class="list">
+    <li>Internal to software.</li>
+    <li>External to software but on the same machine.</li>
+    <li>External to software and system, located on different machine.</li>
+    </ul>
+    </li>
+    <li><b>Tables</b>
+    <ul class="list">
+    <li>Naming convention</li>
+    <li>  Indexing property</li>
+    </ul>
+    </li>
+    </ul>
+    <h3>Data Processing</h3>
+    <p>There are two types of Data Processing:</p>
+    <ul class="list">
+    <li><b>Logical:</b> As user sees it</li>
+    <li><b>Physical:</b> As software sees it</li>
+    </ul>
+ </div>
+	
+    
+</body>
+</html>       

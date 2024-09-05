@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+    <h1>Java Methods</h1>
+
+    <p>In Java, a <strong>method</strong> is a block of code that performs a specific task or action. Methods are used to organize and encapsulate functionality, making it reusable and easier to manage in your Java programs.</p>
+
+    <h2>Method Declaration:</h2>
+    <p>To declare a method in Java, you specify its return type (if any), followed by the method name, and a pair of parentheses <code>()</code> containing any parameters that the method accepts. The method body is enclosed in curly braces <code>{}</code>.</p>
+
+    <h3>Example of Method Declaration:</h3>
+    <pre>
+        <code>
+// Method with no parameters and no return value
+public void sayHello() {
+    System.out.println("Hello, world!");
+}
+
+// Method with parameters and a return value
+public int add(int a, int b) {
+    return a + b;
+}
+        </code>
+    </pre>
+
+    <h2>Method Invocation:</h2>
+    <p>To use a method in Java, you call or invoke it by its name followed by parentheses. If the method has parameters, you pass values as arguments within the parentheses.</p>
+
+    <h3>Example of Method Invocation:</h3>
+    <pre>
+        <code>
+// Calling the sayHello method
+sayHello();
+
+// Calling the add method with arguments and storing the result
+int result = add(5, 3);
+        </code>
+    </pre>
+
+    <h2>Return Value:</h2>
+    <p>A method may return a value using the <code>return</code> statement. The return type in the method declaration specifies the type of value that the method returns. If a method does not return a value, you can use <code>void</code> as the return type.</p>
+
+    <h3>Example of Returning a Value:</h3>
+    <pre>
+        <code>
+// Method with a return value
+public int add(int a, int b) {
+    return a + b;
+}
+        </code>
+    </pre>
+
+    <h2>Notes:</h2>
+    <ul>
+        <li>Methods allow you to break down a program into smaller, reusable parts, promoting code reusability and maintainability.</li>
+        <li>Java has both built-in methods (e.g., <code>System.out.println()</code>) and user-defined methods created by programmers.</li>
+        <li>Methods can have access modifiers (e.g., <code>public</code>, <code>private</code>) to control their visibility and accessibility.</li>
+    </ul>
+<hr>
+    <h1>Java Method Parameters</h1>
+
+    <p>In Java, <strong>method parameters</strong> are variables that are used to pass data into a method when it is called. They allow methods to work with different data values each time they are invoked, making methods versatile and reusable.</p>
+
+    <h2>Parameter Declaration:</h2>
+    <p>To declare parameters for a method in Java, you specify their data types followed by their names within the parentheses of the method declaration. You can have zero or more parameters in a method.</p>
+
+    <h3>Example of Parameter Declaration:</h3>
+    <pre>
+        <code>
+// Method with two integer parameters
+public int add(int a, int b) {
+    return a + b;
+}
+
+// Method with a string parameter
+public void greet(String name) {
+    System.out.println("Hello, " + name + "!");
+}
+        </code>
+    </pre>
+
+    <h2>Passing Arguments:</h2>
+    <p>When you call a method, you provide arguments, which are actual values or expressions, for each parameter in the same order as they are declared in the method. The arguments are used to initialize the corresponding parameters within the method.</p>
+
+    <h3>Example of Passing Arguments:</h3>
+    <pre>
+        <code>
+// Calling the add method with arguments
+int result = add(5, 3);
+
+// Calling the greet method with a string argument
+greet("Alice");
+        </code>
+    </pre>
+
+    <h2>Parameter Types:</h2>
+    <p>Method parameters can have various data types, including primitive types (e.g., <code>int</code>, <code>double</code>), reference types (e.g., <code>String</code>, custom classes), and arrays.</p>
+
+    <h3>Example of Different Parameter Types:</h3>
+    <pre>
+        <code>
+// Method with primitive type parameters
+public double calculateAverage(int[] numbers) {
+    int sum = 0;
+    for (int num : numbers) {
+        sum += num;
+    }
+    return (double) sum / numbers.length;
+}
+
+// Method with reference type parameter
+public void printMessage(String message) {
+    System.out.println(message);
+}
+        </code>
+    </pre>
+
+    <h2>Notes:</h2>
+    <ul>
+        <li>Method parameters allow you to customize the behavior of a method by providing input data.</li>
+        <li>You can have methods with zero parameters, which are called without any arguments.</li>
+        <li>Java uses pass-by-value semantics, meaning that a copy of the argument's value is passed to the method parameter.</li>
+    </ul>
+<hr>
+    <h1>Java Method Overloading</h1>
+
+    <p><strong>Method overloading</strong> in Java is a feature that allows you to define multiple methods in the same class with the same name but different parameter lists. The compiler determines which method to call based on the number and types of arguments provided.</p>
+
+    <h2>Method Overloading Rules:</h2>
+    <p>When overloading methods, you must follow these rules:</p>
+    <ul>
+        <li>The method name must be the same for all overloaded methods.</li>
+        <li>The number of parameters must differ, or the parameter types must be different.</li>
+        <li>The return type can be the same or different, but it alone is not sufficient to distinguish overloaded methods.</li>
+        <li>Overloaded methods can have different access modifiers (e.g., <code>public</code>, <code>private</code>), but the name and parameter list must match.</li>
+    </ul>
+
+    <h2>Example of Method Overloading:</h2>
+    <pre>
+        <code>
+// Overloaded methods to calculate the sum of numbers
+
+public int add(int a, int b) {
+    return a + b;
+}
+
+public double add(double a, double b) {
+    return a + b;
+}
+
+public int add(int a, int b, int c) {
+    return a + b + c;
+}
+
+// Example usage
+
+int sumInt = add(5, 3);             // Calls the first method
+double sumDouble = add(2.5, 3.5);    // Calls the second method
+int sumThree = add(2, 3, 5);        // Calls the third method
+        </code>
+    </pre>
+
+    <h2>Method Overloading Benefits:</h2>
+    <p>Method overloading is beneficial because it allows you to create more readable and intuitive APIs by providing multiple ways to use a method with the same name. It simplifies code and enhances flexibility.</p>
+
+    <h2>Notes:</h2>
+    <ul>
+        <li>Overloaded methods are resolved at compile time based on the provided arguments.</li>
+        <li>Method overloading is often used in Java libraries to create convenient and expressive interfaces for developers.</li>
+        <li>While overloading methods, consider the parameter types and their compatibility to avoid ambiguity and errors.</li>
+    </ul>
+<hr>
+<h1>Java Scope</h1>
+
+    <p>In Java, <strong>scope</strong> refers to the region of a program where a particular variable is visible and can be accessed. Understanding variable scope is crucial for writing maintainable and error-free Java code.</p>
+
+    <h2>Types of Scope:</h2>
+    <p>There are mainly three types of scope in Java:</p>
+
+    <ol>
+        <li><strong>Local Scope:</strong> Variables declared within a method or block of code have local scope. They are only accessible within that specific method or block.</li>
+        <li><strong>Instance Scope:</strong> Instance variables (also called member variables) are declared within a class but outside of any method. They have instance scope and are accessible to all methods of the class.</li>
+        <li><strong>Class Scope:</strong> Class variables (also called static variables) are declared within a class with the <code>static</code> keyword. They have class scope and are shared among all instances of the class.</li>
+    </ol>
+
+    <h2>Example of Variable Scope:</h2>
+    <pre>
+        <code>
+public class ScopeExample {
+    // Instance variable with instance scope
+    private int instanceVar;
+
+    // Class variable with class scope
+    private static int classVar;
+
+    public void methodWithLocalScope() {
+        // Local variable with local scope
+        int localVar = 10;
+        System.out.println("Local variable: " + localVar);
+    }
+
+    public void methodWithInstanceScope() {
+        // Accessing instance variable
+        instanceVar = 20;
+        System.out.println("Instance variable: " + instanceVar);
+    }
+
+    public static void methodWithClassScope() {
+        // Accessing class variable
+        classVar = 30;
+        System.out.println("Class variable: " + classVar);
+    }
+}
+        </code>
+    </pre>
+
+    <h2>Scope Rules:</h2>
+    <p>Scope rules dictate how variables are accessed and which variable takes precedence in case of naming conflicts:</p>
+    <ul>
+        <li>Local variables take precedence over instance and class variables with the same name within their respective scopes.</li>
+        <li>Instance variables take precedence over class variables with the same name.</li>
+        <li>Class variables are shared among all instances of the class and have the highest level of visibility.</li>
+    </ul>
+
+    <h2>Notes:</h2>
+    <ul>
+        <li>Variable scope helps in managing the lifetime and visibility of variables, preventing unintended modifications or conflicts.</li>
+        <li>Local variables have limited lifetime and exist only within the block or method in which they are declared.</li>
+        <li>Instance and class variables have a longer lifetime and persist as long as their containing object or class exists.</li>
+    </ul>
+<hr>
+    <h1>Java Recursion</h1>
+
+    <p><strong>Recursion</strong> is a programming technique in Java where a method calls itself to solve a problem. It is a powerful and elegant way to solve complex problems by breaking them down into smaller, more manageable subproblems.</p>
+
+    <h2>Key Concepts:</h2>
+    <p>Here are some key concepts related to recursion in Java:</p>
+
+    <ul>
+        <li><strong>Base Case:</strong> Every recursive method should have a base case, which is a condition that defines when the recursion should stop. Without a base case, the recursion can lead to infinite loops.</li>
+        <li><strong>Recursive Case:</strong> In addition to the base case, recursive methods also have a recursive case. This is where the method calls itself with a modified input to solve a smaller subproblem.</li>
+        <li><strong>Stack Memory:</strong> Java uses a call stack to manage method calls, including recursive ones. Each method call is pushed onto the stack, and when a method returns, it is popped off the stack. Recursion uses stack memory, so excessive recursion can lead to a stack overflow.</li>
+    </ul>
+
+    <h2>Example of Recursion:</h2>
+    <pre>
+        <code>
+public class Factorial {
+    public static int factorial(int n) {
+        // Base case: If n is 0 or 1, return 1
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            // Recursive case: n! = n * (n-1)!
+            return n * factorial(n - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        int result = factorial(5);
+        System.out.println("Factorial of 5 is: " + result);
+    }
+}
+        </code>
+    </pre>
+
+    <h2>Explanation:</h2>
+    <p>In this example, the <code>factorial</code> method calculates the factorial of a number <code>n</code> using recursion. The base case is when <code>n</code> is 0 or 1, and in this case, the method returns 1. For other values of <code>n</code>, it recursively calls itself with <code>n-1</code> until it reaches the base case and returns the result.</p>
+
+    <h2>Notes:</h2>
+    <ul>
+        <li>Recursion is often used to solve problems that can be broken down into smaller, similar subproblems.</li>
+        <li>Recursive methods can be less efficient than iterative solutions for certain problems, so it's essential to choose the right approach based on the problem's characteristics.</li>
+        <li>Recursion can be challenging to understand and debug, but it can lead to elegant and concise code for some problems.</li>
+    </ul>
+    <hr>
+</body>
+</html>

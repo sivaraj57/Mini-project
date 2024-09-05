@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+    <h1><span class="color_h1">Virtualization in OS</span></h1>
+    <p>After the concept of server virtualization and application's virtualization, the field of virtualization evolved to a next level. Jointly with VDI (Virtual Desktop Infrastructure), Virtualization of Operating System (OS) is one of those procedures that get popular in the current market. The company Ardence (which is now a part of Citrix) has initiated the concept of OS Virtualization technique. In this chapter, you will learn about the basics of Virtualization in Operating System.</p>
+    <hr>
+    <h2>What is OS Virtualization?</h2>
+    <p>With an operating system, virtualization does not remain pre-installed or preloaded on the local device, and no hard disk drive is required. The whole lot of things is run from the network using a type of virtual disk. Through the current implementations, this virtual disk gets the disk image file that is stored on a remote server.    </p>
+    <hr>
+    <h2>Types of Virtual Desks</h2>
+    <p>
+        There are two categories of Virtual Disks in the majority implementations:
+        <ul>
+            <li><u><b>Private Virtual Disk:</b></u> A private virtual disk generally used by a single client only, just similar to a local hard disk. Based on the rights assigned, the user can save the information on that virtual disk. So as the client has restarted the settings get retained, just like working with a physical local hard disk.</li>
+            <li><u><b>Shared/Common Virtual Disk:</b></u>Several clients require a shared Virtual Disk at a time. During this usage, changes get saved in a special type of cache memory, but as the client shuts down or restarts, the cache gets cleared.<br> A Virtual Disk gets created by implementing a kind of imaging technique. Now you know, mostly, what operating system virtualization is, let's now see into a bit more detail on how it works and what components are concerned.</li>
+        </ul>
+    </p>
+    <hr>
+    <h2>How Does OS Virtualization works?</h2>
+    <p>The first section is the OS Virtualization server. It is the central point in the OS Virtualization structure. The server places the streaming of the data on the virtual disks for the client and also establishes which client will get connected to which virtual disk (by the use of database where this information resides).
+
+        <br>Secondly, there has to be client that contacts the server for getting connected to the virtual disk and requests for components stored on virtual disk for running the operating system.</p>
+    <hr>
+    <h2>Connecting to OS Virtualization as Server</h2>    
+    <p>First, you start the machine and set up a link with the OS Virtualization server. Most products offer various probable methods for connecting to the server. One of the frequently used methods is using a PXE service, but also a bootstrap is used a lot. Moreover, each method initialized the NIC (Network Interface Card), receiving a (DHCP-oriented) IP address and an association to the server.</p>
+    <hr>
+    <h2>What Happens at Virtual Disk Connection?</h2>
+    <p>As the connection is established among the client and the server, the server looks through its database for checking whether the client is known and what virtual disk(s) needs to be assigned to the client. As more than one virtual disk gets connected then a boot menu is displayed on the client. When only one disk is assigned, that disk will be connected to the client later.</p>
+    <hr>
+    </body>
+    </html>

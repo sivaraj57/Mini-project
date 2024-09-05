@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">STORAGE AND FILE STRUCTURE</span></h1>
+    
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Storage System</span></h1>
+        <hr>
+        <div>
+            <p>Databases are stored in file formats, which contain records. At physical level, the actual data is stored in electromagnetic format on some device. These storage devices can be broadly categorized into three types −</p>
+            <img src="/dbms/images/memory_types.png" alt="Memory Types">
+            <ul class="list">
+            <li><p><b>Primary Storage</b> − The memory storage that is directly accessible to the CPU comes under this category. CPU's internal memory (registers), fast memory (cache), and main memory (RAM) are directly accessible to the CPU, as they are all placed on the motherboard or CPU chipset. This storage is typically very small, ultra-fast, and volatile. Primary storage requires continuous power supply in order to maintain its state. In case of a power failure, all its data is lost.</p></li>
+            <li><p><b>Secondary Storage</b> − Secondary storage devices are used to store data for future use or as backup. Secondary storage includes memory devices that are not a part of the CPU chipset or motherboard, for example, magnetic disks, optical disks (DVD, CD, etc.), hard disks, flash drives, and magnetic tapes.</p></li>
+            <li><p><b>Tertiary Storage</b> − Tertiary storage is used to store huge volumes of data. Since such storage devices are external to the computer system, they are the slowest in speed. These storage devices are mostly used to take the back up of an entire system. Optical disks and magnetic tapes are widely used as tertiary storage.</p></li>
+            </ul>
+            <h2>Memory Hierarchy</h2>
+            <p>A computer system has a well-defined hierarchy of memory. A CPU has direct access to it main memory as well as its inbuilt registers. The access time of the main memory is obviously less than the CPU speed. To minimize this speed mismatch, cache memory is introduced. Cache memory provides the fastest access time and it contains data that is most frequently accessed by the CPU.</p>
+            <p>The memory with the fastest access is the costliest one. Larger storage devices offer slow speed and they are less expensive, however they can store huge volumes of data as compared to CPU registers or cache memory.</p>
+            <h2>Magnetic Disks</h2>
+            <p>Hard disk drives are the most common secondary storage devices in present computer systems. These are called magnetic disks because they use the concept of magnetization to store information. Hard disks consist of metal disks coated with magnetizable material. These disks are placed vertically on a spindle. A read/write head moves in between the disks and is used to magnetize or de-magnetize the spot under it. A magnetized spot can be recognized as 0 (zero) or 1 (one).</p>
+            <p>Hard disks are formatted in a well-defined order to store data efficiently. A hard disk plate has many concentric circles on it, called <b>tracks</b>. Every track is further divided into <b>sectors</b>. A sector on a hard disk typically stores 512 bytes of data.</p>
+            <h2>Redundant Array of Independent Disks</h2>
+            <p>RAID or <b>R</b>edundant <b>A</b>rray of <b>I</b>ndependent <b>D</b>isks, is a technology to connect multiple secondary storage devices and use them as a single storage media.</p>
+            <p>RAID consists of an array of disks in which multiple disks are connected together to achieve different goals. RAID levels define the use of disk arrays.</p>
+            <h3>RAID 0</h3>
+            <p>In this level, a striped array of disks is implemented. The data is broken down into blocks and the blocks are distributed among disks. Each disk receives a block of data to write/read in parallel. It enhances the speed and performance of the storage device. There is no parity and backup in Level 0.</p>
+            
+            <img src="/dbms/images/raid_0.png" alt="RAID 0">
+            
+            <h3>RAID 1</h3>
+            <p>RAID 1 uses mirroring techniques. When data is sent to a RAID controller, it sends a copy of data to all the disks in the array. RAID level 1 is also called <b>mirroring</b> and provides 100% redundancy in case of a failure.</p>
+            
+            <img src="/dbms/images/raid_1.png" alt="RAID 1">
+            <h3>RAID 2</h3>
+            <p>RAID 2 records Error Correction Code using Hamming distance for its data, striped on different disks. Like level 0, each data bit in a word is recorded on a separate disk and ECC codes of the data words are stored on a different set disks. Due to its complex structure and high cost, RAID 2 is not commercially available.</p>
+            
+            <img src="/dbms/images/raid_2.png" alt="RAID 2">
+            <h3>RAID 3</h3>
+            <p>RAID 3 stripes the data onto multiple disks. The parity bit generated for data word is stored on a different disk. This technique makes it to overcome single disk failures.</p>
+            
+            <img src="/dbms/images/raid_3.png" alt="RAID 3">
+            <h3>RAID 4</h3>
+            <p>In this level, an entire block of data is written onto data disks and then the parity is generated and stored on a different disk. Note that level 3 uses byte-level striping, whereas level 4 uses block-level striping. Both level 3 and level 4 require at least three disks to implement RAID.</p>
+            
+            <img src="/dbms/images/raid_4.png" alt="RAID 4">
+            <h3>RAID 5</h3>
+            <p>RAID 5 writes whole data blocks onto different disks, but the parity bits generated for data block stripe are distributed among all the data disks rather than storing them on a different dedicated disk.</p>
+            
+            <img src="/dbms/images/raid_5.png" alt="RAID 5">
+            <h3>RAID 6</h3>
+            <p>RAID 6 is an extension of level 5. In this level, two independent parities are generated and stored in distributed fashion among multiple disks. Two parities provide additional fault tolerance. This level requires at least four disk drives to implement RAID.</p>
+        </div>
+        <hr>
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">File Structure</span></h1>
+        <hr>
+        <div>
+            <p>Relative data and information is stored collectively in file formats. A file is a sequence of records stored in binary format. A disk drive is formatted into several blocks that can store records. File records are mapped onto those disk blocks.</p>
+            <h2>File Organization</h2>
+            <p>File Organization defines how file records are mapped onto disk blocks. We have four types of File Organization to organize file records −</p>
+            <img src="/dbms/images/file_organization.png" alt="File Organization"> 
+            <h2>Heap File Organization</h2>
+            <p>When a file is created using Heap File Organization, the Operating System allocates memory area to that file without any further accounting details. File records can be placed anywhere in that memory area. It is the responsibility of the software to manage the records. Heap File does not support any ordering, sequencing, or indexing on its own.</p>
+            <h2>Sequential File Organization</h2>
+            <p>Every file record contains a data field (attribute) to uniquely identify that record. In sequential file organization, records are placed in the file in some sequential order based on the unique key field or search key. Practically, it is not possible to store all the records sequentially in physical form.</p>
+            <h2>Hash File Organization</h2>
+            <p>Hash File Organization uses Hash function computation on some fields of the records. The output of the hash function determines the location of disk block where the records are to be placed.</p>
+            <h2>Clustered File Organization</h2>
+            <p>Clustered file organization is not considered good for large databases. In this mechanism, related records from one or more relations are kept in the same disk block, that is, the ordering of records is not based on primary key or search key.</p>
+            <h2>File Operations</h2>
+            <p>Operations on database files can be broadly classified into two categories −</p>
+            <ul class="list">
+            <li><p><b>Update Operations</b></p></li>
+            <li><p><b>Retrieval Operations</b></p></li>
+            </ul>
+            <p>Update operations change the data values by insertion, deletion, or update. Retrieval operations, on the other hand, do not alter the data but retrieve them after optional conditional filtering. In both types of operations, selection plays a significant role. Other than creation and deletion of a file, there could be several operations, which can be done on files.</p>
+            <ul class="list">
+            <li><p><b>Open</b> − A file can be opened in one of the two modes, <b>read mode</b> or <b>write mode</b>. In read mode, the operating system does not allow anyone to alter data. In other words, data is read only. Files opened in read mode can be shared among several entities. Write mode allows data modification. Files opened in write mode can be read but cannot be shared.</p><p></p></li>
+            <li><p><b>Locate</b> − Every file has a file pointer, which tells the current position where the data is to be read or written. This pointer can be adjusted accordingly. Using find (seek) operation, it can be moved forward or backward.</p></li>
+            <li><p><b>Read</b> − By default, when files are opened in read mode, the file pointer points to the beginning of the file. There are options where the user can tell the operating system where to locate the file pointer at the time of opening a file. The very next data to the file pointer is read.</p></li>
+            <li><p><b>Write</b> − User can select to open a file in write mode, which enables them to edit its contents. It can be deletion, insertion, or modification. The file pointer can be located at the time of opening or can be dynamically changed if the operating system allows to do so.</p></li>
+            <li><p><b>Close</b> − This is the most important operation from the operating system’s point of view. When a request to close a file is generated, the operating system</p>
+            <ul class="list">
+            <li>removes all the locks (if in shared mode),</li>
+            <li>saves the data (if altered) to the secondary storage media, and</li>
+            <li>releases all the buffers and file handlers associated with the file.</li>
+            </ul>
+            </li>
+            </ul>
+            <p>The organization of data inside a file plays a major role here. The process to locate the file pointer to a desired record inside a file various based on whether the records are arranged sequentially or clustered.</p>
+        </div>
+        <hr>
+       
+    </body>
+</html>

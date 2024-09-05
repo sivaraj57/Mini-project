@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+    <h1><span class="color_h1" style="color: darkviolet;">SOFTWARE DESIGN STRATEGIES</span></h1><hr>
+    <div>
+        <p>Software design is a process to conceptualize the software requirements into software implementation. Software design takes the user requirements as challenges and tries to find optimum solution. While the software is being conceptualized, a plan is chalked out to find the best possible design for implementing the intended solution.  </p>
+    <p>There are multiple variants of software design. Let us study them briefly:</p>
+    <h2>Structured Design</h2>
+    <p>Structured design is a conceptualization of problem into several well-organized elements of solution.  It is basically concerned with the solution design.  Benefit of structured design is, it gives better understanding of how the problem is being solved.  Structured design also makes it simpler for designer to concentrate on the problem more accurately. </p>
+    <p>Structured design is mostly based on ‘divide and conquer’ strategy where a problem is broken into several small problems and each small problem is individually solved until the whole problem is solved.</p>
+    <p>The small pieces of problem are solved by means of solution modules.  Structured design emphasis that these modules be well organized in order to achieve precise solution.  </p>
+    <p>These modules are arranged in hierarchy. They communicate with each other. A good structured design always follows some rules for communication among multiple modules, namely -</p>
+    <p><b>Cohesion</b> -  grouping of all functionally related elements.</p>
+    <p><b>Coupling</b> - communication between different modules.</p>
+    <p>A good structured design has high cohesion and low coupling arrangements.</p>
+    <h2>Function Oriented Design</h2>
+    <p>In function-oriented design, the system is comprised of many smaller sub-systems known as functions.  These functions are capable of performing significant task in the system. The system is considered as top view of all functions.</p>
+    <p>Function oriented design inherits some properties of structured design where divide and conquer methodology is used.</p>
+    <p>This design mechanism divides the whole system into smaller functions, which provides means of abstraction by concealing the information and their operation.. These functional modules can share information among themselves by means of information passing and using information available globally.</p>
+    <p>Another characteristic of functions is that when a program calls a function, the function changes the state of the program, which sometimes is not acceptable by other modules. Function oriented design works well where the system state does not matter and program/functions work on input rather than on a state.</p>
+    <h3>Design Process</h3>
+    <ul class="list">
+    <li>The whole system is seen as how data flows in the system by means of data flow diagram.</li>
+    <li>DFD depicts  how functions changes data and state of entire system.</li>
+    <li>The entire system is logically broken down into smaller units known as functions on the basis of their operation in the system.</li>
+    <li>Each function is then described at large.</li>
+    </ul>
+    <h2>Object Oriented Design</h2>
+    <p>Object oriented design works around the entities and their characteristics instead of functions involved in the software system.  This design strategies focuses on entities and its characteristics.  The whole concept of software solution revolves around the engaged entities.</p>
+    <p>Let us see the important concepts of Object Oriented Design:</p>
+    <ul class="list">
+    <li><b>Objects - </b>All entities involved in the solution design are known as objects.  For example, person, banks, company and customers are treated as objects.  Every entity has some attributes associated to it and has some methods to perform on the attributes.</li>
+    <li><p><b>Classes - </b>A class is a generalized description of an object.  An object is an instance of a class.  Class defines all the attributes, which an object can have and methods, which defines the functionality of the object.</p>
+    <p>In the solution design, attributes are stored as variables and functionalities are defined by means of methods or procedures.</p></li>
+    <li><b>Encapsulation - </b>In OOD, the attributes (data variables) and methods (operation on the data) are bundled together is called encapsulation. Encapsulation not only bundles important information of an object together, but also restricts access of the data and methods from the outside world. This is called information hiding.</li>
+    <li><b>Inheritance - </b>OOD allows similar classes to stack up in hierarchical manner where the lower or sub-classes can import, implement and re-use allowed variables and methods from their immediate super classes. This property of OOD is known  as inheritance.  This makes it easier to define specific class and to create generalized classes from specific ones.</li>
+    <li><b>Polymorphism - </b>OOD languages provide a mechanism where methods performing similar tasks but vary in arguments, can be assigned same name. This is called polymorphism, which allows a single interface performing tasks for different types.  Depending upon how the function is invoked, respective portion of the code gets executed. </li>
+    </ul>
+    <h3>Design Process</h3>
+    <p>Software design process can be perceived as series of well-defined steps.  Though it varies according to design approach (function oriented or object oriented, yet It may have the following steps involved:</p>
+    <ul class="list">
+    <li>A solution design is created from requirement or previous used system and/or system sequence diagram.</li>
+    <li>Objects are identified and grouped into classes on behalf of similarity in attribute characteristics.</li>
+    <li>Class hierarchy and relation among them is defined.</li>
+    <li>Application framework is defined.</li>
+    </ul>
+    <h2>Software Design Approaches</h2>
+    <p>Here are two generic approaches for software designing:</p>
+    <h3>Top Down Design</h3>
+    <p>We know that a system is composed of more than one sub-systems and it contains a number of components.  Further, these sub-systems and components may have their on set of sub-system and components and creates hierarchical structure in the system.</p>
+    <p>Top-down design takes the whole software system as one entity and then decomposes it to achieve more than one sub-system or component based on some characteristics.  Each sub-system or component is then treated as a system and decomposed further.  This process keeps on running until the lowest level of system in the top-down hierarchy is achieved.</p>
+    <p>Top-down design starts with a generalized model of system and keeps on defining the more specific part of it.  When all components are composed the whole system comes into existence.</p>
+    <p>Top-down design is more suitable when the software solution needs to be designed from scratch and specific details are unknown.</p>
+    <h3>Bottom-up Design</h3>
+    <p>The bottom up design model starts with most specific and basic components.  It proceeds with composing higher level of components by using basic or lower level components. It keeps creating higher level components until the desired system is not evolved as one single component.  With each higher level, the amount of abstraction is increased.</p>
+    <p>Bottom-up strategy is more suitable when a system  needs to be created from some existing system, where the basic primitives can be used in the newer system.</p>
+    <p>Both, top-down and bottom-up approaches are not practical individually. Instead, a good combination of both is used.</p>
+
+    </div>
+    
+</body>
+</html>       

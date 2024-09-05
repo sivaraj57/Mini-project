@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet">
+</head>
+<body>
+
+	<h1>C <span class="color_h1">Introduction</span></h1>
+	<hr>
+	<span><h2>What is C?</h2></span>
+	<p>C is a general-purpose programming language created by Dennis Ritchie at the Bell Laboratories in 1972.</p>
+	<p>C is strongly associated with UNIX,as it was developed to write the UNIX operating system</p>
+	<hr>
+	<h2>Why Learn C?</h2>
+	<ul>
+<li>It is one of the most popular programming language in the world</li>
+  <li>If you know C, you will have no problem learning other popular programming languages such as Java, Python, C++, C#, etc, as the syntax is similar</li>
+  <!--<li>If you know C, you will understand how computer memory works</li>-->
+  <li>C is very fast, compared to other programming languages, like Java and Python</li>
+  <li>C is very versatile; it can be used in both applications and technologies</li>
+</ul>
+ <hr>
+  <h2>Difference between C and C++</h2>
+<ul>
+<li>C++</a> was developed as an extension of C, and both languages have almost the same syntax</li>
+<li>The main difference between C and C++ is that C++ support classes and objects, while C does not</li>
+</ul>
+<h2>Get Started</h2>
+<p>This tutorial will teach you the basics of C.</p>
+<p>It is not necessary to have any prior programming experience.</p>
+<hr>
+<h1>C <span class="color_h1">Syntax</span></h1>
+<hr>
+<h2>Syntax</h2>
+<p>You have already seen the following code a couple of times in the first 
+chapters. Let's break it down to understand it better:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  #include &lt;stdio.<span class="javapropertycolor" style="color:black">h</span>&gt;<br><br><span class="javakeywordcolor" style="color:mediumblue">int</span> main() {<br>&nbsp; printf(<span class="javastringcolor" style="color:brown">"Hello World!"</span>);<br>&nbsp; <span class="javanumbercolor" style="color:red">
+</span>  <span class="javakeywordcolor" style="color:mediumblue">return</span> <span class="javanumbercolor" style="color:red">0</span>;<br>} </span></div>
+</div>
+<p><strong>Line 1:</strong> <code class="w3-codespan">#include &lt;stdio.h&gt;</code> is a 
+<strong>header file library</strong> that lets us work with input and output 
+functions, such as 
+<code class="w3-codespan">printf()</code> (used in line 4). Header files add functionality to C programs.</p>
+<div class="w3-note w3-panel">
+<p>Don't worry if you don't understand how&nbsp; <code class="w3-codespan">#include &lt;stdio.h&gt;</code> works. Just think of it as something that (almost) always appears in your program.</p>
+</div>
+<p><strong>Line 2:</strong> A blank line. C ignores white space. But we use it 
+to make the code more readable.</p>
+<p><strong>Line 3:</strong> Another thing that always appear in a C program, is
+<code class="w3-codespan">main()</code>. This is called a 
+<strong>function</strong>. Any code inside its curly brackets <code class="w3-codespan">{}</code> will be executed.
+</p>
+<p><strong>Line 4:</strong> <code class="w3-codespan">printf()</code> is a 
+<strong>function</strong> used to output/print text to the screen. In our example it will output "Hello World!". </p>
+<div class="w3-note w3-panel">
+<p><strong>Note that:</strong> Every C statement ends with a semicolon <code class="w3-codespan">;</code></p>
+<p><strong>Note:</strong> The body of <code class="w3-codespan">int main()</code> could also been written as:<br>
+<code class="w3-codespan">int main(){printf("Hello World!");return 0;} </code></p>
+<p><strong>Remember:</strong> The compiler ignores white spaces. However, multiple lines makes the code more readable.</p>
+</div>
+<p><strong>Note that:</strong> Every C statement ends with a semicolon <code class="w3-codespan">;</code></p>
+<p><strong>Note:</strong> The body of <code class="w3-codespan">int main()</code> could also been written as:<br>
+<code class="w3-codespan">int main(){printf("Hello World!");return 0;} </code></p>
+<p><strong>Remember:</strong> The compiler ignores white spaces. However, multiple lines makes the code more readable.</p>
+</div>
+<p><strong>Line 5:</strong> <code class="w3-codespan">return 0</code> ends the <code class="w3-codespan">main()</code> function.</p>
+<p><strong>Line 6:</strong> Do not forget to add the closing curly bracket <code class="w3-codespan">}</code> to actually end the 
+main function.</p>
+<br>
+<br>
+<hr>
+<hr>
+
+<h2>Output (Print Text)</h2>
+<p>To output values or print text in C, you can use the <code class="w3-codespan">printf()</code> 
+function:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  #include &lt;stdio.<span class="javapropertycolor" style="color:black">h</span>&gt;<br><br><span class="javakeywordcolor" style="color:mediumblue">int</span> main() {<br>&nbsp; printf(<span class="javastringcolor" style="color:brown">"Hello World!"</span>);<br>&nbsp; <span class="javanumbercolor" style="color:red">
+</span>  <span class="javakeywordcolor" style="color:mediumblue">return</span> <span class="javanumbercolor" style="color:red">0</span>;<br>} </span></div>
+</div>
+
+<p>You can use as many <code class="w3-codespan">printf()</code> functions as you want.
+<strong>However</strong>, note that it does not insert a new line at the end of the output:</p>
+<hr>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  #include &lt;stdio.<span class="javapropertycolor" style="color:black">h</span>&gt;<br><br><span class="javakeywordcolor" style="color:mediumblue">int</span> main() {<br>&nbsp; printf(<span class="javastringcolor" style="color:brown">"Hello World!"</span>);<br>&nbsp; <span class="javanumbercolor" style="color:red">
+</span>  printf(<span class="javastringcolor" style="color:brown">"I am learning C."</span>);<br>&nbsp; <span class="javakeywordcolor" style="color:mediumblue">return</span> <span class="javanumbercolor" style="color:red">0</span>;<br>} </span></div>
+</div>
+<hr>
+ <h1>C <span class="color_h1">Comments</span></h1>
+<hr>
+
+<h2>Comments in C</h2>
+
+<p>Comments can be used to explain code, and to make it more readable. It can also be used to 
+prevent execution when testing alternative code.</p>
+<p>Comments can be <strong>singled-lined</strong> or <strong>multi-lined</strong>.</p>
+<hr>
+
+<h2>Single-line Comments</h2>
+<p>Single-line comments start with two forward slashes (<code class="w3-codespan">//</code>).</p>
+<p>Any text between <code class="w3-codespan">//</code> and the end of the line 
+is ignored by the compiler (will not be executed).</p>
+<p>This example uses a single-line comment before a line of code:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="commentcolor" style="color:green">// This is a comment<br></span>printf(<span class="javastringcolor" style="color:brown">"Hello World!"</span>); </span></div>
+</div>
+
+<p>This example uses a single-line comment at the end of a line of code:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  printf(<span class="javastringcolor" style="color:brown">"Hello World!"</span>); <span class="commentcolor" style="color:green">// This is a comment </span></span></div>
+
+</div>
+
+<hr>
+<h2>C Multi-line Comments</h2>
+
+<p>Multi-line comments start with <code class="w3-codespan">/*</code> and ends with <code class="w3-codespan">*/</code>.</p>
+
+<p>Any text between <code class="w3-codespan">/*</code> and <code class="w3-codespan">*/</code> will be ignored by 
+the compiler:</p>
+
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="commentcolor" style="color:green">/* The code below will print the words Hello World!<br>to the screen, and it is 
+  amazing */</span><br>printf(<span class="javastringcolor" style="color:brown">"Hello World!"</span>); </span></div>
+</div>
+<div class="w3-note w3-panel">
+<h4>Single or multi-line comments?</h4>
+<p>It is up to you which you want to use. Normally, we use <code class="w3-codespan">//</code> for short comments, and <code class="w3-codespan">/* */</code> for longer.</p>
+<p><strong>Good to know:</strong> Before version <strong>C99</strong> (released in 1999), you could only use multi-line comments in C.</p>
+</div>
+<hr>
+<h1>C <span class="color_h1">Variables</span></h1>
+
+<hr>
+
+<p>Variables are containers for storing data values, like numbers and 
+characters.</p>
+<p>In C, there are different <strong>types</strong> of variables (defined with different keywords), for example:</p>
+
+<ul>
+ <li><code class="w3-codespan">int</code> - stores integers (whole numbers), without decimals, such as <code class="w3-codespan">123</code> or <code class="w3-codespan">-123</code></li>
+ <li><code class="w3-codespan">float</code> - stores floating point numbers, with decimals, such as <code class="w3-codespan">19.99</code> or <code class="w3-codespan">-19.99</code></li>
+ <li><code class="w3-codespan">char</code> - stores single characters, such as <code class="w3-codespan">'a'</code> or <code class="w3-codespan">'B'</code>. 
+ Char values are surrounded by <strong>single quotes</strong></li>
+</ul>
+<hr>
+<h2>Declaring (Creating) Variables</h2>
+<p>To create a variable, specify the <strong>type</strong> and assign it a 
+<strong>value</strong>:</p>
+<div class="w3-example">
+<h3>Syntax</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <em>type</em> <em>variableName</em> = <em>value</em>; </span></div>
+</div>
+<p>Where <em>type</em> is one of C types (such as <code class="w3-codespan">int</code>), and 
+<em>variableName</em> is the name of the variable (such as <strong>x</strong> or
+<strong>myName</strong>). The <b>equal sign</b> is used to assign a value to the variable.</p>
+
+<p>So, to create a variable that should <strong>store a number</strong>, look at the following example:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Create a variable called <strong>myNum</strong> of type <code class="w3-codespan">int</code> and assign the value <strong>15</strong> 
+to it:</p>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="javakeywordcolor" style="color:mediumblue">int</span> myNum = <span class="javanumbercolor" style="color:red">15</span>; </span></div>
+</div>
+
+<p>You can also declare a variable without assigning the value, and assign the value later:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="commentcolor" style="color:green">// Declare a variable<br></span><span class="javakeywordcolor" style="color:mediumblue">int</span> myNum;<br><br><span class="commentcolor" style="color:green">// Assign a value to the variable<br></span>myNum = <span class="javanumbercolor" style="color:red">15</span>; </span></div>
+</div>
+<hr>
+
+<h2>Output Variables</h2>
+<p>You learned from the <a >output chapter</a> that you can output values/print text with the <code class="w3-codespan">printf()</code> function:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  printf(<span class="javastringcolor" style="color:brown">"Hello World!"</span>); </span></div>
+
+</div>
+
+<p>In many other programming languages (like <a >Python</a>, <a>Java</a>, and <a >C++</a>), you would normally use a 
+<strong>print function</strong> to display the value of a variable. However, this is not possible in C:</p>
+
+<div class="w3-example w3-pale-red">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh w3-border-red"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="javakeywordcolor" style="color:mediumblue">int</span> myNum = <span class="javanumbercolor" style="color:red">15</span>;<br>printf(myNum);&nbsp; <span class="commentcolor" style="color:green">// Nothing happens </span></span></div>
+
+
+<p>To output variables in C, you must get familiar with something called "format specifiers".</p>
+
+<hr>
+
+<h2>Format Specifiers</h2>
+<p>Format specifiers are used together with the <code class="w3-codespan">printf()</code> 
+function to tell the compiler what type of data the variable is storing. It is 
+basically a placeholder for the variable value.</p>
+<p>A format specifier starts 
+with a percentage sign <code class="w3-codespan">%</code>, followed by a character.</p>
+<p>For example, to output the value of an <code class="w3-codespan">int</code> variable, 
+you must use the format 
+specifier <code class="w3-codespan">%d</code> or <code class="w3-codespan">%i</code> 
+surrounded by double quotes, 
+inside the <code class="w3-codespan">printf()</code> function:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="javakeywordcolor" style="color:mediumblue">int</span> myNum = <span class="javanumbercolor" style="color:red">15</span>;<br>printf(<span class="javastringcolor" style="color:brown">"%d"</span>, myNum);&nbsp; <span class="commentcolor" style="color:green"></span></div>
+
+<p>To print other types, use <code class="w3-codespan">%c</code> for <code class="w3-codespan">char</code> and <code class="w3-codespan">%f</code> for <code class="w3-codespan">float</code>:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="commentcolor" style="color:green">// Create variables<br></span><span class="javakeywordcolor" style="color:mediumblue">int</span> myNum = <span class="javanumbercolor" style="color:red">15</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="commentcolor" style="color:green">// Integer (whole number)<br></span><span class="javakeywordcolor" style="color:mediumblue">float</span> <span class="javanumbercolor" style="color:red">
+</span>  myFloatNum = <span class="javanumbercolor" style="color:red">5.99</span>;&nbsp;&nbsp; <span class="commentcolor" style="color:green">// Floating point number<br></span><span class="javakeywordcolor" style="color:mediumblue">char</span> myLetter = <span class="javastringcolor" style="color:brown">'D'</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="commentcolor" style="color:green">// 
+  Character<br></span><br><span class="commentcolor" style="color:green">// Print variables<br></span>printf(<span class="javastringcolor" style="color:brown">"%d\n"</span>, myNum);<br><span class="javanumbercolor" style="color:red">
+</span>  printf(<span class="javastringcolor" style="color:brown">"%f\n"</span>, myFloatNum);<br>printf(<span class="javastringcolor" style="color:brown">"%c\n"</span>, myLetter); </span></div>
+</div>
+
+<p>To combine both text and a variable, separate them with a comma inside the <code class="w3-codespan">
+printf()</code> function:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="javakeywordcolor" style="color:mediumblue">int</span> myNum = <span class="javanumbercolor" style="color:red">15</span>;<br>printf(<span class="javastringcolor" style="color:brown">"My favorite number is: %d"</span>, myNum); </span></div>
+
+</div>
+
+<p>To print different types in a single <code class="w3-codespan">printf()</code> function, you can use the 
+following:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="javakeywordcolor" style="color:mediumblue">int</span> myNum = <span class="javanumbercolor" style="color:red">15</span>;<br><span class="javakeywordcolor" style="color:mediumblue">char</span> myLetter = <span class="javastringcolor" style="color:brown">'D'</span>;<br>printf(<span class="javastringcolor" style="color:brown">"My number is %d and my 
+  letter is %c"</span>, myNum, myLetter); </span></div>
+
+</div>
+
+<div class="w3-note w3-panel">
+<p>You will learn more about <a>Data Types in the next chapter</a>.</p>
+</div>
+<hr>
+
+<h2>Change Variable Values</h2>
+<p><strong>Note:</strong> If you assign a new value to an existing variable, it will overwrite the previous value:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="javakeywordcolor" style="color:mediumblue">int</span> myNum = <span class="javanumbercolor" style="color:red">15</span>;&nbsp;&nbsp;<span class="commentcolor" style="color:green">// myNum is 15<br></span>myNum = <span class="javanumbercolor" style="color:red">10</span>;&nbsp; <span class="commentcolor" style="color:green">// Now myNum is 10 </span></span></div>
+</div>
+
+<p>You can also assign the value of one variable to another:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="javakeywordcolor" style="color:mediumblue">int</span> myNum = <span class="javanumbercolor" style="color:red">15</span>;<br><br><span class="javakeywordcolor" style="color:mediumblue">int</span> myOtherNum = <span class="javanumbercolor" style="color:red">23</span>;<br><br><span class="commentcolor" style="color:green">// Assign the value of 
+  myOtherNum (23) to myNum<br></span>myNum = myOtherNum;<br><br><span class="commentcolor" style="color:green">// myNum is now 23, 
+  instead of 15<br></span>printf(<span class="javastringcolor" style="color:brown">"%d"</span>, myNum); </span></div>
+
+</div>
+<!--
+<p>Or copy the value of one variable and assign it to a variable without a 
+value:</p>-->
+<p>Or copy values to empty variables:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="commentcolor" style="color:green">// Create a variable and assign the value 15 to it<br></span><span class="javakeywordcolor" style="color:mediumblue">int</span> myNum = <span class="javanumbercolor" style="color:red">15</span>;<br><br><span class="javanumbercolor" style="color:red">
+</span>  <span class="commentcolor" style="color:green">// Declare a variable without assigning it a value<br></span><span class="javakeywordcolor" style="color:mediumblue">int</span> myOtherNum;<br><br><span class="javanumbercolor" style="color:red">
+</span>  <span class="commentcolor" style="color:green">// Assign the value of myNum to myOtherNum<br></span>myOtherNum = myNum;<br><br><span class="commentcolor" style="color:green">// 
+  myOtherNum now has 15 as a value<br></span>printf(<span class="javastringcolor" style="color:brown">"%d"</span>, myOtherNum); </span></div>
+
+</div>
+
+<hr>
+<h2>Add Variables Together</h2>
+
+<p>To add a variable to another variable, you can use the <code class="w3-codespan">+</code> 
+operator:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="javakeywordcolor" style="color:mediumblue">int</span> x = <span class="javanumbercolor" style="color:red">5</span>;<br><span class="javakeywordcolor" style="color:mediumblue">int</span> y = <span class="javanumbercolor" style="color:red">6</span>;<br><span class="javakeywordcolor" style="color:mediumblue">int</span> sum = x + y;<br>printf(<span class="javastringcolor" style="color:brown">"%d"</span>, sum); </span></div>
+
+</div>
+<hr>
+
+<h2>Declare Multiple Variables</h2>
+
+<p>To declare more than one variable of the same type, use a <strong>comma-separated</strong> list:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="javakeywordcolor" style="color:mediumblue">int</span> x = <span class="javanumbercolor" style="color:red">5</span>, y = <span class="javanumbercolor" style="color:red">6</span>, z = <span class="javanumbercolor" style="color:red">50</span>;<br>printf(<span class="javastringcolor" style="color:brown">"%d"</span>, x + y + z); </span></div>
+</div>
+
+<p>You can also assign the <strong>same value</strong> to multiple variables of the same type:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="javakeywordcolor" style="color:mediumblue">int</span> x, y, z;<br>x = y = z = <span class="javanumbercolor" style="color:red">50</span>;<br>printf(<span class="javastringcolor" style="color:brown">"%d"</span>, x + y + z); </span></div>
+</div>
+
+<hr>
+
+
+<h2>C Variable Names</h2>
+<p>All C <strong>variables</strong> must be
+<strong>identified</strong> with <strong>unique names</strong>.</p>
+<p>These unique names are called <strong>identifiers</strong>.</p>
+
+<p>Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).</p>
+<p><strong>Note:</strong> It is recommended to use descriptive names in order to 
+create understandable and maintainable code:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="commentcolor" style="color:green">// Good<br></span><span class="javakeywordcolor" style="color:mediumblue">int</span> minutesPerHour = <span class="javanumbercolor" style="color:red">60</span>;<br><br><span class="commentcolor" style="color:green">// OK, but not so easy to 
+  understand what <strong>m</strong> actually is<br></span><span class="javakeywordcolor" style="color:mediumblue">int</span>  <span class="javanumbercolor" style="color:red">
+</span>  m = <span class="javanumbercolor" style="color:red">60</span>;<br> </span></div>
+</div>
+
+<p>The<strong> general rules </strong>for naming variables are:</p>
+<ul>
+  <li>Names can contain letters, digits and underscores</li>
+  <li>Names must begin with a letter or an underscore (_)</li>
+  <li>Names are case sensitive (<code class="w3-codespan">myVar</code> and <code class="w3-codespan">myvar</code> are different variables)</li>
+  <li>Names cannot contain whitespaces or special characters like !, #, %, etc.</li>
+   <li>Reserved words (such as <code class="w3-codespan">int</code>) cannot be used as names</li>
+</ul>
+
+
+<hr>
+
+<h2>Real-Life Example</h2>
+<p>Often in our examples, we simplify variable names to match their data type (myInt 
+or myNum for <code class="w3-codespan">int</code> types, myChar for <code class="w3-codespan">char</code> types etc). This is done to avoid confusion. </p>
+<p>However, if you want a real-life example on how variables can be used, take a look at the following, where we have made a program that stores different data 
+of a college student:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate javaHigh"><span class="javacolor" style="color:black"><span class="javanumbercolor" style="color:red">
+</span>  <span class="commentcolor" style="color:green">// Student data<br></span><span class="javakeywordcolor" style="color:mediumblue">int</span> studentID = <span class="javanumbercolor" style="color:red">15</span>;<br><span class="javakeywordcolor" style="color:mediumblue">int</span> studentAge = <span class="javanumbercolor" style="color:red">23</span>;<br><span class="javakeywordcolor" style="color:mediumblue">float</span> <span class="javanumbercolor" style="color:red">
+</span>  studentFee = <span class="javanumbercolor" style="color:red">75.25</span>;<br><span class="javakeywordcolor" style="color:mediumblue">char</span> studentGrade = <span class="javastringcolor" style="color:brown">'B'</span>;<br><br><span class="commentcolor" style="color:green">// Print variables<br></span><span class="javanumbercolor" style="color:red">
+</span>  printf(<span class="javastringcolor" style="color:brown">"Student id: %d\n"</span>, studentID);<br>printf(<span class="javastringcolor" style="color:brown">"Student age: %d\n"</span>, <span class="javanumbercolor" style="color:red">
+</span>  studentAge);<br>printf(<span class="javastringcolor" style="color:brown">"Student fee: %f\n"</span>, studentFee);<br>printf(<span class="javastringcolor" style="color:brown">"Student 
+  grade: %c"</span>, studentGrade); </span></div>
+</div>
+<hr>
+</body>
+</html>

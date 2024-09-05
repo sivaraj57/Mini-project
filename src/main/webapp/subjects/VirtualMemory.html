@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+	<h1><span class="color_h1">Virtual Memory</span></h1>
+    <p>In this chapter, you will gather knowledge about what virtual memory is and how they are being managed within the operating system, along with its working. Virtual memory is a technical concept that lets the execution of different processes which are not totally in memory. One main benefit of this method is that programs can be larger than the physical memory.</p>
+    <p>Also, virtual memory abstracts primary memory into a very large, consistent array of storage that divides logical memory as viewed by the user from that of physical memory. This technique is used to free programmers from the anxiety of memory-storage limitations.</p>
+    <hr>
+    <h2>Uses of Virtual Memory</h2>
+    <p>Virtual memory also permits processes for sharing files easily and for implementing shared memory. Moreover, it offers a well-organized mechanism for process creation. Virtual memory is not that easy to apply and execute. However, this technique may substantially decrease performance if it is not utilized carefully.</p>
+    <hr>
+    <h2>What is Virtual Address Space(VAS)?</h2>
+    <p>The virtual address space of any process is defined as the logical (or virtual) view of how any process gets stored in memory. Normally, this view is where a process begins at a certain logical address — say, addresses location 0—and then exists in contiguous memory. Although, the fact is physical memory might be structured in the form of page frames arid where the physical page frames are assigned to a process that may not be adjacent to each other. It depends on to the memory management unit (MMU) which maps logical pages to physical page frames in memory.</p>
+    <hr>
+    <h2>The Concept of Demand Paging</h2>
+    <p>Think of how an executable program could have loaded from within a disk into its memory. One choice would be to load the complete program in physical memory at a program at the time of execution. However, there is a problem with this approach, which you may not at first need the entire program in memory. So the memory gets occupied unnecessarily.</p>
+    <p>An alternative way is to load pages only when they are needed/required initially. This method is termed as demand paging and is commonly utilized in virtual memory systems. Using this demand-paged virtual memory, pages gets only loaded as they are demanded at the time of program execution; pages which are never accessed will never load into physical memory.</p>
+    <p>A demand - paging scheme is similar to a paging system with swapping feature where processes exist in secondary memory (typically in a disk). As you want to execute any process, you swap it into memory internally. Rather than swapping the complete process into memory, you can use a "lazy swapper." A "lazy swapper" in no way swaps a page into memory unnecessarily unless that page required for execution.    </p>
+    <hr>
+    <h2>Hardware Required for the Concept of Demand Paging</h2>
+    <p>The hardware required for supporting demand paging is the same that is required for paging and swapping:
+        <ul>
+            <li><i><u><b>Page table:</b></u></i>Page table can mark an entry invalid or unacceptable using a valid-invalid bit.</li>
+            <li><i><u><b>Secondary memory:</b></u></i>Secondary memory retains those pages which are not there in main memory. The secondary memory is generally a high-speed disk. It is also known as a swap device, and the segment of disk used for this purpose is termed as swap space.            </li>
+        </ul>
+    </p>
+</body>
+</html>

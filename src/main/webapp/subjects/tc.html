@@ -1,0 +1,196 @@
+<!DOCTYPE html><html>
+    <body>
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">TRANSACTION AND CONCURRENCY</span></h1>
+    
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Transaction</span></h1>
+        <hr>
+        <div>
+            <p>A transaction can be defined as a group of tasks. A single task is the minimum processing unit which cannot be divided further.</p>
+            <p>Let’s take an example of a simple transaction. Suppose a bank employee transfers Rs 500 from A's account to B's account. This very simple and small transaction involves several low-level tasks.</p>
+            <p><b>A’s Account</b></p>
+            <pre class="result notranslate">Open_Account(A)
+            Old_Balance = A.balance
+            New_Balance = Old_Balance - 500
+            A.balance = New_Balance
+            Close_Account(A)
+            </pre>
+            <p><b>B’s Account</b></p>
+            <pre class="result notranslate">Open_Account(B)
+            Old_Balance = B.balance
+            New_Balance = Old_Balance + 500
+            B.balance = New_Balance
+            Close_Account(B)
+            </pre>
+            <h2>ACID Properties</h2>
+            <p>A transaction is a very small unit of a program and it may contain several lowlevel tasks. A transaction in a database system must maintain <b>A</b>tomicity, <b>C</b>onsistency, <b>I</b>solation, and <b>D</b>urability − commonly known as ACID properties − in order to ensure accuracy, completeness, and data integrity.</p>
+            <ul class="list">
+            <li><p><b>Atomicity</b> − This property states that a transaction must be treated as an atomic unit, that is, either all of its operations are executed or none. There must be no state in a database where a transaction is left partially completed. States should be defined either before the execution of the transaction or after the execution/abortion/failure of the transaction.</p></li>
+            <li><p><b>Consistency</b> − The database must remain in a consistent state after any transaction. No transaction should have any adverse effect on the data residing in the database. If the database was in a consistent state before the execution of a transaction, it must remain consistent after the execution of the transaction as well.</p></li>
+            <li><p><b>Durability</b> − The database should be durable enough to hold all its latest updates even if the system fails or restarts. If a transaction updates a chunk of data in a database and commits, then the database will hold the modified data. If a transaction commits but the system fails before the data could be written on to the disk, then that data will be updated once the system springs back into action.</p></li>
+            <li><p><b>Isolation</b> − In a database system where more than one transaction are being executed simultaneously and in parallel, the property of isolation states that all the transactions will be carried out and executed as if it is the only transaction in the system. No transaction will affect the existence of any other transaction.</p></li>
+            </ul>
+            <h2>Serializability</h2>
+            <p>When multiple transactions are being executed by the operating system in a multiprogramming environment, there are possibilities that instructions of one transactions are interleaved with some other transaction.</p>
+            <ul class="list">
+            <li><p><b>Schedule</b> − A chronological execution sequence of a transaction is called a schedule. A schedule can have many transactions in it, each comprising of a number of instructions/tasks.</p></li>
+            <li><p><b>Serial Schedule</b> − It is a schedule in which transactions are aligned in such a way that one transaction is executed first. When the first transaction completes its cycle, then the next transaction is executed. Transactions are ordered one after the other. This type of schedule is called a serial schedule, as transactions are executed in a serial manner.</p></li>
+            </ul>
+            <p>In a multi-transaction environment, serial schedules are considered as a benchmark. The execution sequence of an instruction in a transaction cannot be changed, but two transactions can have their instructions executed in a random fashion. This execution does no harm if two transactions are mutually independent and working on different segments of data; but in case these two transactions are working on the same data, then the results may vary. This ever-varying result may bring the database to an inconsistent state.</p>
+            <p>To resolve this problem, we allow parallel execution of a transaction schedule, if its transactions are either serializable or have some equivalence relation among them.</p>
+            <h2>Equivalence Schedules</h2>
+            <p>An equivalence schedule can be of the following types −</p>
+            <h3>Result Equivalence</h3>
+            <p>If two schedules produce the same result after execution, they are said to be result equivalent. They may yield the same result for some value and different results for another set of values. That's why this equivalence is not generally considered significant.</p>
+            <h3>View Equivalence</h3>
+            <p>Two schedules would be view equivalence if the transactions in both the schedules perform similar actions in a similar manner.</p>
+            <p>For example −</p>
+            <ul class="list">
+            <li><p>If T reads the initial data in S1, then it also reads the initial data in S2.</p></li>
+            <li><p>If T reads the value written by J in S1, then it also reads the value written by J in S2.</p></li>
+            <li><p>If T performs the final write on the data value in S1, then it also performs the final write on the data value in S2.</p></li>
+            </ul>
+            <h3>Conflict Equivalence</h3>
+            <p>Two schedules would be conflicting if they have the following properties −</p>
+            <ul class="list">
+            <li>Both belong to separate transactions.</li>
+            <li>Both accesses the same data item.</li>
+            <li>At least one of them is "write" operation.</li>
+            </ul>
+            <p>Two schedules having multiple transactions with conflicting operations are said to be conflict equivalent if and only if −</p>
+            <ul class="list">
+            <li>Both the schedules contain the same set of Transactions.</li>
+            <li>The order of conflicting pairs of operation is maintained in both the schedules.</li>
+            </ul>
+            <p><b>Note</b> − View equivalent schedules are view serializable and conflict equivalent schedules are conflict serializable. All conflict serializable schedules are view serializable too.</p>
+            <h2>States of Transactions</h2>
+            <p>A transaction in a database can be in one of the following states −</p>
+            <img src="/dbms/images/transaction_states.png" alt="Transaction States">
+            <ul class="list">
+            <li><p><b>Active</b> − In this state, the transaction is being executed. This is the initial state of every transaction.</p></li>
+            <li><p><b>Partially Committed</b> − When a transaction executes its final operation, it is said to be in a partially committed state.</p></li>
+            <li><p><b>Failed</b> − A transaction is said to be in a failed state if any of the checks made by the database recovery system fails. A failed transaction can no longer proceed further.</p></li>
+            <li><p><b>Aborted</b> − If any of the checks fails and the transaction has reached a failed state, then the recovery manager rolls back all its write operations on the database to bring the database back to its original state where it was prior to the execution of the transaction. Transactions in this state are called aborted. The database recovery module can select one of the two operations after a transaction aborts −</p>
+            <ul class="list">
+            <li>Re-start the transaction</li>
+            <li>Kill the transaction</li>
+            </ul>
+            </li>
+            <li><p><b>Committed</b> − If a transaction executes all its operations successfully, it is said to be committed. All its effects are now permanently established on the database system.</p></li>
+            </ul>
+        </div>
+        <hr>
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">concurrency Control</span></h1>
+        <hr>
+        <div>
+            <p>In a multiprogramming environment where multiple transactions can be executed simultaneously, it is highly important to control the concurrency of transactions. We have concurrency control protocols to ensure atomicity, isolation, and serializability of concurrent transactions. Concurrency control protocols can be broadly divided into two categories −</p>
+            <ul class="list">
+            <li>Lock based protocols</li>
+            <li>Time stamp based protocols</li>
+            </ul>
+            <h2>Lock-based Protocols</h2>
+            <p>Database systems equipped with lock-based protocols use a mechanism by which any transaction cannot read or write data until it acquires an appropriate lock on it. Locks are of two kinds −</p>
+            <ul class="list">  
+            <li><p><b>Binary Locks</b> − A lock on a data item can be in two states; it is either locked or unlocked.</p></li>
+            <li><p><b>Shared/exclusive</b> − This type of locking mechanism differentiates the locks based on their uses. If a lock is acquired on a data item to perform a write operation, it is an exclusive lock. Allowing more than one transaction to write on the same data item would lead the database into an inconsistent state. Read locks are shared because no data value is being changed.</p></li>
+            </ul>
+            <p>There are four types of lock protocols available −</p>
+            <h3>Simplistic Lock Protocol</h3>
+            <p>Simplistic lock-based protocols allow transactions to obtain a lock on every object before a 'write' operation is performed. Transactions may unlock the data item after completing the ‘write’ operation.</p>
+            <h3>Pre-claiming Lock Protocol</h3>
+            <p>Pre-claiming protocols evaluate their operations and create a list of data items on which they need locks. Before initiating an execution, the transaction requests the system for all the locks it needs beforehand. If all the locks are granted, the transaction executes and releases all the locks when all its operations are over. If all the locks are not granted, the transaction rolls back and waits until all the locks are granted.</p>
+            <img src="/dbms/images/pre_claiming.png" alt="Pre-claiming">
+            <h3>Two-Phase Locking 2PL</h3>
+            <p>This locking protocol divides the execution phase of a transaction into three parts. In the first part, when the transaction starts executing, it seeks permission for the locks it requires. The second part is where the transaction acquires all the locks. As soon as the transaction releases its first lock, the third phase starts. In this phase, the transaction cannot demand any new locks; it only releases the acquired locks.</p>
+            <img src="/dbms/images/2PL.png" alt="Two Phase Locking">
+            <p>Two-phase locking has two phases, one is <b>growing</b>, where all the locks are being acquired by the transaction; and the second phase is shrinking, where the locks held by the transaction are being released.</p>
+            <p>To claim an exclusive (write) lock, a transaction must first acquire a shared (read) lock and then upgrade it to an exclusive lock.</p>
+            <h3>Strict Two-Phase Locking</h3>
+            <p>The first phase of Strict-2PL is same as 2PL. After acquiring all the locks in the first phase, the transaction continues to execute normally. But in contrast to 2PL, Strict-2PL does not release a lock after using it. Strict-2PL holds all the locks until the commit point and releases all the locks at a time.</p>
+            <img src="/dbms/images/strict_2PL.png" alt="Strict Two Phase Locking">
+            <p>Strict-2PL does not have cascading abort as 2PL does.</p>
+            <h2>Timestamp-based Protocols</h2>
+            <p>The most commonly used concurrency protocol is the timestamp based protocol. This protocol uses either system time or logical counter as a timestamp.</p>
+            <p>Lock-based protocols manage the order between the conflicting pairs among transactions at the time of execution, whereas timestamp-based protocols start working as soon as a transaction is created.</p>
+            <p>Every transaction has a timestamp associated with it, and the ordering is determined by the age of the transaction. A transaction created at 0002 clock time would be older than all other transactions that come after it. For example, any transaction 'y' entering the system at 0004 is two seconds younger and the priority would be given to the older one.</p>
+            <p>In addition, every data item is given the latest read and write-timestamp. This lets the system know when the last ‘read and write’ operation was performed on the data item.</p>
+            <h2>Timestamp Ordering Protocol</h2>
+            <p>The timestamp-ordering protocol ensures serializability among transactions in their conflicting read and write operations. This is the responsibility of the protocol system that the conflicting pair of tasks should be executed according to the timestamp values of the transactions.</p>
+            <ul class="list">
+            <li>The timestamp of transaction T<sub><small>i</small></sub> is denoted as TS(T<sub><small>i</small></sub>).</li>
+            <li>Read time-stamp of data-item X is denoted by R-timestamp(X).</li>
+            <li>Write time-stamp of data-item X is denoted by W-timestamp(X).</li>
+            </ul>
+            <p>Timestamp ordering protocol works as follows −</p>
+            <ul class="list">
+            <li><p><b>If a transaction Ti issues a read(X) operation −</b></p></li>
+            <ul class="list">
+            <li>If TS(Ti) &lt; W-timestamp(X)
+            <ul class="list">
+            <li>Operation rejected.</li>
+            </ul>
+            </li>
+            <li>If TS(Ti) &gt;= W-timestamp(X)
+            <ul class="list">
+            <li>Operation executed.</li>
+            </ul>
+            </li>
+            <li>All data-item timestamps updated.</li>
+            </ul>
+            <li><p><b>If a transaction Ti issues a write(X) operation −</b></p></li>
+            <ul class="list">
+            <li>If TS(Ti) &lt; R-timestamp(X)</li>
+            <ul class="list">
+            <li>Operation rejected.</li>
+            </ul>
+            <li>If TS(Ti) &lt; W-timestamp(X)</li>
+            <ul class="list">
+            <li>Operation rejected and Ti rolled back.</li>
+            </ul>
+            <li>Otherwise, operation executed.</li>
+            </ul>
+            </ul>
+            <h3>Thomas' Write Rule</h3>
+            <p>This rule states if TS(Ti) &lt; W-timestamp(X), then the operation is rejected and T<sub><small>i</small></sub> is rolled back.</p>
+            <p>Time-stamp ordering rules can be modified to make the schedule view serializable.</p>
+            <p>Instead of making T<sub><small>i</small></sub> rolled back, the 'write' operation itself is ignored.</p>
+        </div>
+        <hr>
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Deadlock</span></h1>
+        <hr>
+        <div>
+            <p>In a multi-process system, deadlock is an unwanted situation that arises in a shared resource environment, where a process indefinitely waits for a resource that is held by another process.</p>
+            <p>For example, assume a set of transactions {T<sub><small>0</small></sub>, T<sub><small>1</small></sub>, T<sub><small>2</small></sub>, ...,T<sub><small>n</small></sub>}.  T<sub><small>0</small></sub> needs a resource X to complete its task.  Resource X is held by T<sub><small>1</small></sub>, and T<sub><small>1</small></sub> is waiting for a resource Y, which is held by T<sub><small>2</small></sub>.  T<sub><small>2</small></sub> is waiting for resource Z, which is held by T<sub><small>0</small></sub>.  Thus, all the processes wait for each other to release resources. In this situation, none of the processes can finish their task. This situation is known as a deadlock.</p>
+            <p>Deadlocks are not healthy for a system. In case a system is stuck in a deadlock, the transactions involved in the deadlock are either rolled back or restarted.</p>
+            <h2>Deadlock Prevention</h2>
+            <p>To prevent any deadlock situation in the system, the DBMS aggressively inspects all the operations, where transactions are about to execute. The DBMS inspects the operations and analyzes if they can create a deadlock situation. If it finds that a deadlock situation might occur, then that transaction is never allowed to be executed.</p>
+            <p>There are deadlock prevention schemes that use timestamp ordering mechanism of transactions in order to predetermine a deadlock situation.</p>
+            <h3>Wait-Die Scheme</h3>
+            <p>In this scheme, if a transaction requests to lock a resource (data item), which is already held with a conflicting lock by another transaction, then one of the two possibilities may occur −</p>
+            <ul class="list">
+            <li><p>If TS(T<sub><small>i</small></sub>) &lt; TS(T<sub><small>j</small></sub>) − that is T<sub><small>i</small></sub>, which is requesting a conflicting lock, is older than T<sub><small>j</small></sub> − then  T<sub><small>i</small></sub> is allowed to wait until the data-item is available.</p></li>
+            <li><p>If TS(T<sub><small>i</small></sub>) &gt; TS(t<sub><small>j</small></sub>) − that is T<sub><small>i</small></sub> is younger than T<sub><small>j</small></sub> − then T<sub><small>i</small></sub> dies.  T<sub><small>i</small></sub> is restarted later with a random delay but with the same timestamp.</p></li>
+            </ul>
+            <p>This scheme allows the older transaction to wait but kills the younger one.</p>
+            <h3>Wound-Wait Scheme</h3>
+            <p>In this scheme, if a transaction requests to lock a resource (data item), which is already held with conflicting lock by some another transaction, one of the two possibilities may occur −</p>
+            <ul class="list">
+            <li><p>If TS(T<sub><small>i</small></sub>) &lt; TS(T<sub><small>j</small></sub>), then T<sub><small>i</small></sub> forces T<sub><small>j</small></sub> to be rolled back − that is T<sub><small>i</small></sub> wounds T<sub><small>j</small></sub>. T<sub><small>j</small></sub> is restarted later with a random delay but with the same timestamp.</p></li>
+            <li><p>If TS(T<sub><small>i</small></sub>) &gt; TS(T<sub><small>j</small></sub>), then T<sub><small>i</small></sub> is forced to wait until the resource is available.</p></li>
+            </ul>
+            <p>This scheme, allows the younger transaction to wait; but when an older transaction requests an item held by a younger one, the older transaction forces the younger one to abort and release the item.</p>
+            <p>In both the cases, the transaction that enters the system at a later stage is aborted.</p>
+            <h2>Deadlock Avoidance</h2>
+            <p>Aborting a transaction is not always a practical approach. Instead, deadlock avoidance mechanisms can be used to detect any deadlock situation in advance. Methods like "wait-for graph" are available but they are suitable for only those systems where transactions are lightweight having fewer instances of resource. In a bulky system, deadlock prevention techniques may work well.</p>
+            <h3>Wait-for Graph</h3>
+            <p>This is a simple method available to track if any deadlock situation may arise. For each transaction entering into the system, a node is created. When a transaction T<sub><small>i</small></sub> requests for a lock on an item, say X, which is held by some other transaction T<sub><small>j</small></sub>, a directed edge is created from T<sub><small>i</small></sub> to T<sub><small>j</small></sub>. If T<sub><small>j</small></sub> releases item X, the edge between them is dropped and T<sub><small>i</small></sub> locks the data item.</p>
+            <p>The system maintains this wait-for graph for every transaction waiting for some data items held by others. The system keeps checking if there's any cycle in the graph.</p>
+            <img src="/dbms/images/wait_for_graph.png" alt="Wait-for Graph"> 
+            <p>Here, we can use any of the two following approaches −</p>
+            <ul class="list">
+            <li><p>First, do not allow any request for an item, which is already locked by another transaction. This is not always feasible and may cause starvation, where a transaction indefinitely waits for a data item and can never acquire it.</p></li>
+            <li><p>The second option is to roll back one of the transactions. It is not always feasible to roll back the younger transaction, as it may be important than the older one. With the help of some relative algorithm, a transaction is chosen, which is to be aborted. This transaction is known as the <b>victim</b> and the process is known as <b>victim selection</b>.</p></li>
+            </ul>
+        </div>
+        <hr>
+    </body>
+</html>

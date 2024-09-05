@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+    <h1>Introduction to Java</h1>
+    <p>Java is a high-level, object-oriented programming language that was created by James Gosling at Sun Microsystems (now owned by Oracle Corporation) in the mid-1990s. It is known for its platform independence, which means that Java code can run on any platform that has a Java Virtual Machine (JVM) installed, making it a popular choice for building cross-platform applications.</p>
+
+    <p>Java's key features include:</p>
+    
+    <ul>
+        <li><strong>Platform Independence:</strong> Java programs are compiled into bytecode, which can be executed on any system with a compatible JVM.</li>
+        <li><strong>Object-Oriented:</strong> Java is based on the object-oriented programming (OOP) paradigm, promoting code reusability and maintainability.</li>
+        <li><strong>Robust:</strong> Java has built-in memory management, exception handling, and strong type-checking, making it a robust language.</li>
+        <li><strong>Multi-threaded:</strong> Java supports concurrent programming, allowing you to create applications that can perform multiple tasks simultaneously.</li>
+        <li><strong>Rich Standard Library:</strong> Java comes with a vast standard library that provides pre-built classes and methods for various tasks.</li>
+    </ul>
+
+    <p>Java is widely used in a variety of applications, including web development (Java EE), Android app development (Android SDK), desktop applications (Java SE), and more. It has a large and active developer community, which contributes to its continued growth and evolution.</p>
+
+    <p>Learning Java can open up opportunities in software development, as it is used in many industries and for various types of projects.</p>
+<hr>
+
+    <h1>Java Syntax</h1>
+    <p>Java syntax refers to the set of rules and conventions that govern how Java programs are written. It defines how you should structure your code to create valid and functional Java applications. Here are some essential aspects of Java syntax:</p>
+
+    <h2>1. Statements</h2>
+    <p>In Java, statements are the building blocks of code. Each statement typically ends with a semicolon (;). Common types of statements include variable declarations, assignments, method calls, and control flow statements like if, for, and while loops.</p>
+
+    <h2>2. Variables and Data Types</h2>
+    <p>Java is a statically-typed language, which means you must declare the data type of a variable when you define it. Common data types in Java include int, double, String, boolean, and many more. Variables must also follow naming conventions and cannot start with a digit.</p>
+
+    <h2>3. Comments</h2>
+    <p>Comments are used to annotate code for documentation or to provide explanations. Java supports both single-line comments using "//" and multi-line comments using "/* */".</p>
+
+    <h2>4. Classes and Objects</h2>
+    <p>Java is an object-oriented language, and programs are typically organized into classes and objects. Classes define the blueprint for objects, and objects are instances of classes. The main method, "public static void main(String[] args)," is the entry point for Java applications.</p>
+
+    <h2>5. Method Declaration</h2>
+    <p>Methods are functions in Java that perform specific tasks. You declare a method using a method signature, which includes the return type, method name, and parameters. For example:</p>
+    <pre>
+        <code>
+public int add(int num1, int num2) {
+    return num1 + num2;
+}
+        </code>
+    </pre>
+
+    <h2>6. Control Flow</h2>
+    <p>Control flow statements like "if," "for," and "while" allow you to create conditional and looping structures in your code. These statements help control the flow of execution.</p>
+
+    <h2>7. Exception Handling</h2>
+    <p>Java provides a robust exception handling mechanism using "try," "catch," and "finally" blocks to handle runtime errors gracefully.</p>
+
+    <p>Understanding and following Java syntax rules is crucial for writing correct and maintainable Java programs. Proper indentation and code style also enhance code readability and maintainability.</p>
+<hr>
+    <h1>Java Output</h1>
+    <p>In Java, you can display information and results to the user or the console using various output mechanisms. The most common methods for output in Java include:</p>
+
+    <h2>1. System.out.println()</h2>
+    <p>The <code>System.out.println()</code> method is used to print a line of text to the standard output (usually the console). You can use it to display strings, numbers, or the results of expressions. For example:</p>
+    <pre>
+        <code>
+System.out.println("Hello, Java!");
+System.out.println("The result is: " + result);
+        </code>
+    </pre>
+
+    <h2>2. System.out.print()</h2>
+    <p>The <code>System.out.print()</code> method is similar to <code>System.out.println()</code>, but it does not add a newline character at the end of the output. This means that multiple calls to <code>System.out.print()</code> will print on the same line. For example:</p>
+    <pre>
+        <code>
+System.out.print("Hello, ");
+System.out.print("Java!");
+        </code>
+    </pre>
+
+    <h2>3. Formatting Output</h2>
+    <p>You can format output using <code>printf()</code> method from <code>System.out</code> class. It allows you to specify formatting options for displaying numbers and other data. For example:</p>
+    <pre>
+        <code>
+int num = 42;
+System.out.printf("The answer is: %d", num);
+        </code>
+    </pre>
+
+    <h2>4. Logging</h2>
+    <p>Java also provides a built-in logging mechanism through the <code>java.util.logging</code> package. This is commonly used for application logging. You can configure loggers and log levels to control the verbosity of your logs.</p>
+
+    <h2>5. Graphical User Interfaces (GUI)</h2>
+    <p>If you are developing Java applications with graphical user interfaces (GUIs), you can use components like labels, text fields, and text areas to display output to the user.</p>
+
+    <p>These are some of the basic methods for output in Java. Depending on your application's context, you may choose different output mechanisms to provide information to users or to debug your code.</p>
+<hr>
+    <h1>Java Comments</h1>
+    <p>Comments in Java are essential for code documentation and providing explanations to fellow developers. They allow you to include human-readable text within your code that is ignored by the Java compiler. There are two main types of comments in Java:</p>
+
+    <h2>1. Single-Line Comments</h2>
+    <p>Single-line comments are used for annotating a single line of code. They are preceded by double forward slashes "//". Anything after these slashes on the same line is considered a comment and is ignored by the compiler. Single-line comments are typically used for brief explanations and notes. For example:</p>
+    <pre>
+        <code>
+int count = 5; // Initialize the count variable
+        </code>
+    </pre>
+
+    <h2>2. Multi-Line Comments</h2>
+    <p>Multi-line comments, also known as block comments, are used for annotating multiple lines of code or adding detailed explanations. They are enclosed between "/*" to start the comment block and "*/" to end it. Everything between these delimiters is treated as a comment and is not compiled. Multi-line comments are often used for documenting classes, methods, and providing extensive comments. For example:</p>
+    <pre>
+        <code>
+/*
+ * This is a multi-line comment.
+ * It can span multiple lines and is useful
+ * for explaining complex code sections.
+ */
+int result = calculate(); // Calculate the result
+        </code>
+    </pre>
+
+    <p>Comments are not just for documenting code; they also help improve code readability and make it easier for you and other developers to understand the purpose and functionality of your Java programs. Using comments effectively is a good practice in software development.</p>
+<hr>
+    <h1>Java Variables</h1>
+    <p>Variables in Java are used to store data values. They act as containers that hold various types of data, such as numbers, text, and objects, during the execution of a program. Variables are an essential concept in Java and play a crucial role in manipulating and working with data.</p>
+
+    <h2>Declaring Variables</h2>
+    <p>In Java, you must declare a variable before you can use it. The declaration includes specifying the data type of the variable and giving it a name. For example:</p>
+    <pre>
+        <code>
+int age; // Declaring an integer variable
+String name; // Declaring a string variable
+double price; // Declaring a double variable
+        </code>
+    </pre>
+
+    <h2>Assigning Values</h2>
+    <p>Once a variable is declared, you can assign a value to it using the assignment operator (=). The assigned value must be compatible with the variable's data type. For example:</p>
+    <pre>
+        <code>
+age = 30; // Assigning a value to the age variable
+name = "John"; // Assigning a string value to the name variable
+price = 19.99; // Assigning a double value to the price variable
+        </code>
+    </pre>
+
+    <h2>Data Types</h2>
+    <p>Java has various data types, including:</p>
+    <ul>
+        <li><strong>int:</strong> for integers (whole numbers).</li>
+        <li><strong>double:</strong> for floating-point numbers (decimal numbers).</li>
+        <li><strong>String:</strong> for text and strings of characters.</li>
+        <li><strong>boolean:</strong> for true/false values.</li>
+        <li>And many more...</li>
+    </ul>
+
+    <h2>Naming Conventions</h2>
+    <p>Variable names must adhere to certain naming conventions in Java:</p>
+    <ul>
+        <li>Must start with a letter, underscore (_), or dollar sign ($).</li>
+        <li>Can contain letters, digits, underscores, and dollar signs.</li>
+        <li>Cannot be a Java keyword (e.g., "int," "if," "while").</li>
+        <li>Should use meaningful names to describe the variable's purpose (e.g., "age," "name," "totalPrice").</li>
+        <li>By convention, use camelCase for variable names (e.g., "myVariableName").</li>
+    </ul>
+
+    <p>Understanding how to declare and use variables is fundamental to Java programming, as they enable you to store and manipulate data effectively in your applications.</p>
+<hr>
+    <h1>Java Data Types</h1>
+    <p>Data types in Java define the type of values that variables can hold. Java supports various data types, which can be broadly categorized into two groups: primitive data types and reference data types.</p>
+
+    <h2>1. Primitive Data Types</h2>
+    <p>Primitive data types represent simple values, and they are stored directly in memory. Java provides the following primitive data types:</p>
+    <ul>
+        <li><strong>byte:</strong> 8-bit signed integer.</li>
+        <li><strong>short:</strong> 16-bit signed integer.</li>
+        <li><strong>int:</strong> 32-bit signed integer.</li>
+        <li><strong>long:</strong> 64-bit signed integer.</li>
+        <li><strong>float:</strong> 32-bit floating-point number.</li>
+        <li><strong>double:</strong> 64-bit floating-point number.</li>
+        <li><strong>char:</strong> 16-bit Unicode character.</li>
+        <li><strong>boolean:</strong> Represents true or false values.</li>
+    </ul>
+
+    <h2>2. Reference Data Types</h2>
+    <p>Reference data types do not store the actual data but instead store references (memory addresses) to objects in memory. Java provides the following reference data types:</p>
+    <ul>
+        <li><strong>Class Types:</strong> These data types are defined by classes and represent objects. Examples include:</li>
+        <ul>
+            <li><strong>String:</strong> Represents a sequence of characters.</li>
+            <li><strong>Arrays:</strong> Represents a collection of elements of the same type.</li>
+            <li>Custom user-defined classes.</li>
+        </ul>
+        <li><strong>Interface Types:</strong> Represents interfaces, which define a set of methods that classes must implement.</li>
+        <li><strong>Enumeration Types:</strong> Represents a finite set of values (enum).</li>
+        <li><strong>Other Reference Types:</strong> Includes various other reference types like generic types, annotations, and more.</li>
+    </ul>
+
+    <h2>3. Type Casting</h2>
+    <p>Java allows you to perform type casting to convert values from one data type to another. Implicit type casting (widening) is done automatically when no data loss occurs, while explicit type casting (narrowing) requires a cast operator and may result in data loss.</p>
+
+    <p>Choosing the appropriate data type is crucial in Java programming to ensure efficient memory usage and accurate data representation. Primitive data types are used for simple values, while reference data types are used for more complex objects and structures.</p>
+<hr>
+    <h1>Java Type Casting</h1>
+    <p>Type casting, also known as type conversion, is the process of changing the data type of a value or variable in Java. This is important when you need to perform operations or assignments involving different data types. Java supports two types of type casting:</p>
+
+    <h2>1. Implicit Type Casting (Widening)</h2>
+    <p>Implicit type casting, also called widening or automatic type conversion, occurs when the destination data type can accommodate the source data type without any data loss. It happens automatically during assignment or expression evaluation. For example:</p>
+    <pre>
+        <code>
+int num1 = 42;
+double num2 = num1; // Implicit casting from int to double
+        </code>
+    </pre>
+
+    <p>In this example, the integer value `num1` is implicitly cast to a double when assigned to `num2` because a double can represent integer values without loss of precision.</p>
+
+    <h2>2. Explicit Type Casting (Narrowing)</h2>
+    <p>Explicit type casting, also known as narrowing, is used when you want to convert a value from a larger data type to a smaller one or when there is potential data loss. It requires a cast operator and must be done explicitly in your code. For example:</p>
+    <pre>
+        <code>
+double num1 = 42.56;
+int num2 = (int) num1; // Explicit casting from double to int
+        </code>
+    </pre>
+
+    <p>In this example, we explicitly cast the double value `num1` to an int using `(int)`. Be cautious when using explicit casting, as it may result in data loss or unexpected behavior if the value cannot be accurately represented in the target data type.</p>
+
+    <h2>3. Type Casting Rules</h2>
+    <p>When performing type casting, keep these rules in mind:</p>
+    <ul>
+        <li>Implicit casting can be done between compatible data types without explicit casting.</li>
+        <li>Explicit casting is required when converting from a larger data type to a smaller one or when narrowing the data type.</li>
+        <li>Explicit casting may lead to data loss or unexpected results if not done carefully.</li>
+        <li>Always be aware of the range and precision limitations of the target data type.</li>
+    </ul>
+
+    <p>Type casting is a powerful feature in Java that allows you to work with different data types in a flexible manner. However, it should be used judiciously to ensure data integrity and avoid potential issues.</p>
+<hr>
+    <h1>Java Operators</h1>
+    <p>Operators in Java are symbols or special keywords used to perform operations on variables and values. They are fundamental for arithmetic calculations, comparisons, logical operations, and more. Java provides several types of operators, which can be categorized into the following groups:</p>
+
+    <h2>1. Arithmetic Operators</h2>
+    <p>Arithmetic operators are used to perform mathematical operations on numerical values. Java supports the following arithmetic operators:</p>
+    <ul>
+        <li><strong>+</strong> (Addition)</li>
+        <li><strong>-</strong> (Subtraction)</li>
+        <li><strong>*</strong> (Multiplication)</li>
+        <li><strong>/</strong> (Division)</li>
+        <li><strong>%</strong> (Modulus - remainder after division)</li>
+        <li><strong>++</strong> (Increment by 1)</li>
+        <li><strong>--</strong> (Decrement by 1)</li>
+    </ul>
+
+    <h2>2. Relational Operators</h2>
+    <p>Relational operators are used to compare values and determine relationships between them. Java supports the following relational operators:</p>
+    <ul>
+        <li><strong>==</strong> (Equal to)</li>
+        <li><strong>!=</strong> (Not equal to)</li>
+        <li><strong>&gt;</strong> (Greater than)</li>
+        <li><strong>&lt;</strong> (Less than)</li>
+        <li><strong>&gt;=</strong> (Greater than or equal to)</li>
+        <li><strong>&lt;=</strong> (Less than or equal to)</li>
+    </ul>
+
+    <h2>3. Logical Operators</h2>
+    <p>Logical operators are used to perform logical operations on Boolean values (true or false). Java supports the following logical operators:</p>
+    <ul>
+        <li><strong>&&</strong> (Logical AND)</li>
+        <li><strong>||</strong> (Logical OR)</li>
+        <li><strong>!</strong> (Logical NOT)</li>
+    </ul>
+
+    <h2>4. Assignment Operators</h2>
+    <p>Assignment operators are used to assign values to variables. Java supports the following assignment operators:</p>
+    <ul>
+        <li><strong>=</strong> (Assignment)</li>
+        <li><strong>+=</strong> (Add and assign)</li>
+        <li><strong>-=</strong> (Subtract and assign)</li>
+        <li><strong>*=</strong> (Multiply and assign)</li>
+        <li><strong>/=</strong> (Divide and assign)</li>
+        <li><strong>%=</strong> (Modulus and assign)</li>
+    </ul>
+
+    <p>These are some of the fundamental operators in Java. Understanding how to use these operators is crucial for performing various operations and calculations in your Java programs.</p>
+<hr>
+    <h1>Java Strings</h1>
+    <p>A string in Java is a sequence of characters that represents text. Strings are used extensively in Java programs for working with textual data. Java treats strings as objects, and there are several ways to create and manipulate strings in Java:</p>
+
+    <h2>1. String Literal</h2>
+    <p>You can create a string by enclosing characters in double quotes. For example:</p>
+    <pre>
+        <code>
+String greeting = "Hello, Java!";
+        </code>
+    </pre>
+
+    <h2>2. String Object</h2>
+    <p>You can create a string using the `String` class constructor. For example:</p>
+    <pre>
+        <code>
+String name = new String("John");
+        </code>
+    </pre>
+
+    <h2>3. String Concatenation</h2>
+    <p>You can concatenate (join) strings together using the `+` operator. For example:</p>
+    <pre>
+        <code>
+String firstName = "John";
+String lastName = "Doe";
+String fullName = firstName + " " + lastName;
+        </code>
+    </pre>
+
+    <h2>4. String Methods</h2>
+    <p>Java provides numerous methods for manipulating strings, such as:</p>
+    <ul>
+        <li><strong>length()</strong>: Returns the length of the string.</li>
+        <li><strong>charAt(index)</strong>: Returns the character at the specified index.</li>
+        <li><strong>substring(beginIndex, endIndex)</strong>: Returns a substring of the original string.</li>
+        <li><strong>indexOf(substring)</strong>: Returns the index of the first occurrence of the specified substring.</li>
+        <li><strong>toLowerCase()</strong>: Converts the string to lowercase.</li>
+        <li><strong>toUpperCase()</strong>: Converts the string to uppercase.</li>
+        <li><strong>trim()</strong>: Removes leading and trailing whitespace.</li>
+        <li>And many more...</li>
+    </ul>
+
+    <h2>5. String Immutability</h2>
+    <p>Strings in Java are immutable, which means their values cannot be changed after they are created. Any operation that appears to modify a string actually creates a new string object.</p>
+
+    <h2>6. String Comparison</h2>
+    <p>When comparing strings for equality, you should use the `.equals()` method, as the `==` operator checks for reference equality, not content equality.</p>
+
+    <p>Strings are a fundamental part of Java programming, and understanding how to work with them effectively is essential for text processing and manipulation tasks.</p>
+<hr>
+    <h1>Java Math Class</h1>
+    <p>The <code>Math</code> class in Java is a built-in class that provides a wide range of mathematical functions and constants for performing common mathematical operations. It is part of the Java standard library and does not require importing any additional packages.</p>
+
+    <h2>Commonly Used Math Functions</h2>
+    <p>The <code>Math</code> class includes methods for performing various mathematical operations, including:</p>
+    <ul>
+        <li><strong>Math.abs(x):</strong> Returns the absolute value of a number.</li>
+        <li><strong>Math.sqrt(x):</strong> Calculates the square root of a number.</li>
+        <li><strong>Math.pow(base, exponent):</strong> Raises a number to a specified power.</li>
+        <li><strong>Math.exp(x):</strong> Calculates the exponential value of a number.</li>
+        <li><strong>Math.log(x):</strong> Computes the natural logarithm (base e) of a number.</li>
+        <li><strong>Math.sin(x), Math.cos(x), Math.tan(x):</strong> Compute trigonometric functions.</li>
+        <li><strong>Math.min(x, y) and Math.max(x, y):</strong> Return the minimum and maximum of two numbers, respectively.</li>
+        <li><strong>Math.random():</strong> Generates a random double value between 0.0 (inclusive) and 1.0 (exclusive).</li>
+    </ul>
+
+    <h2>Math Constants</h2>
+    <p>The <code>Math</code> class also provides several mathematical constants, including:</p>
+    <ul>
+        <li><strong>Math.PI:</strong> The mathematical constant π (pi).</li>
+        <li><strong>Math.E:</strong> The mathematical constant e (Euler's number).</li>
+    </ul>
+
+    <h2>Example Usage</h2>
+    <p>Here's an example demonstrating the use of some <code>Math</code> class methods:</p>
+    <pre>
+        <code>
+double x = 4.0;
+double y = 2.0;
+
+double absoluteValue = Math.abs(x);
+double squareRoot = Math.sqrt(x);
+double power = Math.pow(x, y);
+double randomValue = Math.random();
+
+System.out.println("Absolute Value: " + absoluteValue);
+System.out.println("Square Root: " + squareRoot);
+System.out.println("Power: " + power);
+System.out.println("Random Value: " + randomValue);
+        </code>
+    </pre>
+
+    <p>The <code>Math</code> class is a powerful tool for performing mathematical operations in Java, and it is commonly used in various scientific and engineering applications.</p>
+<hr>
+    <h1>Java Booleans</h1>
+    <p>Booleans in Java are a fundamental data type that represents one of two possible values: <code>true</code> or <code>false</code>. Booleans are used for making decisions and controlling the flow of a program by evaluating conditions. They play a crucial role in programming logic and are commonly used in conditional statements and loops.</p>
+
+    <h2>Boolean Variables</h2>
+    <p>You can declare boolean variables to store boolean values. For example:</p>
+    <pre>
+        <code>
+boolean isJavaFun = true;
+boolean isCodingChallenging = false;
+        </code>
+    </pre>
+
+    <h2>Boolean Expressions</h2>
+    <p>Boolean expressions are conditions that evaluate to either <code>true</code> or <code>false</code>. They are used in conditional statements (e.g., <code>if</code>, <code>while</code>) to make decisions based on the result of the evaluation. For example:</p>
+    <pre>
+        <code>
+int x = 5;
+int y = 10;
+boolean isGreater = x > y; // Evaluates to false
+boolean isEqual = x == y;  // Evaluates to false
+        </code>
+    </pre>
+
+    <h2>Boolean Operators</h2>
+    <p>Java provides several operators for working with boolean values:</p>
+    <ul>
+        <li><strong>Logical AND (<code>&&</code>):</strong> Returns <code>true</code> if both operands are <code>true</code>.</li>
+        <li><strong>Logical OR (<code>||</code>):</strong> Returns <code>true</code> if at least one operand is <code>true</code>.</li>
+        <li><strong>Logical NOT (<code>!</code>):</strong> Inverts the boolean value (changes <code>true</code> to <code>false</code> and vice versa).</li>
+    </ul>
+
+    <h2>Boolean Conditions</h2>
+    <p>Boolean conditions are used to control the flow of a program. For example:</p>
+    <pre>
+        <code>
+if (isJavaFun) {
+    System.out.println("Java is fun!");
+} else {
+    System.out.println("Java is not fun.");
+}
+        </code>
+    </pre>
+
+    <p>Boolean variables and expressions are essential for creating decision-making logic in your Java programs, enabling you to execute different code paths based on specific conditions.</p>
+<hr>
+    <h1>Java If-Else Statement</h1>
+    <p>The <code>if-else</code> statement in Java is a fundamental control structure used for making decisions in your programs. It allows you to execute different blocks of code based on whether a specified condition is true or false.</p>
+
+    <h2>Syntax</h2>
+    <p>The basic syntax of the <code>if-else</code> statement is as follows:</p>
+    <pre>
+        <code>
+if (condition) {
+    // Code block to execute if the condition is true
+} else {
+    // Code block to execute if the condition is false
+}
+        </code>
+    </pre>
+
+    <p>The <code>if</code> statement is followed by a condition enclosed in parentheses. If the condition evaluates to <code>true</code>, the code block inside the first set of curly braces is executed. If the condition evaluates to <code>false</code>, the code block inside the <code>else</code> section is executed (optional).</p>
+
+    <h2>Examples</h2>
+    <p>Here are some examples of how the <code>if-else</code> statement can be used in Java:</p>
+
+    <h3>Example 1: Checking a Condition</h3>
+    <pre>
+        <code>
+int age = 18;
+
+if (age >= 18) {
+    System.out.println("You are an adult.");
+} else {
+    System.out.println("You are not yet an adult.");
+}
+        </code>
+    </pre>
+
+    <h3>Example 2: Determining the Maximum of Two Numbers</h3>
+    <pre>
+        <code>
+int num1 = 10;
+int num2 = 20;
+int max;
+
+if (num1 > num2) {
+    max = num1;
+} else {
+    max = num2;
+}
+
+System.out.println("The maximum number is: " + max);
+        </code>
+    </pre>
+
+    <p>The <code>if-else</code> statement allows you to create conditional logic in your Java programs, making it possible to handle various scenarios and control the flow of execution based on specific conditions.</p>
+<hr>
+    <h1>Java Switch Statement</h1>
+    <p>The <code>switch</code> statement in Java is a control structure used for making decisions based on the value of an expression. It allows you to execute different blocks of code depending on the value of the expression. The <code>switch</code> statement is especially useful when you have multiple conditions to evaluate.</p>
+
+    <h2>Syntax</h2>
+    <p>The basic syntax of the <code>switch</code> statement is as follows:</p>
+    <pre>
+        <code>
+switch (expression) {
+    case value1:
+        // Code to execute if expression equals value1
+        break;
+    case value2:
+        // Code to execute if expression equals value2
+        break;
+    // Add more case statements as needed
+    default:
+        // Code to execute if expression doesn't match any case
+}
+        </code>
+    </pre>
+
+    <p>The <code>switch</code> statement starts with the keyword <code>switch</code>, followed by the expression to evaluate in parentheses. Inside the <code>switch</code> block, you define <code>case</code> labels that correspond to specific values of the expression. When the expression matches a <code>case</code> label, the corresponding code block is executed. You can also include a <code>default</code> case that is executed if none of the <code>case</code> labels match the expression (optional).</p>
+
+    <h2>Examples</h2>
+    <p>Here are some examples of how the <code>switch</code> statement can be used in Java:</p>
+
+    <h3>Example 1: Handling Days of the Week</h3>
+    <pre>
+        <code>
+int day = 3;
+String dayName;
+
+switch (day) {
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+        dayName = "Wednesday";
+        break;
+    // Add cases for other days as needed
+    default:
+        dayName = "Invalid day";
+}
+
+System.out.println("Day of the week is: " + dayName);
+        </code>
+    </pre>
+
+    <h3>Example 2: Calculating Grades</h3>
+    <pre>
+        <code>
+char grade = 'B';
+
+switch (grade) {
+    case 'A':
+        System.out.println("Excellent!");
+        break;
+    case 'B':
+        System.out.println("Good job!");
+        break;
+    case 'C':
+        System.out.println("Satisfactory.");
+        break;
+    // Add cases for other grades as needed
+    default:
+        System.out.println("Invalid grade");
+}
+        </code>
+    </pre>
+
+    <p>The <code>switch</code> statement is a powerful tool for handling multiple conditions based on the value of an expression, making your Java programs more efficient and easier to read when dealing with complex decision-making logic.</p>
+<hr>
+    <h1>Java While Loop</h1>
+
+    <p>A <strong>while loop</strong> in Java is a control structure that allows you to repeatedly execute a block of code as long as a certain condition is true.</p>
+
+    <h2>Syntax:</h2>
+    <pre>
+        <code>
+while (condition) {
+    // Code to be executed while the condition is true
+}
+        </code>
+    </pre>
+
+    <h2>Example:</h2>
+    <p>Here is an example of a while loop in Java:</p>
+    <pre>
+        <code>
+public class WhileLoopExample {
+    public static void main(String[] args) {
+        int count = 1;
+        while (count <= 5) {
+            System.out.println("Count is: " + count);
+            count++;
+        }
+    }
+}
+        </code>
+    </pre>
+
+    <p>In this example, the while loop continues to execute as long as the condition <code>count <= 5</code> is true. The <code>count</code> variable is incremented in each iteration, and the loop stops when the condition becomes false.</p>
+
+    <h2>Notes:</h2>
+    <ul>
+        <li>The condition in a while loop is evaluated before each iteration. If the condition is initially false, the loop will not execute at all.</li>
+        <li>Be careful to avoid infinite loops where the condition never becomes false, as this can lead to your program running indefinitely.</li>
+    </ul>
+<hr>
+
+    <h1>Java For Loop</h1>
+
+    <p>A <strong>for loop</strong> in Java is a control structure that allows you to iterate over a range of values or elements. It's often used for tasks that involve executing a block of code a specific number of times.</p>
+
+    <h2>Syntax:</h2>
+    <pre>
+        <code>
+for (initialization; condition; update) {
+    // Code to be executed in each iteration
+}
+        </code>
+    </pre>
+
+    <p>The <code>initialization</code> is typically used to set up a counter variable, the <code>condition</code> specifies the loop termination condition, and the <code>update</code> is used to modify the counter variable in each iteration.</p>
+
+    <h2>Example:</h2>
+    <p>Here is an example of a for loop in Java:</p>
+    <pre>
+        <code>
+public class ForLoopExample {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Iteration " + i);
+        }
+    }
+}
+        </code>
+    </pre>
+
+    <p>In this example, the for loop initializes the variable <code>i</code> to 1, continues to execute as long as <code>i <= 5</code> is true, and increments <code>i</code> by 1 in each iteration.</p>
+
+    <h2>Notes:</h2>
+    <ul>
+        <li>The initialization, condition, and update sections of a for loop are separated by semicolons.</li>
+        <li>You can use a for loop to iterate over arrays, collections, or other sequences by customizing the initialization and update sections accordingly.</li>
+    </ul>
+<hr>
+    <h1>Java Break and Continue Statements</h1>
+
+    <p>The <strong>break</strong> and <strong>continue</strong> statements in Java are control flow statements that allow you to manipulate the flow of execution within loops and switch statements.</p>
+
+    <h2>Break Statement:</h2>
+    <p>The <strong>break</strong> statement is used to exit or terminate a loop prematurely. When a <strong>break</strong> statement is encountered within a loop, the loop is immediately exited, and program execution continues with the next statement after the loop.</p>
+
+    <h2>Example of Break Statement:</h2>
+    <pre>
+        <code>
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        break; // Exit the loop when i equals 3
+    }
+    System.out.println("i is: " + i);
+}
+// Output: i is: 1
+//         i is: 2
+        </code>
+    </pre>
+
+    <h2>Continue Statement:</h2>
+    <p>The <strong>continue</strong> statement is used to skip the current iteration of a loop and move to the next iteration. When a <strong>continue</strong> statement is encountered, the remaining code in the current iteration is skipped, and the loop continues with the next iteration.</p>
+
+    <h2>Example of Continue Statement:</h2>
+    <pre>
+        <code>
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        continue; // Skip iteration when i equals 3
+    }
+    System.out.println("i is: " + i);
+}
+// Output: i is: 1
+//         i is: 2
+//         i is: 4
+//         i is: 5
+        </code>
+    </pre>
+
+    <h2>Notes:</h2>
+    <ul>
+        <li><strong>Break</strong> and <strong>continue</strong> statements are typically used within loops (e.g., <code>for</code>, <code>while</code>, <code>do-while</code>) to control the flow of the loop.</li>
+        <li><strong>Break</strong> is used to exit the loop entirely, while <strong>continue</strong> skips the current iteration and moves to the next.</li>
+    </ul>
+<hr>
+    <h1>Java Arrays</h1>
+
+    <p>In Java, an <strong>array</strong> is a data structure that allows you to store multiple values of the same data type under a single variable name. Arrays provide a convenient way to work with collections of data elements.</p>
+
+    <h2>Declaration and Initialization:</h2>
+    <p>To declare and initialize an array in Java, you specify the data type of the elements it will contain, followed by square brackets <code>[]</code>. You can create arrays of primitive types or objects.</p>
+
+    <h3>Example of Declaring and Initializing an Array:</h3>
+    <pre>
+        <code>
+// Declare and initialize an integer array with 5 elements
+int[] numbers = {10, 20, 30, 40, 50};
+
+// Declare and initialize a string array with 3 elements
+String[] names = {"Alice", "Bob", "Charlie"};
+        </code>
+    </pre>
+
+    <h2>Accessing Array Elements:</h2>
+    <p>You can access individual elements of an array using their index. Arrays in Java are zero-indexed, meaning the first element is at index 0, the second element is at index 1, and so on.</p>
+
+    <h3>Example of Accessing Array Elements:</h3>
+    <pre>
+        <code>
+int[] numbers = {10, 20, 30, 40, 50};
+int firstNumber = numbers[0]; // Access the first element (10)
+int thirdNumber = numbers[2]; // Access the third element (30)
+        </code>
+    </pre>
+
+    <h2>Array Length:</h2>
+    <p>You can determine the length (number of elements) of an array using the <code>length</code> property.</p>
+
+    <h3>Example of Getting Array Length:</h3>
+    <pre>
+        <code>
+int[] numbers = {10, 20, 30, 40, 50};
+int arrayLength = numbers.length; // Get the length of the array (5)
+        </code>
+    </pre>
+
+    <h2>Iterating Over Arrays:</h2>
+    <p>You can use loops, such as <code>for</code> or <code>foreach</code>, to iterate over the elements of an array and perform operations on each element.</p>
+
+    <h3>Example of Iterating Over an Array:</h3>
+    <pre>
+        <code>
+String[] names = {"Alice", "Bob", "Charlie"};
+for (String name : names) {
+    System.out.println("Hello, " + name);
+}
+// Output:
+// Hello, Alice
+// Hello, Bob
+// Hello, Charlie
+        </code>
+    </pre>
+
+    <h2>Notes:</h2>
+    <ul>
+        <li>Arrays have a fixed size, which is determined when you create them. You cannot change the size of an array once it is created.</li>
+        <li>Arrays are commonly used in Java for tasks like storing collections of data, sorting, and searching.</li>
+    </ul>
+
+<hr>
+    <h1>Java Scope</h1>
+
+    <p>In Java, <strong>scope</strong> refers to the region of a program where a particular variable is visible and can be accessed. Understanding variable scope is crucial for writing maintainable and error-free Java code.</p>
+
+    <h2>Types of Scope:</h2>
+    <p>There are mainly three types of scope in Java:</p>
+
+    <ol>
+        <li><strong>Local Scope:</strong> Variables declared within a method or block of code have local scope. They are only accessible within that specific method or block.</li>
+        <li><strong>Instance Scope:</strong> Instance variables (also called member variables) are declared within a class but outside of any method. They have instance scope and are accessible to all methods of the class.</li>
+        <li><strong>Class Scope:</strong> Class variables (also called static variables) are declared within a class with the <code>static</code> keyword. They have class scope and are shared among all instances of the class.</li>
+    </ol>
+
+    <h2>Example of Variable Scope:</h2>
+    <pre>
+        <code>
+public class ScopeExample {
+    // Instance variable with instance scope
+    private int instanceVar;
+
+    // Class variable with class scope
+    private static int classVar;
+
+    public void methodWithLocalScope() {
+        // Local variable with local scope
+        int localVar = 10;
+        System.out.println("Local variable: " + localVar);
+    }
+
+    public void methodWithInstanceScope() {
+        // Accessing instance variable
+        instanceVar = 20;
+        System.out.println("Instance variable: " + instanceVar);
+    }
+
+    public static void methodWithClassScope() {
+        // Accessing class variable
+        classVar = 30;
+        System.out.println("Class variable: " + classVar);
+    }
+}
+        </code>
+    </pre>
+
+    <h2>Scope Rules:</h2>
+    <p>Scope rules dictate how variables are accessed and which variable takes precedence in case of naming conflicts:</p>
+    <ul>
+        <li>Local variables take precedence over instance and class variables with the same name within their respective scopes.</li>
+        <li>Instance variables take precedence over class variables with the same name.</li>
+        <li>Class variables are shared among all instances of the class and have the highest level of visibility.</li>
+    </ul>
+
+    <h2>Notes:</h2>
+    <ul>
+        <li>Variable scope helps in managing the lifetime and visibility of variables, preventing unintended modifications or conflicts.</li>
+        <li>Local variables have limited lifetime and exist only within the block or method in which they are declared.</li>
+        <li>Instance and class variables have a longer lifetime and persist as long as their containing object or class exists.</li>
+    </ul>
+
+    
+
+
+</body>
+</html>

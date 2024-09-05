@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+	<h1><span class="color_h1">Interprocess Communication (IPC)</span></h1>
+    <p>In this chapter, you will learn about the various working capabilities of IPC (Inter-process communication) within an Operating system along with usage. Processes executing concurrently in the operating system might be either independent processes or cooperating processes. A process is independent if it cannot be affected by the other processes executing in the system.    </p>
+    <hr>
+    <h2>Basics of Interprocess Communication</h2>
+    <p>There are numerous reasons for providing an environment or situation which allows process co-operation:
+        <ul>
+            <li><b>Information Sharing:</b> Since some users may be interested in the same piece of information (for example, a shared file), you must provide a situation for allowing concurrent access to that information.</li>
+            <li><b>Computation Speedup:</b> If you want a particular work to run fast, you must break it into sub-tasks where each of them will get executed in parallel with the other tasks. Note that such a speed-up can be attained only when the computer has compound or various processing elements like CPUs or I/O channels.</li>
+            <li><b>Modularity:</b>You may want to build the system in a modular way by dividing the system functions into split processes or threads.</li>
+            <li><b>Convenience:</b>Even a single user may work on many tasks at a time. For example, a user may be editing, formatting, printing, and compiling in parallel.</li>
+        </ul>
+        Working together with multiple processes, require an interprocess communication (IPC) method which will allow them to exchange data along with various information. There are two primary models of interprocess communication:
+        <ol>
+            <li>Shared memory and</li>
+            <li>Message passing</li>
+        </ol>
+        In the shared-memory model, a region of memory which is shared by cooperating processes gets established. Processes can be then able to exchange information by reading and writing all the data to the shared region. In the message-passing form, communication takes place by way of messages exchanged among the cooperating processes.
+    </p>
+    <p>The two communications models are contrasted in the figure below:
+        <img src="C:\Users\harsh\Pictures\Screenshots\Screenshot (420).png">
+    </p>
+    <hr>
+    <h2>Shared Memory Systems</h2>
+    <p>Interprocess communication (IPC) usually utilizes shared memory that requires communicating processes for establishing a region of shared memory. Typically, a shared-memory region resides within the address space of any process creating the shared memory segment. Other processes that wish for communicating using this shared-memory segment must connect it to their address space.</p>
+    <hr>
+    <h2>More on Inter Process Shared Memory</h2>
+    <p>Note that, normally what happens, the operating system tries to check one process from accessing other's process's memory. Shared memory needs that two or more processes agree to remove this limitation. They can then exchange information via reading and writing data within the shared areas.</p>
+    <p>The form of the data and the location gets established by these processes and are not under the control of the operating system. The processes are also in charge to ensure that they are not writing to the same old location simultaneously.</p>
+</body>
+</html>

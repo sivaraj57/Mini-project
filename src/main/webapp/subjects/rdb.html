@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">RELATIONAL DATABASE DESIGN</span></h1>
+    
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Database Normalization</span></h1>
+        <hr>
+        <div>
+            <h2>Functional Dependency</h2>
+            <p>Functional dependency (FD) is a set of constraints between two attributes in a relation. Functional dependency says that if two tuples have same values for attributes A1, A2,..., An, then those two tuples must have to have same values for attributes B1, B2, ..., Bn.</p>
+            <p>Functional dependency is represented by an arrow sign (→) that is, X→Y, where X functionally determines Y. The left-hand side attributes determine the values of attributes on the right-hand side.</p>
+            <h2>Armstrong's Axioms</h2>
+            <p>If F is a set of functional dependencies then the closure of F, denoted as F<sup>+</sup>, is the set of all functional dependencies logically implied by F. Armstrong's Axioms are a set of rules, that when applied repeatedly, generates a closure of functional dependencies.</p>
+            <ul class="list">
+            <li><p><b>Reflexive rule</b> − If alpha is a set of attributes and beta is_subset_of alpha, then alpha holds beta.</p></li>
+            <li><p><b>Augmentation rule</b> − If a → b holds and y is attribute set, then ay → by also holds. That is adding attributes in dependencies, does not change the basic dependencies.</p></li>
+            <li><p><b>Transitivity rule</b> − Same as transitive rule in algebra, if a → b holds and b → c holds, then a → c also holds. a → b is called as a functionally that determines b.</p></li>
+            </ul>
+            <h2>Trivial Functional Dependency</h2>
+            <ul class="list">
+            <li><p><b>Trivial</b> − If a functional dependency (FD) X → Y holds, where Y is a subset of X, then it is called a trivial FD. Trivial FDs always hold.</p></li>
+            <li><p><b>Non-trivial</b> − If an FD X → Y holds, where Y is not a subset of X, then it is called a non-trivial FD.</p></li>
+            <li><p><b>Completely non-trivial</b> − If an FD X → Y holds, where x intersect Y = Φ, it is said to be a completely non-trivial FD.</p></li>
+            </ul>
+            <h2>Normalization</h2>
+            <p>If a database design is not perfect, it may contain anomalies, which are like a bad dream for any database administrator. Managing a database with anomalies is next to impossible.</p>
+            <ul class="list">
+            <li><p><b>Update anomalies</b> − If data items are scattered and are not linked to each other properly, then it could lead to strange situations. For example, when we try to update one data item having its copies scattered over several places, a few instances get updated properly while a few others are left with old values. Such instances leave the database in an inconsistent state.</p></li>
+            <li><p><b>Deletion anomalies</b> − We tried to delete a record, but parts of it was left undeleted because of unawareness, the data is also saved somewhere else.</p></li>
+            <li><p><b>Insert anomalies</b> − We tried to insert data in a record that does not exist at all.</p></li>
+            </ul>
+            <p>Normalization is a method to remove all these anomalies and bring the database to a consistent state.</p>
+            <h2>First Normal Form</h2>
+            <p>First Normal Form is defined in the definition of relations (tables) itself. This rule defines that all the attributes in a relation must have atomic domains. The values in an atomic domain are indivisible units.</p>
+            <img src="/dbms/images/unorganized_relation.png" alt="unorganized relation">
+            <p>We re-arrange the relation (table) as below, to convert it to First Normal Form.</p>
+            <img src="/dbms/images/1nf.png" alt="Relation in 1NF">
+            <p>Each attribute must contain only a single value from its pre-defined domain.</p>
+            <h2>Second Normal Form</h2>
+            <p>Before we learn about the second normal form, we need to understand the following −</p>
+            <ul class="list">
+            <li><p><b>Prime attribute</b> − An attribute, which is a part of the candidate-key, is known as a prime attribute.</p></li>
+            <li><p><b>Non-prime attribute</b> − An attribute, which is not a part of the prime-key, is said to be a non-prime attribute.</p></li>
+            </ul>
+            <p>If we follow second normal form, then every non-prime attribute should be fully functionally dependent on prime key attribute. That is, if X → A holds, then there should not be any proper subset Y of X, for which Y → A also holds true.</p>
+            <img src="/dbms/images/not_2nf.png" alt="Relation not in 2NF">
+            <p>We see here in Student_Project relation that the prime key attributes are Stu_ID and Proj_ID. According to the rule, non-key attributes, i.e. Stu_Name and Proj_Name must be dependent upon both and not on any of the prime key attribute individually. But we find that Stu_Name can be identified by Stu_ID and Proj_Name can be identified by Proj_ID independently. This is called <b>partial dependency</b>, which is not allowed in Second Normal Form.</p>
+            <img src="/dbms/images/2nf.png" alt="Relation  in 2NF">
+            <p>We broke the relation in two as depicted in the above picture. So there exists no partial dependency.</p>
+            <h2>Third Normal Form</h2>
+            <p>For a relation to be in Third Normal Form, it must be in Second Normal form and the following must satisfy −</p>
+            <ul class="list">
+            <li>No non-prime attribute is transitively dependent on prime key attribute.</li>
+            <li>For any non-trivial functional dependency, X → A, then either −
+            <ul class="list"> <li="">X is a superkey or,
+            <li>A is prime attribute.</li>
+            </ul>
+            </li>
+            </ul>
+            <img src="/dbms/images/not_3nf.png" alt="Relation not in 3NF">
+            <p>We find that in the above Student_detail relation, Stu_ID is the key and only prime key attribute. We find that City can be identified by Stu_ID as well as Zip itself.  Neither Zip is a superkey nor is City a prime attribute. Additionally, Stu_ID → Zip → City, so there exists <b>transitive dependency</b>.</p>
+            <p>To bring this relation into third normal form, we break the relation into two relations as follows −</p>
+            <img src="/dbms/images/3nf.png" alt="Relation in 3NF">
+            <h2>Boyce-Codd Normal Form</h2>
+            <p>Boyce-Codd Normal Form (BCNF) is an extension of Third Normal Form on strict terms. BCNF states that −</p>
+            <ul class="list">
+            <li>For any non-trivial functional dependency, X → A, X must be a super-key.</li>
+            </ul>
+            <p>In the above image, Stu_ID is the super-key in the relation Student_Detail and Zip is the super-key in the relation ZipCodes. So,</p>
+            <p style="padding-left:20px;">Stu_ID → Stu_Name, Zip</p>
+            <p>and</p>
+            <p style="padding-left:20px;">Zip → City</p>
+            <p>Which confirms that both the relations are in BCNF.</p>
+        </div>
+        <hr>
+        <h1><span class="color_h1" style="color:rgb(76, 27, 97)">Database Joins</span></h1>
+        <hr>
+        <div>
+            <p>We understand the benefits of taking a Cartesian product of two relations, which gives us all the possible tuples that are paired together. But it might not be feasible for us in certain cases to take a Cartesian product where we encounter huge relations with thousands of tuples having a considerable large number of attributes.</p>
+            <p><b>Join</b> is a combination of a Cartesian product followed by a selection process. A Join operation pairs two tuples from different relations, if and only if a given join condition is satisfied.</p>
+            <p>We will briefly describe various join types in the following sections.</p>
+            <h2>Theta (θ) Join </h2>
+            <p>Theta join combines tuples from different relations provided they satisfy the theta condition. The join condition is denoted by the symbol <b>θ</b>.</p>
+            <h3>Notation</h3>
+            <pre class="result notranslate">R1 ⋈<sub>θ</sub> R2
+            </pre>
+            <p>R1 and R2 are relations having attributes (A1, A2, .., An) and (B1, B2,.. ,Bn) such that the attributes don’t have anything in common, that is R1 ∩ R2 = Φ.</p>
+            <p>Theta join can use all kinds of comparison operators.</p>
+            <div class="table-wrapper"><table class="table table-bordered">
+            <tbody><tr>
+            <th colspan="3" style="text-align:center;">Student</th>
+            </tr>
+            <tr>
+            <th>SID</th>
+            <th>Name</th>
+            <th>Std</th>
+            </tr>
+            <tr>
+            <td>101</td>
+            <td>Alex</td>
+            <td>10</td>
+            </tr>
+            <tr>
+            <td>102</td>
+            <td>Maria</td>
+            <td>11</td>
+            </tr>
+            </tbody></table></div>
+            <div class="table-wrapper"><table class="table table-bordered">
+            <tbody><tr>
+            <th colspan="2" style="text-align:center">Subjects</th>
+            </tr>
+            <tr>
+            <th>Class</th>
+            <th>Subject</th>
+            </tr>
+            <tr>
+            <td>10
+            </td><td>Math</td>
+            </tr>
+            <tr>
+            <td>10
+            </td><td>English</td>
+            </tr>
+            <tr>
+            <td>11
+            </td><td>Music</td>
+            </tr>
+            <tr>
+            <td>11
+            </td><td>Sports</td>
+            </tr>
+            </tbody></table></div>
+            <p>Student_Detail −</p>
+            <pre class="result notranslate">STUDENT <big>⋈</big><sub>Student.Std = Subject.Class</sub> SUBJECT
+            </pre>
+            <p></p>
+            <div class="table-wrapper"><table class="table table-bordered">
+            <tbody><tr>
+            <th colspan="5" style="text-align:center">Student_detail</th>
+            </tr>
+            <tr>
+            <th>SID</th>
+            <th>Name</th>
+            <th>Std</th>
+            <th>Class</th>
+            <th>Subject</th>
+            </tr>
+            <tr>
+            <td>101
+            </td><td>Alex</td>
+            <td>10</td>
+            <td>10
+            </td><td>Math</td>
+            </tr>
+            <tr>
+            <td>101
+            </td><td>Alex</td>
+            <td>10</td>
+            <td>10
+            </td><td>English</td>
+            </tr>
+            <tr>
+            <td>102
+            </td><td>Maria</td>
+            <td>11</td>
+            <td>11
+            </td><td>Music</td>
+            </tr>
+            <tr>
+            <td>102
+            </td><td>Maria</td>
+            <td>11</td>
+            <td>11
+            </td><td>Sports</td>
+            </tr>
+            </tbody></table></div>
+            <h2>Equijoin</h2>
+            <p>When Theta join uses only <b>equality</b> comparison operator, it is said to be equijoin. The above example corresponds to equijoin.</p>
+            <h2>Natural Join (<big>⋈</big>)</h2>
+            <p>Natural join does not use any comparison operator. It does not concatenate the way a Cartesian product does. We can perform a Natural Join only if there is at least one common attribute that exists between two relations. In addition, the attributes must have the same name and domain.</p>
+            <p>Natural join acts on those matching attributes where the values of attributes in both the relations are same.</p>
+            <div class="table-wrapper"><table class="table table-bordered">
+            <tbody><tr>
+            <th colspan="3" style="text-align:center;">Courses</th>
+            </tr>
+            <tr>
+            <th>CID</th>
+            <th>Course</th>
+            <th>Dept</th>
+            </tr>
+            <tr>
+            <td>CS01</td>
+            <td>Database</td>
+            <td>CS</td>
+            </tr>
+            <tr>
+            <td>ME01</td>
+            <td>Mechanics</td>
+            <td>ME</td>
+            </tr>
+            <tr>
+            <td>EE01</td>
+            <td>Electronics</td>
+            <td>EE</td>
+            </tr>
+            </tbody></table></div>
+            <div class="table-wrapper"><table class="table table-bordered">
+            <tbody><tr>
+            <th colspan="2" style="text-align:center;">HoD</th>
+            </tr>
+            <tr>
+            <th>Dept</th>
+            <th>Head</th>
+            </tr>
+            <tr>
+            <td>CS</td>
+            <td>Alex</td>
+            </tr>
+            <tr>
+            <td>ME</td>
+            <td>Maya</td>
+            </tr>
+            <tr>
+            <td>EE</td>
+            <td>Mira</td>
+            </tr>
+            </tbody></table></div>
+            <div class="table-wrapper"><table class="table table-bordered">
+            <tbody><tr>
+            <th colspan="4" style="text-align:center;">Courses ⋈ HoD</th>
+            </tr>
+            <tr>
+            <th>Dept</th>
+            <th>CID</th>
+            <th>Course</th>
+            <th>Head</th>
+            </tr>
+            <tr>
+            <td>CS</td>
+            <td>CS01</td>
+            <td>Database</td>
+            <td>Alex</td>
+            </tr>
+            <tr>
+            <td>ME</td>
+            <td>ME01</td>
+            <td>Mechanics</td>
+            <td>Maya</td>
+            </tr>
+            <tr>
+            <td>EE</td>
+            <td>EE01</td>
+            <td>Electronics</td>
+            <td>Mira</td>
+            </tr>
+            </tbody></table></div>
+            <h2>Outer Joins</h2>
+            <p>Theta Join, Equijoin, and Natural Join are called inner joins. An inner join includes only those tuples with matching attributes and the rest are discarded in the resulting relation. Therefore, we need to use outer joins to include all the tuples from the participating relations in the resulting relation. There are three kinds of outer joins − left outer join, right outer join, and full outer join.</p>
+            <h2>Left Outer Join(R <img src="/dbms/images/left_outer_join.png" width="24" style="display:inline; padding-bottom: 0px;" alt="Left Outer Join"> S)</h2>
+            <p>All the tuples from the Left relation, R, are included in the resulting relation. If there are tuples in R without any matching tuple in the Right relation S, then the S-attributes of the resulting relation are made NULL.</p>
+            <div class="table-wrapper"><table class="table table-bordered">
+            <tbody><tr>
+            <th colspan="2" style="text-align:center;">Left</th>
+            </tr>
+            <tr>
+            <th>A</th>
+            <th>B</th>
+            </tr>
+            <tr>
+            <td>100</td>
+            <td>Database</td>
+            </tr>
+            <tr>
+            <td>101</td>
+            <td>Mechanics</td>
+            </tr>
+            <tr>
+            <td>102</td>
+            <td>Electronics</td>
+            </tr>
+            </tbody></table></div>
+            <div class="table-wrapper"><table class="table table-bordered">
+            <tbody><tr>
+            <th colspan="2" style="text-align:center;">Right</th>
+            </tr>
+            <tr>
+            <th>A</th>
+            <th>B</th>
+            </tr>
+            <tr>
+            <td>100</td>
+            <td>Alex</td>
+            </tr>
+            <tr>
+            <td>102</td>
+            <td>Maya</td>
+            </tr>
+            <tr>
+            <td>104</td>
+            <td>Mira</td>
+            </tr>
+            </tbody></table></div>
+            <div class="table-wrapper"><table class="table table-bordered">
+            <tbody><tr>
+            <th colspan="4" style="text-align:center;">Courses <img src="/dbms/images/left_outer_join.png" width="24" style="display:inline; padding-bottom: 0px;" alt="Left Outer Join"> HoD</th>
+            </tr>
+            <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            </tr>
+            <tr>
+            <td>100</td>
+            <td>Database</td>
+            <td>100</td>
+            <td>Alex</td>
+            </tr>
+            <tr>
+            <td>101</td>
+            <td>Mechanics</td>
+            <td>---</td>
+            <td>---</td>
+            </tr>
+            <tr>
+            <td>102</td>
+            <td>Electronics</td>
+            <td>102</td>
+            <td>Maya</td>
+            </tr>
+            </tbody></table></div>
+            <h2>Right Outer Join: ( R <img src="/dbms/images/right_outer_join.png" width="24" style="display:inline; padding-bottom: 0px;" alt="Right Outer Join"> S )</h2>
+            <p>All the tuples from the Right relation, S, are included in the resulting relation. If there are tuples in S without any matching tuple in R, then the R-attributes of resulting relation are made NULL.</p>
+            <div class="table-wrapper"><table class="table table-bordered">
+            <tbody><tr>
+            <th colspan="4" style="text-align:center;">Courses <img src="/dbms/images/right_outer_join.png" width="13" style="display:inline; padding-bottom: 0px;" alt="Right Outer Join"> HoD</th>
+            </tr>
+            <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            </tr>
+            <tr>
+            <td>100</td>
+            <td>Database</td>
+            <td>100</td>
+            <td>Alex</td>
+            </tr>
+            <tr>
+            <td>102</td>
+            <td>Electronics</td>
+            <td>102</td>
+            <td>Maya</td>
+            </tr>
+            <tr>
+            <td>---</td>
+            <td>---</td>
+            <td>104</td>
+            <td>Mira</td>
+            </tr>
+            </tbody></table></div>
+            <h2>Full Outer Join: ( R <img src="/dbms/images/full_outer_join.png" width="16" style="display:inline; padding-bottom: 0px;" alt="Full Outer Join"> S)</h2>
+            <p>All the tuples from both participating relations are included in the resulting relation. If there are no matching tuples for both relations, their respective unmatched attributes are made NULL.</p>
+            <div class="table-wrapper"><table class="table table-bordered">
+            <tbody><tr>
+            <th colspan="4" style="text-align:center;">Courses <img src="/dbms/images/full_outer_join.png" width="13" style="display:inline; padding-bottom: 0px;" alt="Full Outer Join"> HoD</th>
+            </tr>
+            <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            </tr>
+            <tr>
+            <td>100</td>
+            <td>Database</td>
+            <td>100</td>
+            <td>Alex</td>
+            </tr>
+            <tr>
+            <td>101</td>
+            <td>Mechanics</td>
+            <td>---</td>
+            <td>---</td>
+            </tr>
+            <tr>
+            <td>102</td>
+            <td>Electronics</td>
+            <td>102</td>
+            <td>Maya</td>
+            </tr>
+            <tr>
+            <td>---</td>
+            <td>---</td>
+            <td>104</td>
+            <td>Mira</td>
+            </tr>
+            </tbody></table></div>
+        </div>
+        <hr>
+       
+    </body>
+</html>

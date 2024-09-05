@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+	<h1><span class="color_h1">Scheduling Algorithms</span></h1>
+    <p>CPU scheduling treats with the issues of deciding which of the processes in the ready queue needs to be allocated to the CPU. There are several different CPU scheduling algorithms used nowadays within an operating system. In this tutorial, you will get to know about some of them.</p>
+    <hr>
+    <h2>First-Come, First-Served Scheduling (FCFS) Algorithm</h2>
+    <p>By far the easiest and simplest CPU scheduling algorithm is the first-come, first served (FCFS) scheduling technique. With this method, the process which requests the CPU first, that process gets allocated to the CPU first. The execution of the FCFS policy is easily managed with a FIFO queue. As a process enters the ready queue, its Process Control Block is linked with the tail of the queue. When the CPU gets free, it is assigned to the process at the head or start of the queue.</p>
+    <p>Consider the following set of processes/jobs which arrive at time 0, with the length of the CPU burst that is given in milliseconds:</p>
+    <img src="C:\Users\harsh\Pictures\Screenshots\Screenshot (416).png">
+    <p>When the processes arrive in the order - P1, P2, P3 and is served using FCFS method, you get the outcome as given in the below mentioned Gantt chart:</p>
+    <img src="C:\Users\harsh\Pictures\Screenshots\s2.png">
+    <hr>
+    <h2>Shortest-Job-First Scheduling Technique</h2>
+    <p>A diverse approach to CPU scheduling is the technique of shortest-job-first (SJF) scheduling algorithm which links with each process the length of the process's next CPU burst. If the CPU is available, it is assigned to the process that has the minimum next CPU burst. If the subsequent CPU bursts of two processes become the same, then FCFS scheduling is used to break the tie.</p>
+    <p>Let us take an example of SJF scheduling, with the given set of processes below, and the length of the CPU burst in milliseconds:
+        <img src="C:\Users\harsh\Pictures\Screenshots\Screenshot (418).png">
+    </p>
+    <hr>
+    <h2>Priority Scheduling</h2>
+    <p>The SJF algorithm is a special example of the common priority scheduling technique. A priority is related and assigned with each process, and the CPU gets assigned to the process with the maximum priority. Equal priority processes get scheduled using FCFS method. An SJF algorithm is purely a priority algorithm wherein the priority (P) is the opposite of the (predicted) subsequent CPU burst. The better the CPU burst, the lower the priority is and vice versa.    </p>
+    <hr>
+    <h2>Round-Robin Scheduling</h2>
+    <p>The round-robin (RR) scheduling technique is intended mainly for time-sharing systems. This algorithm is related to FCFS scheduling, but preemption is included to toggle among processes. A small unit of time which is termed as a time quantum or time slice has to be defined. A 'time quantum' is usually from 10 to 100 milliseconds. The ready queue gets treated with a circular queue. The CPU scheduler goes about the ready queue, allocating the CPU with each process for the time interval which is at least 1-time quantum.</p>
+    <hr>
+    <h2>Multilevel Queue Scheduling</h2>
+    <p>Another form of scheduling technique has been designed for situations where processes are simply classified into different groups. A multi-level queue scheduling technique partitions or divides the ready queue into many separate queues. The processes get permanently assigned to one queue, usually based on some property of the process, such as the size of the memory, process priority and/or type of process. Each queue got its scheduling algorithm which works at the multilevel form.
+
+        Here is the diagram of how it works:
+        <img src="C:\Users\harsh\Pictures\Screenshots\Screenshot (419).png">
+    </p>
+    <hr>
+</body>
+</html>    
+	
